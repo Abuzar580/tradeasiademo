@@ -1,13 +1,22 @@
+import { Button } from "@/components/ui";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-col items-center justify-center gap-4 px-6 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          ChemTradeAsia
-        </h1>
-        <p className="text-zinc-600 dark:text-zinc-400">
-          React storefront
-        </p>
+    <div className="min-h-screen">
+      <main className="mx-auto max-w-4xl px-6 py-12">
+        <h1>ChemTradeAsia</h1>
+        <p className="body-regular mt-4">React storefront</p>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <Button variant="primary" href="#">
+            Primary
+          </Button>
+          <Button variant="outlined" href="#">
+            Outlined
+          </Button>
+          <Button variant="signIn" href="/sign-in">
+            Sign In
+          </Button>
+        </div>
       </main>
     </div>
   );
