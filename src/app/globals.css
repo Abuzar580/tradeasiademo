@@ -9,6 +9,7 @@
   /* Primary palette */
   --brand-primary: #123C69;
   --brand-primary-hover: #14568E;
+  --brand-primary-deep: #052E59;
   --brand-secondary: #1ba2ca;
 
   /* Semantic */
@@ -18,6 +19,7 @@
 
   /* Neutrals */
   --brand-neutral-text: #646F79;
+  --brand-black: #000000;
   --brand-neutral-surface: #ffffff;
   --brand-neutral-surface-2: #F3F7FA;
   --brand-neutral-surface-3: #EAE9E1;
@@ -68,13 +70,15 @@
   --body-caption-size: 12px;
   --body-caption-line-height: 18px;
 
+  --common-letter-spacing: 1.3px;
+
   /* Buttons – Sign in (uses brand color variables) */
   --btn-signin-font-size: 12px;
   --btn-signin-line-height: 27px;
   --btn-signin-letter-spacing: 1.3px;
   --btn-signin-color: var(--brand-primary);
   --btn-signin-color-hover: var(--brand-white);
-  --btn-signin-padding: 16px 39px;
+  --btn-signin-padding: 15px 39px;
   --brand-gradient-mid: rgba(var(--brand-white-rgb), 0.6);
   --btn-signin-bg: linear-gradient(
     359.97deg,
@@ -116,6 +120,7 @@
 @theme inline {
   --color-primary: var(--brand-primary);
   --color-primary-hover: var(--brand-primary-hover);
+  --color-primary-deep: var(--brand-primary-deep);
   --color-secondary: var(--brand-secondary);
 
   --color-success: var(--brand-success);
@@ -199,7 +204,7 @@ h5, .heading-5 {
   }
 
   .body-caption {
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-normal);
     font-size: var(--body-caption-size);
     line-height: var(--body-caption-line-height);
   }
@@ -223,13 +228,12 @@ h5, .heading-5 {
 
   .btn-sign-in:hover {
     color: var(--btn-signin-color-hover);
-    font-size: var(--btn-signin-font-size-hover);
-    font-size: var(--btn-signin-font-size-hover);
     background: var(--btn-signin-bg-hover);
     border: var(--btn-signin-border-hover);
+    text-shadow: 0 0 1px currentColor;
   }
 
-  /* Common base for primary & outlined */
+  /* Common btn style */
   .btn {
     border-radius: var(--btn-border-radius);
     font-weight: var(--font-weight-semibold);

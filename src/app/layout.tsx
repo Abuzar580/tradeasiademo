@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LayoutOne } from "@/layouts/layout-one";
 
 export const metadata: Metadata = {
   title: "ChemTradeAsia",
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {children}
+        <LayoutOne>{children}</LayoutOne>
       </body>
     </html>
   );
