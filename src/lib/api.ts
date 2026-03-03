@@ -14,6 +14,7 @@
 
 import { cache } from "react";
 import type { TenantConfig } from "@/types/tenant";
+import { validateTenantConfig } from "./tenant-validator";
 
 const API_BASE_URL = process.env.API_BASE_URL ?? "";
 
@@ -199,17 +200,18 @@ function getFallbackTenantConfig(tenantId: string): TenantConfig {
 export const fetchTenantBootstrap = cache(
   async (tenantId: string): Promise<TenantConfig> => {
     if (!API_BASE_URL) {
-      return getFallbackTenantConfig(tenantId);
+      return validateTenantConfig(getFallbackTenantConfig(tenantId));
     }
 
     try {
-      return await apiFetch<TenantConfig>(
+      const raw = await apiFetch<unknown>(
         `/api/v1/tenants/${tenantId}/bootstrap`,
         {
           revalidate: 3600,
           tags: [`tenant-${tenantId}`, "bootstrap"],
         },
       );
+      return validateTenantConfig(raw);
     } catch (error) {
       if (process.env.NODE_ENV !== "production") {
         console.warn(
@@ -219,7 +221,7 @@ export const fetchTenantBootstrap = cache(
             : String(error),
         );
       }
-      return getFallbackTenantConfig(tenantId);
+      return validateTenantConfig(getFallbackTenantConfig(tenantId));
     }
   },
 );
