@@ -2,42 +2,27 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { defaultLanguages, type LanguageOption } from "@/constants/languages";
-
-type ExploreItem = {
-  label: string;
-  href?: string;
-  children?: { label: string; href?: string }[];
-};
+import type { HeaderConfig } from "@/types/header";
 
 type DesktopHamburgerDrawerProps = {
   isOpen: boolean;
   onClose: () => void;
-  /** Optional: will come from API later – same source for desktop list & mobile modal */
-  languages?: LanguageOption[];
-  exploreItems?: ExploreItem[];
+  config: HeaderConfig;
   siteDomain?: string;
 };
-
-const defaultExploreItems: ExploreItem[] = [
-  { label: "Country", href: "/country", children: [{ label: "India", href: "/country/india" }, { label: "USA", href: "/country/usa" }] },
-  { label: "Industry", href: "/industry", children: [{ label: "Chemicals", href: "/industry/chemicals" }, { label: "Pharma", href: "/industry/pharma" }] },
-  { label: "Origin", href: "/origin", children: [{ label: "Asia", href: "/origin/asia" }, { label: "Europe", href: "/origin/europe" }] },
-  { label: "Business Vertical", href: "/vertical", children: [{ label: "B2B", href: "/vertical/b2b" }, { label: "B2C", href: "/vertical/b2c" }] },
-];
 
 export function DesktopHamburgerDrawer({
   isOpen,
   onClose,
-  languages = defaultLanguages,
-  exploreItems = defaultExploreItems,
+  config,
   siteDomain = "chemtradeasia.com",
 }: DesktopHamburgerDrawerProps) {
+  const { explore, languages } = config;
   const [languageOpen, setLanguageOpen] = useState(true);
   const [exploreOpen, setExploreOpen] = useState(true);
   const [secondLevelLabel, setSecondLevelLabel] = useState<string | null>(null);
 
-  const activeExploreItem = exploreItems.find((i) => i.label === secondLevelLabel);
+  const activeExploreItem = explore.find((i) => i.label === secondLevelLabel);
   const secondLevelItems = activeExploreItem?.children ?? [];
 
   if (!isOpen) return null;
@@ -158,7 +143,7 @@ export function DesktopHamburgerDrawer({
           {exploreOpen && (
             <>
               <ul className="px-5 py-6">
-                {exploreItems.map((item) => (
+                {explore.map((item) => (
                   <li key={item.label}>
                     <button
                       type="button"
@@ -218,7 +203,19 @@ export function DesktopHamburgerDrawer({
           <ul className="flex-1 overflow-y-auto px-5 py-4">
             {secondLevelItems.map((item) => (
               <li key={item.label} className="py-3">
-                <a href={item.href ?? "#"} className="body-caption text-[var(--brand-black)] hover:text-[var(--brand-neutral-text)]">
+                <a
+                  href={item.href ?? "#"}
+                  className="body-caption text-[var(--brand-black)] flex items-center gap-3 hover:text-[var(--brand-neutral-text)]"
+                >
+                  {item.flagSrc && (
+                    <Image
+                      src={item.flagSrc}
+                      alt=""
+                      width={28}
+                      height={20}
+                      className="h-6 w-8 shrink-0 rounded object-cover"
+                    />
+                  )}
                   {item.label}
                 </a>
               </li>

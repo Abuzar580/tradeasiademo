@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { defaultLanguages, type LanguageOption } from "@/constants/languages";
+import { defaultLanguages } from "@/constants/languages";
+import type { LanguageOption } from "@/types/header";
 
 export type { LanguageOption };
 

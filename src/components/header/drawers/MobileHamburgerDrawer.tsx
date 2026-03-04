@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { LanguageModal } from "@/components/shared/LanguageModal";
-import { WebsiteExploreModal } from "@/components/shared/WebsiteExploreModal";
+import { LanguageModal } from "@/components/header/modals/LanguageModal";
+import { WebsiteExploreModal } from "@/components/header/modals/WebsiteExploreModal";
 import type { HeaderConfig } from "@/types/header";
 
 type MobileHamburgerDrawerProps = {
@@ -150,10 +150,13 @@ export function MobileHamburgerDrawer({
       <LanguageModal
         isOpen={languageModalOpen}
         onClose={() => setLanguageModalOpen(false)}
+        languages={config.languages}
       />
       <WebsiteExploreModal
         isOpen={websiteExploreModalOpen}
         onClose={() => setWebsiteExploreModalOpen(false)}
+        exploreCategories={config.explore}
+        languages={config.languages}
       />
     </>
   );

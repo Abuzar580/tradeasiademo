@@ -3,20 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { defaultLanguages, type LanguageOption } from "@/constants/languages";
-
-export type ExploreCategory = {
-  label: string;
-  href?: string;
-  children?: { label: string; href?: string }[];
-};
-
-const defaultExploreCategories: ExploreCategory[] = [
-  { label: "Country", href: "/country", children: [] },
-  { label: "Industry", href: "/industry", children: [{ label: "Chemicals", href: "/industry/chemicals" }, { label: "Pharma", href: "/industry/pharma" }] },
-  { label: "Origin", href: "/origin", children: [{ label: "Asia", href: "/origin/asia" }, { label: "Europe", href: "/origin/europe" }] },
-  { label: "Business Vertical", href: "/vertical", children: [{ label: "B2B", href: "/vertical/b2b" }, { label: "B2C", href: "/vertical/b2c" }] },
-];
+import type { ExploreCategory, LanguageOption } from "@/types/header";
 
 const EXPLORE_DESCRIPTION =
   "Explore our network of country and industry based websites to access localized information, offerings, and business services across our group.";
@@ -25,7 +12,7 @@ type WebsiteExploreModalProps = {
   isOpen: boolean;
   onClose: () => void;
   exploreCategories?: ExploreCategory[];
-  /** Used when "Country" is selected for flag + name list */
+  /** @deprecated */
   languages?: LanguageOption[];
   globalWebsiteUrl?: string;
 };
@@ -33,8 +20,7 @@ type WebsiteExploreModalProps = {
 export function WebsiteExploreModal({
   isOpen,
   onClose,
-  exploreCategories = defaultExploreCategories,
-  languages = defaultLanguages,
+  exploreCategories = [],
   globalWebsiteUrl = "https://chemtradeasia.com",
 }: WebsiteExploreModalProps) {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -43,10 +29,11 @@ export function WebsiteExploreModal({
   if (!isOpen) return null;
 
   const activeItem = exploreCategories.find((c) => c.label === activeCategory);
-  const isCountry = activeCategory === "Country";
-  const listItems = isCountry
-    ? languages.map((l) => ({ label: l.name, href: "#", flagSrc: l.flagSrc ?? "/flag.svg" }))
-    : (activeItem?.children ?? []).map((c) => ({ label: c.label, href: c.href ?? "#", flagSrc: undefined }));
+  const listItems = (activeItem?.children ?? []).map((c) => ({
+    label: c.label,
+    href: c.href ?? "#",
+    flagSrc: c.flagSrc,
+  }));
 
   return (
     <div className="lg:hidden">

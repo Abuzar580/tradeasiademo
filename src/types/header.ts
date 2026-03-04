@@ -1,3 +1,15 @@
+export type ExploreCategory = {
+  label: string;
+  href?: string;
+  children?: { label: string; href?: string; flagSrc?: string }[];
+};
+
+export type LanguageOption = {
+  code: string;
+  name: string;
+  flagSrc?: string;
+};
+
 export type HeaderNavChild = {
   label: string;
   href: string;
@@ -25,5 +37,7 @@ export type HeaderConfig = {
   };
   nav: HeaderNavItem[];
   actions: HeaderAction[];
+  explore: ExploreCategory[];
+  languages: LanguageOption[];
 };
 

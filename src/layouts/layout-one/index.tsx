@@ -1,5 +1,6 @@
-import { HeaderOne } from "@/components/shared/HeaderOne";
+import { HeaderOne } from "@/components/header/HeaderOne";
 import { FooterOne } from "@/components/shared/FooterOne";
+import { defaultLanguages } from "@/constants/languages";
 import type { HeaderConfig } from "@/types/header";
 
 const headerOneConfig: HeaderConfig = {
@@ -34,6 +35,42 @@ const headerOneConfig: HeaderConfig = {
       href: "/sign-in",
     },
   ],
+  explore: [
+    {
+      label: "Country",
+      href: "/country",
+      children: defaultLanguages.map((l) => ({
+        label: l.name,
+        href: "#",
+        flagSrc: l.flagSrc ?? "/flag.svg",
+      })),
+    },
+    {
+      label: "Industry",
+      href: "/industry",
+      children: [
+        { label: "Chemicals", href: "/industry/chemicals" },
+        { label: "Pharma", href: "/industry/pharma" },
+      ],
+    },
+    {
+      label: "Origin",
+      href: "/origin",
+      children: [
+        { label: "Asia", href: "/origin/asia" },
+        { label: "Europe", href: "/origin/europe" },
+      ],
+    },
+    {
+      label: "Business Vertical",
+      href: "/vertical",
+      children: [
+        { label: "B2B", href: "/vertical/b2b" },
+        { label: "B2C", href: "/vertical/b2c" },
+      ],
+    },
+  ],
+  languages: defaultLanguages,
 };
 
 export function LayoutOne({ children }: { children: React.ReactNode }) {

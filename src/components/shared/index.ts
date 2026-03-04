@@ -1,2 +1,2 @@
-export { HeaderOne } from "./HeaderOne";
+export { HeaderOne } from "@/components/header/HeaderOne";
 export { FooterOne } from "./FooterOne";
