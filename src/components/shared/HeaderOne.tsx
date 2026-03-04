@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui";
 import { DesktopHamburgerDrawer } from "@/components/shared/DesktopHamburgerDrawer";
 import { MobileHamburgerDrawer } from "@/components/shared/MobileHamburgerDrawer";
+import { SearchOverlay } from "@/components/shared/SearchOverlay";
 import type { HeaderConfig } from "@/types/header";
 
 type HeaderOneProps = {
@@ -16,18 +17,19 @@ export function HeaderOne({ config }: HeaderOneProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopDrawerOpen, setDesktopDrawerOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const { logo, nav, actions } = config;
   const signInAction = actions.find((action) => action.type === "signIn");
   const otherActions = actions.filter((action) => action.type !== "signIn");
 
   useEffect(() => {
-    const menuOpen = mobileMenuOpen || desktopDrawerOpen;
+    const menuOpen = mobileMenuOpen || desktopDrawerOpen || searchOpen;
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [mobileMenuOpen, desktopDrawerOpen]);
+  }, [mobileMenuOpen, desktopDrawerOpen, searchOpen]);
 
   return (
     <header className="absolute left-0 right-0 top-5 z-50 px-5 md:top-[30px]">
@@ -133,6 +135,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
             type="button"
             aria-label="Search"
             className="flex h-[45px] w-[45px] shrink-0 items-center justify-center rounded-full bg-[var(--brand-primary-deep)] md:h-[50px] md:w-[50px]"
+            onClick={() => setSearchOpen(true)}
           >
             <Image src="/search.svg" alt="" width={20} height={20} />
           </button>
@@ -150,7 +153,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
             <Button
               variant="signIn"
               href={signInAction.href}
-              className="hidden sm:inline-flex"
+              className="hidden lg:inline-flex"
             >
               {signInAction.label}
             </Button>
@@ -200,6 +203,8 @@ export function HeaderOne({ config }: HeaderOneProps) {
           onClose={() => setDesktopDrawerOpen(false)}
         />
       </div>
+
+      <SearchOverlay isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }
