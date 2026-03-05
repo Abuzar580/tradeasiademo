@@ -184,6 +184,10 @@ h5, .heading-5 {
 
 @layer utilities {
 
+  .layout-container {
+    max-width: var(--layout-container-max);
+  }
+
   .body-large {
     font-weight: var(--font-weight-semibold);
     font-size: var(--body-large-size);

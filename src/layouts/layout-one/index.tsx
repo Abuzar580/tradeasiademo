@@ -77,7 +77,7 @@ export function LayoutOne({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex min-h-screen flex-col">
       <HeaderOne config={headerOneConfig} />
-      <main className="flex-1 pt-24 md:pt-32">{children}</main>
+      <main>{children}</main>
       <FooterOne />
     </div>
   );
