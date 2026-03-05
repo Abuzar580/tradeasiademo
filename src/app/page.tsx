@@ -1,11 +1,5 @@
-import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
+import { HomeLayoutOne } from "@/layouts/layout-one/HomeLayoutOne";
 
 export default function Home() {
-  return (
-    <div>
-      <main>
-        <AppDownloadSection />
-      </main>
-    </div>
-  );
+  return <HomeLayoutOne />;
 }
