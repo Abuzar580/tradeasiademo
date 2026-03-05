@@ -25,9 +25,9 @@ export function HeaderNav({ nav, openIndex, onOpenIndexChange }: HeaderNavProps)
         >
           {item.children ? (
             <>
-              <button
+              <a
                 type="button"
-                className="body-caption flex items-center gap-1 hover:opacity-90 text-[var(--brand-white)] uppercase"
+                className="body-caption flex items-center gap-1 hover:opacity-90 text-[var(--brand-white)] uppercase lg:py-3"
                 style={{
                   fontWeight: "var(--font-weight-bold)",
                   lineHeight: "13.2px",
@@ -45,10 +45,10 @@ export function HeaderNav({ nav, openIndex, onOpenIndexChange }: HeaderNavProps)
                   height={12}
                   className={`shrink-0 ${openIndex === index ? "rotate-180" : ""}`}
                 />
-              </button>
+              </a>
               {openIndex === index && (
                 <ul
-                  className="rounded-lg absolute left-0 top-2 z-20 mt-1 min-w-[180px] py-2"
+                  className="rounded-lg absolute left-0 top-7 z-20 mt-1 min-w-[180px] py-2"
                   style={{
                     background: "var(--brand-neutral-surface)",
                     boxShadow: "var(--btn-shadow-soft)",

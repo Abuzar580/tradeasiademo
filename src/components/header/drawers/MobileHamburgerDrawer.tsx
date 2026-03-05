@@ -50,7 +50,7 @@ export function MobileHamburgerDrawer({
             <div key={item.href}>
               {item.children && item.children.length > 0 ? (
                 <>
-                  <button
+                  <a
                     type="button"
                     onClick={() =>
                       setExpandedIndex(expandedIndex === index ? null : index)
@@ -70,7 +70,7 @@ export function MobileHamburgerDrawer({
                         className="shrink-0"
                       />
                     </span>
-                  </button>
+                  </a>
                   {expandedIndex === index && (
                     <ul className="bg-[var(--brand-primary)]">
                       {item.children.map((child) => (

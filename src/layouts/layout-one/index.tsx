@@ -1,5 +1,5 @@
 import { HeaderOne } from "@/components/header/HeaderOne";
-import { FooterOne } from "@/components/shared/FooterOne";
+import { FooterOne } from "@/components/footer/FooterOne";
 import { defaultLanguages } from "@/constants/languages";
 import type { HeaderConfig } from "@/types/header";
 
