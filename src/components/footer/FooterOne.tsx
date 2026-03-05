@@ -10,7 +10,7 @@ export function FooterOne() {
 
   return (
     <footer className="bg-[var(--brand-primary)] text-[var(--brand-white)]">
-      <div className="mx-auto w-full max-w-[var(--layout-container-max)] p-8 md:p-0">
+      <div className="mx-auto w-full layout-container p-8 md:p-0">
         <div className="hidden md:flex md:px-14 md:pt-15">
           <Image
             src="/logo.svg"
