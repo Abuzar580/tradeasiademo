@@ -186,6 +186,7 @@ h5, .heading-5 {
 
   .layout-container {
     max-width: var(--layout-container-max);
+    margin: 0 auto;
   }
 
   .body-large {
