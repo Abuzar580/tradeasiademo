@@ -28,7 +28,7 @@ export function FeedbackSection({
       )}
       <div className="relative mx-auto layout-container flex flex-col gap-10 md:gap-12">
           <div className="flex flex-col gap-3 md:gap-5">
-            <div
+            <h2
               className="text-[length:var(--heading-5-size)] leading-[var(--heading-3-line-height)] text-[var(--brand-white)] font-[var(--font-weight-bold)]
               md:text-[length:var(--heading-2-size)] md:leading-[var(--heading-2-line-height)]"
             >
@@ -39,7 +39,7 @@ export function FeedbackSection({
               >
                 {headingHighlight}
               </span>
-            </div>
+            </h2>
             <p className="text-[length:var(--body-medium-size)] leading-[var(--body-large-line-height)] font-[var(--font-weight-semibold)] text-[var(--brand-white)]
               md:text-[length:var(--heading-4-size)]">
               {subtitle}

@@ -14,14 +14,14 @@ export function AppDownloadSection() {
       <div className="relative mx-auto flex layout-container flex-col items-center md:flex-row gap-[50px]" style={{ textAlign: "center" }}>
         {/* Left: Text + buttons */}
         <div className="flex flex-1 md:flex-[3] flex-col items-center">
-          <div
+          <h2
             className="text-[32px] leading-[44.8px] md:text-[46px] md:leading-[62.1px] font-bold text-[var(--brand-black)]"
           >
             Introducing our NEW
             <span className="block font-bold text-[var(--brand-primary)]">
               Chemicals B2B Mobile App
             </span>
-          </div>
+          </h2>
           <p className="text-[length:var(--body-regular-size)] line-height:var(--body-large-line-height) font-[weight:var(--font-weight-semibold)] mt-4 max-w-[600px] text-[20px] md:text-[length:var(--body-large-size)]">
             {DESCRIPTION}
           </p>
