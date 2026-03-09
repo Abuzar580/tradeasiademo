@@ -28,8 +28,5 @@ export const options = [
 ];
 
 // reusable styles
-export const labelStyle =
-  "[&>label]:text-[16px] m-0 mt-4 [&>label]:font-[700] [&>label]:uppercase [&>label]:tracking-wide [&>label]:text-[var(--brand-primary-deep)]";
-
 export const inputStyle =
-  "h-[58px] mt-2 rounded-[var(--border-radius-md)] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] px-4 text-[16px] font-[600] placeholder:text-[16px] placeholder:font-[600] placeholder:text-[var(--brand-neutral-surface-3)] focus:border-[var(--brand-primary)]";
+  "h-[58px] mt-2 rounded-[20px] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] px-4 text-[16px] font-[600] placeholder:text-[16px] placeholder:font-[600] placeholder:text-[var(--brand-neutral-text)] focus:border-[var(--brand-primary)]";

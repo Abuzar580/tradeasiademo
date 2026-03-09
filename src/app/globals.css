@@ -102,14 +102,6 @@
   --btn-common-padding: 16px;
   --transition: all 0.2s;
 
-  /* Border - common */
-  --border-radius-xs: 5px;
-  --border-radius-sm: 16px;
-  --border-radius-md: 20px;
-  --border-radius-lg: 40px;
-  --border-radius-xl: 50px;
-  --border-radius-full: 100%;
-
   /* Buttons – mobile */
   --btn-mobile-font-size: 16px;
   --btn-mobile-line-height: 24px;
@@ -302,25 +294,4 @@ h5, .heading-5 {
       line-height: var(--btn-mobile-line-height);
     }
   }
-}
-
-.custom-swiper-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.custom-swiper-pagination-bullet {
-  height: 6px;
-  width: 6px;
-  border-radius: var(--border-radius-md);
-  background-color: var(--brand-neutral-surface-3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.custom-swiper-pagination-bullet-active {
-  width: 32px;
-  background-color: var(--brand-primary);
 }

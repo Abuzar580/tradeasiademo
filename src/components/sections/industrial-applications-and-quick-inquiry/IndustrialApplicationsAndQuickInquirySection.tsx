@@ -1,4 +1,3 @@
-import React from 'react'
 import { IndustrialApplications } from './(components)/industrial-applications'
 import { QuickInquiry } from './(components)/quick-inquiry'
 
