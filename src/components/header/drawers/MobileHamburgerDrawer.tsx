@@ -6,6 +6,7 @@ import { useState } from "react";
 import { LanguageModal } from "@/components/header/modals/LanguageModal";
 import { WebsiteExploreModal } from "@/components/header/modals/WebsiteExploreModal";
 import type { HeaderConfig } from "@/types/header";
+import { GlobeIcon } from "@/icons";
 
 type MobileHamburgerDrawerProps = {
   isOpen: boolean;
@@ -110,13 +111,7 @@ export function MobileHamburgerDrawer({
               onClick={() => setLanguageModalOpen(true)}
               className="body-small text-[var(--brand-white)] flex flex-1 items-center gap-3 py-2 border-b border-[var(--brand-neutral-surface)]/15 text-left"
             >
-              <Image
-                src="/globe.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="brightness-0 invert shrink-0"
-              />
+              <GlobeIcon className="w-6 h-6 text-[var(--brand-white)]" />
               <span>Select language</span>
             </button>
             <button
@@ -124,13 +119,7 @@ export function MobileHamburgerDrawer({
               onClick={() => setWebsiteExploreModalOpen(true)}
               className="body-small text-[var(--brand-white)] flex flex-1 items-center gap-3 py-2 border-b border-[var(--brand-neutral-surface)]/15"
             >
-              <Image
-                src="/globe.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="brightness-0 invert shrink-0"
-              />
+              <GlobeIcon className="w-6 h-6 text-[var(--brand-white)]" />
               <span>Select a website</span>
             </button>
           </div>
