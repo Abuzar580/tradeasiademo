@@ -1,0 +1,134 @@
+"use client";
+
+import { Button } from "@/components/ui/Button";
+import { useForm } from "react-hook-form";
+import { Input, Textarea } from "rizzui";
+import { inputStyle, labelStyle, options } from "./constant";
+
+type FormValues = {
+    productName: string;
+    qty: string;
+    selectOption: string;
+    email: string;
+    message: string;
+};
+
+export function QuickInquiryForm() {
+    const {
+        handleSubmit,
+        control,
+        register,
+        formState: { errors },
+    } = useForm<FormValues>({
+        defaultValues: {
+            productName: "",
+            qty: "",
+            selectOption: "",
+            email: "",
+            message: "",
+        },
+    });
+
+    const onSubmit = (data: FormValues) => {
+        console.log("Form submitted:", data);
+    };
+
+    return (
+        <section>
+            <div className="w-full rounded-[var(--border-radius-lg)] bg-[var(--brand-white)] px-6 py-8 shadow-[var(--shadow-lg)]">
+                <form className="flex flex-col justify-between gap-2" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-8">
+                        {/* Product Name */}
+                        <Input
+                            label="PRODUCT NAME *"
+                            placeholder="Enter product name"
+                            size="lg"
+                            {...register("productName", { required: "Product name is required" })}
+                            className={labelStyle}
+                            inputClassName={`${inputStyle} ${errors.productName ? "border-[var(--brand-danger)]" : ""}`}
+                        />
+                        {errors.productName && (
+                            <p className="text-[var(--brand-danger)] text-[var(--body-small-size)] m-0"> {errors.productName.message} </p>
+                        )}
+
+                        {/* Quantity */}
+                        <Input
+                            label="QTY *"
+                            placeholder="Enter quantity"
+                            size="lg"
+                            {...register("qty", { required: "Quantity is required" })}
+                            className={labelStyle}
+                            inputClassName={`${inputStyle} ${errors.qty ? "border-[var(--brand-danger)]" : ""}`}
+                        />
+                        {errors.qty && (
+                            <p className="text-[var(--brand-danger)] text-[var(--body-small-size)] m-0"> {errors.qty.message} </p>
+                        )}
+
+                        {/* Select Option */}
+                        <div className="flex flex-col gap-2 m-0 pt-4">
+                            <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
+                                SELECT
+                            </label>
+
+                            <select
+                                {...register("selectOption", { required: "Please select an option" })}
+                                className={`h-[58px] w-full rounded-[var(--border-radius-md)] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] p-2 font-[var(--font-weight-semibold)] ${errors.selectOption ? "border-[var(--brand-danger)]" : ""}`}
+                            >
+                                <option value="">Select an option</option>
+                                {options.map((option) => (
+                                    <option key={option.value} value={option.value}> {option.label} </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        {/* Email */}
+                        <Input
+                            label="EMAIL*"
+                            placeholder="Enter your email"
+                            type="email"
+                            size="lg"
+                            {...register("email", {
+                                required: "Email is required",
+                                pattern: {
+                                    value: /^\S+@\S+$/i,
+                                    message: "Invalid email address",
+                                },
+                            })}
+                            className={labelStyle}
+                            inputClassName={`${inputStyle} ${errors.email ? "border-[var(--brand-danger)]" : ""}`}
+                        />
+                        {errors.email && (
+                            <p className="text-[var(--brand-danger)] text-[var(--body-small-size)] m-0"> {errors.email.message} </p>
+                        )}
+
+                        {/* Message */}
+                        <div className="flex flex-col gap-2 m-0 pt-4">
+                            <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
+                                MESSAGE
+                            </label>
+
+                            <Textarea
+                                {...register("message")}
+                                rows={6}
+                                placeholder="Enter your message"
+                                className={`body-regular w-full resize-none rounded-[var(--border-radius-md)] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] p-2 placeholder:text-[var(--body-regular-size)] placeholder:font-[var(--font-weight-semibold)] placeholder:text-[var(--brand-neutral-surface-3)] outline-none focus:border-[var(--brand-primary)] ${errors.message ? "border-[var(--brand-danger)]" : ""}`}
+                            />
+
+                            {errors.message && (
+                                <p className="text-[var(--brand-danger)] text-[var(--body-small-size)] m-0">
+                                    {errors.message.message}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="flex">
+                        <Button variant="primary" type="submit" className="w-full">
+                            Submit Inquiry
+                        </Button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    );
+}
