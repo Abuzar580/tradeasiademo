@@ -28,7 +28,7 @@ export function AppDownloadSection() {
           <div className="pt-7 flex items-center gap-4">
             <Link href="#" className="flex h-10 items-center">
               <Image
-                src="/Appstore.svg"
+                src="/AppStoreIcon.svg"
                 alt="Download on the App Store"
                 width={121}
                 height={40}

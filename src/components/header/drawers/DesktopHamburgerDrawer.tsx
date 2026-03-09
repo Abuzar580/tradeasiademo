@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { HeaderConfig } from "@/types/header";
+import { GlobeIcon } from "@/icons";
 
 type DesktopHamburgerDrawerProps = {
   isOpen: boolean;
@@ -62,13 +63,7 @@ export function DesktopHamburgerDrawer({
             aria-expanded={languageOpen}
           >
             <span className="flex items-center gap-2">
-              <Image
-                src="/globe.svg"
-                alt=""
-                width={24}
-                height={24}
-                style={{ filter: "brightness(0) saturate(100%)" }}
-              />
+              <GlobeIcon className="w-6 h-6 text-[var(--brand-black)]" />
               <span className="body-small text-[var(--brand-black)]">
                 Select language
               </span>
@@ -117,13 +112,7 @@ export function DesktopHamburgerDrawer({
             aria-expanded={exploreOpen}
           >
             <span className="flex items-center gap-2">
-              <Image
-                src="/globe.svg"
-                alt=""
-                width={24}
-                height={24}
-                style={{ filter: "brightness(0) saturate(100%)" }}
-              />
+              <GlobeIcon className="w-6 h-6 text-[var(--brand-black)]" />
               <span className="body-small text-[var(--brand-black)]">
                 Select a Website to Explore
               </span>
