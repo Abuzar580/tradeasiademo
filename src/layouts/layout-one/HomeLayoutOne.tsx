@@ -1,13 +1,19 @@
-import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
-import { BannerSection } from "@/components/sections/Banner";
-import { FeedbackSection } from "@/components/sections/FeedbackSection";
+import { BannerSection } from "@/components/sections/BannerSection";
 import { GlobalSupplySection } from "@/components/sections/GlobalSupplySection";
 import { ProductCategoriesSection } from "@/components/sections/ProductCategoriesSection";
+import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
+import { FeedbackSection } from "@/components/sections/FeedbackSection";
 
 export function HomeLayoutOne() {
   return (
     <>
-      <BannerSection/>
+      <BannerSection
+        title="Explore TradeAsia Indonesia to discover valuable"
+        highlight="insights and information"
+        subtitle="Mira los planes, dale seguimientos a todo el progreso y mantén las conversaciones laborales desde solo lugar."
+        buttonText="Learn More"
+        buttonHref="#"
+      />
       <GlobalSupplySection/>
       <ProductCategoriesSection />
       <AppDownloadSection />
