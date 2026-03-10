@@ -24,7 +24,7 @@ export function SolutionCard({
     >
       {/* Icon */}
       <div
-        className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-primary)]
+        className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-primary)]
         transition-colors duration-300 group-hover:bg-white"
       >
         <Icon
