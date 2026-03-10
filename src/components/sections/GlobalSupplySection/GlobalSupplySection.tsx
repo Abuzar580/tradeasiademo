@@ -61,13 +61,13 @@ export function GlobalSupplySection() {
 
         {/* Heading + Description */}
         <div className="flex flex-col gap-5 md:gap-15">
-          <div
+          <h2
             className="text-[length:var(--heading-3-size)] leading-[var(--heading-3-line-height)]
             font-[var(--font-weight-semibold)] text-[var(--brand-white)]
             md:text-[length:var(--heading-1-size)] md:leading-[var(--heading-1-line-height)]"
           >
             Global Chemical Suppliers & Distributor
-          </div>
+          </h2>
 
           <p
             className="mx-auto max-w-[900px] text-[length:var(--body-regular-size)]

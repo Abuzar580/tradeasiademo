@@ -151,31 +151,31 @@ body {
   color: var(--brand-neutral-text);
 }
 
-h1, .heading-1 {
+.heading-1 {
   font-weight: var(--font-weight-bold);
   font-size: var(--heading-1-size);
   line-height: var(--heading-1-line-height);
 }
 
-h2, .heading-2 {
+.heading-2 {
   font-weight: var(--font-weight-bold);
   font-size: var(--heading-2-size);
   line-height: var(--heading-2-line-height);
 }
 
-h3, .heading-3 {
+.heading-3 {
   font-weight: var(--font-weight-bold);
   font-size: var(--heading-3-size);
   line-height: var(--heading-3-line-height);
 }
 
-h4, .heading-4 {
+.heading-4 {
   font-weight: var(--font-weight-bold);
   font-size: var(--heading-4-size);
   line-height: var(--heading-4-line-height);
 }
 
-h5, .heading-5 {
+.heading-5 {
   font-weight: var(--font-weight-bold);
   font-size: var(--heading-5-size);
   line-height: var(--heading-5-line-height);

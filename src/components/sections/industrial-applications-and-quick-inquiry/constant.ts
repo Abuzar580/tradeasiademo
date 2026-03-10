@@ -27,6 +27,4 @@ export const options = [
   { label: "Cherry", value: "cherry" },
 ];
 
-// reusable styles
-export const inputStyle =
-  "h-[58px] mt-2 rounded-[20px] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] px-4 text-[16px] font-[600] placeholder:text-[16px] placeholder:font-[600] placeholder:text-[var(--brand-neutral-text)] focus:border-[var(--brand-primary)]";
+export const inputStyle = "h-[58px] mt-2 rounded-[20px] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] px-4 text-[16px] font-[600] placeholder:text-[16px] placeholder:font-[600] placeholder:text-[var(--brand-neutral-text)] focus:border-[var(--brand-primary)]";
