@@ -3,7 +3,7 @@ import { GlobalSupplySection } from "@/components/sections/GlobalSupplySection";
 import { ProductCategoriesSection } from "@/components/sections/ProductCategoriesSection";
 import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
 import { FeedbackSection } from "@/components/sections/FeedbackSection";
-import { IndustrialApplicationsAndQuickInquiry } from "@/components/sections/industrial-applications-and-quick-inquiry";
+import { IndustrialApplicationsAndQuickInquiry } from "@/components/sections/IndustrialApplicationsAndQuickInquirySection";
 
 export function HomeLayoutOne() {
   return (

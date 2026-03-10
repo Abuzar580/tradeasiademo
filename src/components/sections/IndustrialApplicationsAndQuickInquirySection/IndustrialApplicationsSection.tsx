@@ -1,13 +1,14 @@
 "use client";
 
-import { QuickInquiryForm } from "./quick-inquiry-form";
+import { Button } from "@/components/ui";
+import Slider from "./Silder";
 
 type HeaderProps = {
   title: string
   subtitle?: string
 }
 
-export function QuickInquiry({
+export function IndustrialApplications({
   title,
   subtitle,
 }: HeaderProps) {
@@ -41,7 +42,18 @@ export function QuickInquiry({
           </p>
         )}
       </div>
-      <QuickInquiryForm />
+
+      <div className="w-full md:rounded-[40px] md:bg-[var(--brand-white)] md:px-5 md:py-8 md:shadow-[var(--box-shadow)] flex flex-col gap-2">
+        <div className="flex-1 mb-8">
+          <Slider />
+        </div>
+
+        <div className="flex justify-center">
+          <Button variant="primary">
+            SEE MORE INDUSTRIES
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

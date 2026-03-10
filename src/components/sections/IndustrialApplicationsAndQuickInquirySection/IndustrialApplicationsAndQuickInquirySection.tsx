@@ -1,5 +1,5 @@
-import { IndustrialApplications } from "./industrial-applications";
-import { QuickInquiry } from "./quick-inquiry";
+import { IndustrialApplications } from "./IndustrialApplicationsSection";
+import { QuickInquiry } from "./QuickInquirySection";
 
 export function IndustrialApplicationsAndQuickInquiry() {
     return (

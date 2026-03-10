@@ -75,7 +75,7 @@ export default function Slider() {
                     <SwiperSlide key={index}>
                         <Link
                             href="#"
-                            className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-4 py-2 min-h-[100px] transition hover:bg-[var(--brand-neutral-surface-3)]"
+                            className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-4 py-2 min-h-[100px] transition"
                         >
                             <div className="flex items-center gap-3">
                                 <span className="hidden md:flex h-12.5 w-12.5 flex-shrink-0 items-center justify-center rounded-full bg-[var(--brand-primary)] text-[var(--brand-white)]">
