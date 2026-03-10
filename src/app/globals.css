@@ -28,6 +28,7 @@
   --brand-neutral-surface-3: #EAE9E1;
   --brand-white: #ffffff;
   --brand-white-rgb: 255, 255, 255;
+  --brand-primary-rgb: 18, 60, 105;
 
   /* Shadow (box-shadow) – RGB for rgba() */
   --brand-shadow-rgb: 89, 89, 132;
