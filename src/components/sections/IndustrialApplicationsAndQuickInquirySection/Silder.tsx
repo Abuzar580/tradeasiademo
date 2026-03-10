@@ -21,7 +21,7 @@ export default function Slider() {
                     variant="primary"
                     className="custom-swiper-prev inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] p-0 text-[var(--brand-white)] hover:bg-[var(--brand-primary-hover)] disabled:cursor-not-allowed disabled:bg-[var(--brand-neutral-surface-3)] h-12.5 w-12.5 shadow-none!"
                 >
-                    <ArrowIcon className="w-6 h-6" />
+                    <ArrowIcon className="w-6 h-6  rotate-180" />
                 </Button>
 
                 <div className="custom-swiper-pagination  flex items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[32px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-primary)]" />
@@ -30,7 +30,7 @@ export default function Slider() {
                     variant="primary"
                     className="custom-swiper-next inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] p-0 text-[var(--brand-white)] hover:bg-[var(--brand-primary-hover)] disabled:cursor-not-allowed disabled:bg-[var(--brand-neutral-surface-3)] h-12.5 w-12.5 shadow-none!"
                 >
-                    <ArrowIcon className="w-6 h-6 rotate-180" />
+                    <ArrowIcon className="w-6 h-6" />
                 </Button>
             </div>
 
@@ -86,7 +86,7 @@ export default function Slider() {
                                 </span>
                             </div>
 
-                            <ArrowIcon className="w-6 h-6 rotate-180 text-[var(--brand-primary)]" />
+                            <ArrowIcon className="w-6 h-6 text-[var(--brand-primary)]" />
                         </Link>
                     </SwiperSlide>
                 ))}
