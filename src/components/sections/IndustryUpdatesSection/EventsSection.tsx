@@ -54,31 +54,16 @@ export function Events({
   subtitle,
 }: HeaderProps) {
   return (
-    <div className="flex flex-col gap-[30px]">
-      <div className="flex flex-col gap-[20px]">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
         <h2
-          className="
-            text-[length:var(--heading-3-size)]
-            leading-[var(--heading-3-line-height)]
-            font-[var(--font-weight-bold)]
-            md:text-[length:var(--heading-3-size)]
-            md:leading-[var(--heading-3-line-height)]
-            text-[var(--brand-primary)]
-          "
+          className="heading-3 text-[var(--brand-primary)]"
         >
           {title}
         </h2>
 
         {subtitle && (
-          <p
-            className="
-              tracking-[-0.008em]
-              text-[var(--body-medium-size)]
-              leading-[var(--body-medium-line-height)]
-              md:text-[var(--body-large-size)]
-              font-[var(--font-weight-semibold)]
-            "
-          >
+          <p className="body-large">
             {subtitle}
           </p>
         )}
@@ -141,15 +126,15 @@ export function Events({
                     />
                   </div>
 
-                  <div className="bg-[var(--brand-primary-deep)] flex-1 px-[34px] py-[52px] flex flex-col">
+                  <div className="bg-[var(--brand-primary)] flex-1 px-5 md:px-8 py-12 flex flex-col">
                     {/* Industry  Name */}
-                    <h4 className="heading-4  text-[var(--brand-white)] mb-6">
+                    <h4 className="heading-4 text-[var(--brand-white)]">
                       {Industry.name}
                     </h4>
 
                     {/* Industry  Details with Icons */}
-                    <div className="space-y-6 heading-4  text-[var(--brand-white)] flex-1">
-                      <div className="flex items-center gap-3">
+                    <div className="space-y-7 md:space-y-6 mt-9 md:mt-6 heading-4  text-[var(--brand-white)] flex-1">
+                      <div className="flex items-center gap-3 md:gap-4">
                         <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
                           <Industry.calenderIcon className="text-[var(--brand-white)]" />
                         </div>
@@ -157,7 +142,7 @@ export function Events({
                           {Industry.date}
                         </p>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 md:gap-4">
                         <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
                           <Industry.locationIcon className="text-[var(--brand-white)]" />
                         </div>
@@ -166,7 +151,7 @@ export function Events({
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-center w-full">
+                      <div className="flex items-center justify-center w-full md:pt-4">
                         <div className="flex items-center justify-between w-full max-w-[320px]">
                           <Button
                             variant="outlined"

@@ -55,27 +55,14 @@ export function NewsAndInsights({
     <div className="flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[20px] ">
         <h2
-          className="
-            text-[length:var(--heading-3-size)]
-            leading-[var(--heading-3-line-height)]
-            font-[var(--font-weight-bold)]
-            md:text-[length:var(--heading-3-size)]
-            md:leading-[var(--heading-3-line-height)]
-            text-[var(--brand-primary)]
-          "
+          className="heading-3 text-[var(--brand-primary)]"
         >
           {title}
         </h2>
 
         {subtitle && (
           <p
-            className="
-              tracking-[-0.008em]
-              text-[var(--body-medium-size)]
-              leading-[var(--body-medium-line-height)]
-              md:text-[var(--body-large-size)]
-              font-[var(--font-weight-semibold)]
-            "
+            className="body-large"
           >
             {subtitle}
           </p>
@@ -88,7 +75,7 @@ export function NewsAndInsights({
           {ARTICLE.map((article) => (
             <div
               key={article.id}
-              className=" flex flex-col md:flex-row rounded-2xl bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] overflow-hidden bg-[var(--brand-white)]"
+              className=" flex flex-col md:flex-row rounded-[18px] bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] overflow-hidden bg-[var(--brand-white)]"
             >
               {/* Article Image */}
               <div className="hidden md:flex relative w-full md:max-w-[270px] h-auto flex-shrink-0">
@@ -101,31 +88,29 @@ export function NewsAndInsights({
               </div>
 
               {/* Article Content */}
-              <div className="flex flex-col gap-[23px] justify-between p-[24px]">
-                <div className="inline-flex w-fit">
+              <div className="flex flex-col gap-[18px] justify-between py-7 px-6 md:px-[18px]">
                   <span
-                    className="body-caption py-[4px] px-[12px] text-[var(--brand-primary)] border-[2px] border-[var(--brand-primary)] rounded-2xl uppercase"
+                    className="inline-flex w-fit body-caption font-[var(--font-weight-semibold)]! py-2 px-5 text-[var(--brand-primary)] border border-[var(--brand-primary)] rounded-[20px] uppercase bg-[var(--brand-neutral-surface-2)]"
                   >
                     {article.badge}
                   </span>
-                </div>
 
-                <p className="body-medium text-[var(--brand-primary)]" >
+                <p className="body-medium text-[var(--brand-primary)] leading-[30px]!" >
                   {article.heading}
                 </p>
 
                 <div className="flex items-center justify-between gap-[16px] pt-[16px]">
-                  <span className="body-caption text-[var(--brand-neutral-text)]">
+                  <span className="body-caption font-[var(--font-weight-semibold)]!">
                     {article.date}
                   </span>
 
                   <Button
                     href={article.readMoreUrl}
                     variant="primary"
-                    className=" inline-flex gap-3 items-center justify-center py-[10px]!"
+                    className=" inline-flex gap-3 items-center justify-center py-3! px-5!"
                   >
                     Read More
-                    <ArrowIcon className="w-[16px] h-[16px]" />
+                    <ArrowIcon className="w-4 h-3" />
                   </Button>
                 </div>
               </div>

@@ -6,12 +6,12 @@ const DESCRIPTION =
 
 export function AppDownloadSection() {
   return (
-    <section className="relative py-12 px-5 md:py-[100px]">
+    <section className="relative py-12 md:py-[100px]">
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/neturalBgImage.png)" }}
       />
-      <div className="relative mx-auto flex layout-container flex-col items-center md:flex-row gap-[50px]" style={{ textAlign: "center" }}>
+      <div className="relative px-5 flex layout-container flex-col items-center md:flex-row gap-[50px]" style={{ textAlign: "center" }}>
         {/* Left: Text + buttons */}
         <div className="flex flex-1 md:flex-[3] flex-col items-center">
           <h2

@@ -19,14 +19,14 @@ export function FeedbackSection({
   backgroundImage,
 }: FeedbackSectionProps) {
   return (
-    <section className="relative py-16 px-5 md:py-20 text-center md:text-left">
+    <section className="relative py-16 md:py-20 text-center md:text-left">
       {backgroundImage && (
         <div
           className="absolute inset-0 -z-10 bg-cover bg-left bg-no-repeat"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       )}
-      <div className="relative mx-auto layout-container flex flex-col gap-10 md:gap-12">
+      <div className="relative px-5 layout-container flex flex-col gap-10 md:gap-12">
           <div className="flex flex-col gap-3 md:gap-5">
             <h2
               className="text-[length:var(--heading-5-size)] leading-[var(--heading-3-line-height)] text-[var(--brand-white)] font-[var(--font-weight-bold)]
