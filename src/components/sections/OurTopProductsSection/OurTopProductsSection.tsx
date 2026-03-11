@@ -196,9 +196,9 @@ export function OurTopProductsSection({
           className="m-0! w-full md:max-w-[880px] p-[50px]! md:p-0! py-0! md:py-0!"
         >
           {PRODUCTS.map((product) => (
-            <SwiperSlide key={product.id}>
+            <SwiperSlide key={product.id} className="!h-auto">
               <div className="rounded-xl overflow-hidden h-full flex flex-col">
-                <div className="relative w-full h-48 md:h-[280px] bg-gray-200">
+                <div className="relative w-full h-48 md:h-[280px] bg-[var(--brand-neutral-surface-2)]">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -207,14 +207,14 @@ export function OurTopProductsSection({
                   />
                 </div>
 
-                <div className="bg-[var(--brand-primary-deep)] flex-1 p-4 md:p-6 flex flex-col">
+                <div className="bg-[var(--brand-primary-deep)] p-4 md:p-6 flex flex-col gap-[15px] flex-1">
                   {/* Product Name */}
-                  <h3 className="text-start body-large text-[var(--brand-white)] mb-2">
+                  <h3 className="text-start body-large text-[var(--brand-white)] line-clamp-2">
                     {product.name}
                   </h3>
 
                   {/* Product Details with Icons */}
-                  <div className="space-y-2 mb-5 flex-1">
+                  <div className="space-y-4 flex-1">
                     <div className="flex items-center gap-3">
                       <div className="bg-[var(--brand-white)] rounded-lg flex-shrink-0 w-8 h-8 flex items-center justify-center">
                         <product.checkIcon />
@@ -223,12 +223,13 @@ export function OurTopProductsSection({
                         <span className="body-caption">CAS NUMBER:</span> {product.casNumber}
                       </p>
                     </div>
+
                     <div className="flex items-center gap-3">
                       <div className="bg-[var(--brand-white)] rounded-lg flex-shrink-0 w-8 h-8 flex items-center justify-center">
                         <product.fileIcon />
                       </div>
                       <p className="body-caption text-[var(--brand-white)]">
-                        <span className="body-caption ">HS CODE:</span> {product.hsCode}
+                        <span className="body-caption">HS CODE:</span> {product.hsCode}
                       </p>
                     </div>
                   </div>
@@ -237,7 +238,7 @@ export function OurTopProductsSection({
                   <Button
                     variant="outlined"
                     href="#"
-                    className="w-full"
+                    className="w-full mt-auto"
                   >
                     INQUIRE NOW
                   </Button>
