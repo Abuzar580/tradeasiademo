@@ -22,8 +22,8 @@ export function HomeLayoutOne() {
       <SupplyChainSolutionsSection />
       <IndustryTrendsSection />
       <IndustryUpdatesSection />
-      <AppDownloadSection />
       <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png"/>
+      <AppDownloadSection />
     </>
   );
 }
