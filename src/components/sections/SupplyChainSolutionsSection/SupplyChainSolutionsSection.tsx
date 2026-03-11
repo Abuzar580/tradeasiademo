@@ -4,7 +4,7 @@ import { StackIcon, ClockIcon, BagIcon } from "@/icons";
 
 export function SupplyChainSolutionsSection() {
   return (
-    <section className="relative py-15 px-5">
+    <section className="relative py-15">
       <div
         className="absolute inset-0 -z-1 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/Logistics.png')" }}
@@ -13,7 +13,7 @@ export function SupplyChainSolutionsSection() {
       {/* White overlay */}
       <div className="absolute inset-0 bg-[rgba(var(--brand-white-rgb),0.90)]"></div>
 
-      <div className="layout-container relative">
+      <div className="layout-container relative px-5">
         {/* Heading */}
         <div className="mx-auto max-w-[820px] text-center">
           <h2 className="text-[length:var(--heading-3-size)] leading-[var(--heading-3-line-height)] font-[var(--font-weight-semibold)] text-[var(--brand-black)] md:text-[length:var(--heading-2-size)] md:leading-[var(--heading-2-line-height)] md:font-[var(--font-weight-bold)]">

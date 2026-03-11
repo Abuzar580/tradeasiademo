@@ -34,10 +34,10 @@ const INSIGHTS_DATA: InsightCardProps[] = [
 export function IndustryTrendsSection() {
   return (
     <section
-      className="px-5 pt-10 pb-[60px] md:pt-20"
+      className="pt-10 pb-[60px] md:pt-20"
       aria-labelledby="industry-trends-heading"
     >
-      <div className="layout-container">
+      <div className="layout-container px-5">
         <div className="text-center mb-7 md:mb-[60px] max-w-[700px] m-auto">
           <h2
             id="industry-trends-heading"

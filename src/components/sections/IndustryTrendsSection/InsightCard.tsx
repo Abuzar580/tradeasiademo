@@ -26,7 +26,7 @@ export function InsightCard({
 
         {/* Overlay */}
         <div
-          className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-300 opacity-100 group-hover:opacity-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"
+          className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-300 opacity-100 group-hover:opacity-0 hidden md:block bg-gradient-to-r from-black/80 via-black/40 to-transparent"
         />
 
         <div className="relative flex flex-col h-full">
