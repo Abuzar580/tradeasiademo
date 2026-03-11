@@ -32,7 +32,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
   }, [mobileMenuOpen, desktopDrawerOpen, searchOpen]);
 
   return (
-    <header className="left-0 right-0 z-50 px-5 top-5 md:top-[30px]">
+    <header className="left-0 right-0 z-50 px-5 fixed top-5 md:top-[30px]">
       <div className="mx-auto flex max-w-[1350px] items-center rounded-[40px] bg-[var(--brand-primary)] px-5 py-3 shadow-xl backdrop-blur-md md:rounded-[60px] md:px-[50px] md:py-5">
         <HeaderLogo src={logo.src} alt={logo.alt} href={logo.href} />
 
