@@ -12,7 +12,8 @@
     "@fontsource/poppins": "^5.2.7",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "swiper": "^12.1.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
