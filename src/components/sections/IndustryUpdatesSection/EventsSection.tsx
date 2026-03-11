@@ -54,7 +54,7 @@ export function Events({
   subtitle,
 }: HeaderProps) {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 h-full lg:gap-[30px]">
       <div className="flex flex-col gap-5">
         <h2
           className="heading-3 text-[var(--brand-primary)]"
@@ -69,8 +69,8 @@ export function Events({
         )}
       </div>
 
-      <div className="w-full rounded-2xl bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] flex flex-col gap-2">
-        <div className="flex">
+      <div className="relative z-10 w-full flex-1 min-h-0 flex flex-col rounded-2xl bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] gap-2">
+        <div className="relative z-10 flex flex-1 min-h-0 flex flex-col">
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={110}
@@ -78,44 +78,28 @@ export function Events({
             slidesPerGroup={1}
             speed={0}
             allowTouchMove={false}
-            loop={true}
+            loop={false}
             navigation={{
-              prevEl: ".custom-swiper-prev",
-              nextEl: ".custom-swiper-next",
+              prevEl: ".events-swiper-prev",
+              nextEl: ".events-swiper-next",
             }}
             pagination={{
               clickable: true,
-              el: ".custom-swiper-pagination",
+              el: ".events-swiper-pagination",
               renderBullet: (index, className) =>
                 `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--brand-white)] cursor-pointer transition-all duration-300"></span>`,
             }}
-            // autoplay={{
-            //     delay: 1000,
-            //     disableOnInteraction: false,
-            // }}
             breakpoints={{
               320: {
                 slidesPerView: 1,
                 spaceBetween: 12,
-              },
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 12,
-              },
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 12,
-              },
-              1024: {
-                slidesPerView: 1,
-                spaceBetween: 12,
-              },
+              }
             }}
-            className="industries-swiper"
+            className="industries-swiper h-full w-full flex-1"
           >
             {INDUSTRY.map((Industry) => (
               <SwiperSlide key={Industry.id}>
-                <div className="rounded-2xl overflow-hidden h-full flex flex-col">
+                <div className="rounded-tl-2xl rounded-tr-2xl overflow-hidden h-full flex flex-col">
                   <div className="relative w-full bg-[var(--brand-white)]">
                     <Image
                       src={Industry.image}
@@ -126,14 +110,14 @@ export function Events({
                     />
                   </div>
 
-                  <div className="bg-[var(--brand-primary)] flex-1 px-5 md:px-8 py-12 flex flex-col">
+                  <div className="bg-[var(--brand-primary)] flex-1 px-5 md:px-8 pb-0 py-12 flex flex-col">
                     {/* Industry  Name */}
                     <h4 className="heading-4 text-[var(--brand-white)]">
                       {Industry.name}
                     </h4>
 
                     {/* Industry  Details with Icons */}
-                    <div className="space-y-7 md:space-y-6 mt-9 md:mt-6 heading-4  text-[var(--brand-white)] flex-1">
+                    <div className="space-y-7 md:space-y-6 mt-9 md:mt-6 heading-4 text-[var(--brand-white)] flex-1">
                       <div className="flex items-center gap-3 md:gap-4">
                         <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
                           <Industry.calenderIcon className="text-[var(--brand-white)]" />
@@ -150,32 +134,35 @@ export function Events({
                           {Industry.location}
                         </p>
                       </div>
-
-                      <div className="flex items-center justify-center w-full md:pt-4">
-                        <div className="flex items-center justify-between w-full max-w-[320px]">
-                          <Button
-                            variant="outlined"
-                            className="custom-swiper-prev inline-flex items-center justify-center shadow-none! p-3!"
-                          >
-                            <ArrowIcon className="w-6 h-6 rotate-180" />
-                          </Button>
-
-                          <div className="flex custom-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[32px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" />
-
-                          <Button
-                            variant="outlined"
-                            className="custom-swiper-next inline-flex items-center justify-center shadow-none! p-3!"
-                          >
-                            <ArrowIcon className="w-6 h-6" />
-                          </Button>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Single pagination + nav outside slides so bullets stay visible */}
+          <div className="rounded-b-2xl bg-[var(--brand-primary)] flex items-center justify-center w-full pb-5 md:pb-8 flex-shrink-0 pt-10">
+            <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-[320px] px-4 gap-2">
+              <div className="flex justify-start">
+                <Button
+                  variant="outlined"
+                  className="events-swiper-prev inline-flex items-center justify-center shadow-none! p-3! [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
+                >
+                  <ArrowIcon className="w-4 h-3 rotate-180" />
+                </Button>
+              </div>
+              <div className="flex events-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[40px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" />
+              <div className="flex justify-end">
+                <Button
+                  variant="outlined"
+                  className="events-swiper-next inline-flex items-center justify-center shadow-none! p-3! [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
+                >
+                  <ArrowIcon className="w-4 h-3" />
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

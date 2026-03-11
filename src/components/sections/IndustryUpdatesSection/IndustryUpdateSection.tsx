@@ -11,14 +11,14 @@ export function IndustryUpdatesSection() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-[64px] md:gap-7 mt-8 md:mt-16">
-                    <div className="md:col-span-5">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-[64px] lg:gap-7 mt-8 lg:mt-16 lg:items-stretch">
+                    <div className="lg:col-span-5 relative z-10 flex flex-col min-h-0 h-full">
                         <Events
                             title="Events"
-                            subtitle="EStay informed with our latest events, researches, and expert perspectives on the chemical industry."
+                            subtitle="EStay informed with our latest events, researches"
                         />
                     </div>
-                    <div className="md:col-span-7">
+                    <div className="lg:col-span-7 flex flex-col min-h-0 h-full">
                         <NewsAndInsights
                             title="News & Insights"
                             subtitle="Stay informed with our latest articles, research, and expert perspectives on the chemical industry."

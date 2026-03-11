@@ -37,12 +37,12 @@ const ARTICLE= [
     readMoreUrl: "/article/2"
   },
   {
-    id: "2",
+    id: "3",
     image: "/CategoryImage.png",
     badge: "ARTICLE",
     heading: "Deep Dive: The Universal Emulsifier – Understanding Lecithin in Food...",
     date: "04 February 2026",
-    readMoreUrl: "/article/2"
+    readMoreUrl: "/article/3"
   },
 ]
 
@@ -52,7 +52,7 @@ export function NewsAndInsights({
   subtitle,
 }: NewsAndInsightsProps) {
   return (
-    <div className="flex flex-col gap-[30px]">
+    <div className="flex flex-col gap-[30px] h-full">
       <div className="flex flex-col gap-[20px] ">
         <h2
           className="heading-3 text-[var(--brand-primary)]"
