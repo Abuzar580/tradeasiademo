@@ -84,14 +84,14 @@ export function NewsAndInsights({
 
       {/* Articles Grid */}
       {ARTICLE.length > 0 && (
-        <div className="grid grid-cols-1 gap-[34px]">
+        <div className="grid grid-cols-1 gap-[30px]">
           {ARTICLE.map((article) => (
             <div
               key={article.id}
               className=" flex flex-col md:flex-row rounded-2xl bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] overflow-hidden bg-[var(--brand-white)]"
             >
               {/* Article Image */}
-              <div className="hidden md:flex relative w-full md:max-w-[270px] h-[240px] flex-shrink-0">
+              <div className="hidden md:flex relative w-full md:max-w-[270px] h-auto flex-shrink-0">
                 <Image
                   src={article.image}
                   alt={article.heading}

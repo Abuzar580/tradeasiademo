@@ -131,16 +131,17 @@ export function Events({
             {INDUSTRY.map((Industry) => (
               <SwiperSlide key={Industry.id}>
                 <div className="rounded-2xl overflow-hidden h-full flex flex-col">
-                  <div className="relative w-full h-[420px] bg-[var(--brand-white)]">
+                  <div className="relative w-full bg-[var(--brand-white)]">
                     <Image
                       src={Industry.image}
                       alt={Industry.name}
-                      fill
-                      className="object-contain py-[59px]"
+                      width={420}
+                      height={420}
+                      className="object-cover w-full h-auto py-[60px]"
                     />
                   </div>
 
-                  <div className="bg-[var(--brand-primary-deep)] flex-1 px-[34px] py-[50px] flex flex-col">
+                  <div className="bg-[var(--brand-primary-deep)] flex-1 px-[34px] py-[52px] flex flex-col">
                     {/* Industry  Name */}
                     <h4 className="heading-4  text-[var(--brand-white)] mb-6">
                       {Industry.name}
