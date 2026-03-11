@@ -3,3 +3,5 @@ export { default as GlobeIcon } from "./GlobeIcon.svg";
 export { default as StackIcon } from "./StackIcon.svg";
 export { default as CheckIcon } from "./CheckIcon.svg";
 export { default as FileIcon } from "./FileIcon.svg";
+export { default as ArrowIcon } from "./ArrowIcon.svg";
+export { default as BagIcon } from "./BagIcon.svg";

@@ -1,0 +1,1 @@
+export { SupplyChainSolutionsSection } from "./SupplyChainSolutionsSection";
