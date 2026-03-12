@@ -14,9 +14,29 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Slider() {
+    const mobileCards = INDUSTRIES.slice(0, 10);
+
     return (
         <div className="w-full h-full md:rounded-[40px] md:bg-[var(--brand-white)] px-0 py-0 md:px-[25px] md:py-[32px] md:shadow-[var(--box-shadow)] flex flex-col gap-[30px]">
-            <div className="flex-1">
+
+            {/* MOBILE GRID */}
+            <div className="grid grid-cols-2 gap-x-[22px] gap-y-[16px] md:hidden">
+                {mobileCards.map((industry, index) => (
+                    <Link
+                        key={index}
+                        href="#"
+                        className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-[15px] py-[24px] gap-2"
+                    >
+                        <span className="body-regular text-[var(--brand-primary)]">
+                            {industry}
+                        </span>
+                        <ArrowIcon className="w-2 h-3 text-[var(--brand-primary)] flex-shrink-0" />
+                    </Link>
+                ))}
+            </div>
+
+            {/* DESKTOP SLIDER */}
+            <div className="hidden md:block flex-1">
                 <div className="hidden items-center justify-between mb-6 md:flex">
                     <Button
                         variant="primary"
@@ -76,7 +96,7 @@ export default function Slider() {
                         <SwiperSlide key={index}>
                             <Link
                                 href="#"
-                                className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-[15px] py-[24px] transition gap-4 min-h-[96px]"
+                                className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-[15px] py-[24px] transition gap-4"
                             >
                                 <div className="flex items-center gap-3">
                                     <span className="hidden md:flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[var(--brand-primary)] text-[var(--brand-white)]">
@@ -87,7 +107,7 @@ export default function Slider() {
                                     </span>
                                 </div>
 
-                                <ArrowIcon className="w-2 h-3 text-[var(--brand-primary)]" />
+                                <ArrowIcon className="w-2 h-3 text-[var(--brand-primary)] flex-shrink-0" />
                             </Link>
                         </SwiperSlide>
                     ))}

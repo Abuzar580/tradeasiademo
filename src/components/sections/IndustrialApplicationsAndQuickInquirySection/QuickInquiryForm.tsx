@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import { useForm } from "react-hook-form";
 import { inputStyle, options } from "./constant";
+import { ArrowIcon } from "@/icons";
 
 type FormValues = {
     productName: string;
@@ -38,7 +39,7 @@ export function QuickInquiryForm() {
                 <form className="flex-1 flex flex-col justify-between" onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         {/* Product Name */}
-                        <div className="flex flex-col pb-5">
+                        <div className="flex flex-col pb-4">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 PRODUCT NAME *
                             </label>
@@ -56,7 +57,7 @@ export function QuickInquiryForm() {
                         </div>
 
                         {/* Quantity */}
-                        <div className="flex flex-col pb-5">
+                        <div className="flex flex-col pb-4">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 QTY *
                             </label>
@@ -74,24 +75,38 @@ export function QuickInquiryForm() {
                         </div>
 
                         {/* Select Option */}
-                        <div className="flex flex-col pb-5">
+                        <div className="flex flex-col pb-4 relative">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 SELECT
                             </label>
 
-                            <select
-                                {...register("selectOption", { required: "Please select an option" })}
-                                className={`${inputStyle} bg-[var(--brand-neutral-surface-3)]`}
-                            >
-                                <option value="">Select an option</option>
-                                {options.map((option) => (
-                                    <option key={option.value} value={option.value}> {option.label} </option>
-                                ))}
-                            </select>
+                            <div className="relative">
+                                <select
+                                    {...register("selectOption", { required: "Please select an option" })}
+                                    className={`${inputStyle} bg-[var(--brand-neutral-surface-3)] appearance-none w-full`}
+                                >
+                                    <option value="" className="absolute text-[var(--brand-neutral)] bg-[var(--brand-neutral-surface-3)] max-w-[50px]!">
+                                        Select an option
+                                    </option>
+                                    {options.map((option) => (
+                                        <option
+                                            key={option.value}
+                                            value={option.value}
+                                            className="text-[var(--brand-primary-deep)] bg-[var(--brand-neutral-surface-3)] max-w-[50px]!"
+                                        >
+                                            {option.label}
+                                        </option>
+                                    ))}
+                                </select>
+
+                                <div className="absolute inset-y-0 right-[19px] flex items-center pointer-events-none">
+                                    <ArrowIcon className="w-3 h-3 text-[var(--brand-primary)] transform rotate-90" />
+                                </div>
+                            </div>
                         </div>
 
                         {/* Email */}
-                        <div className="flex flex-col pb-5">
+                        <div className="flex flex-col pb-4">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 EMAIL *
                             </label>
@@ -109,7 +124,7 @@ export function QuickInquiryForm() {
                         </div>
 
                         {/* Message */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col pb-4">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 MESSAGE
                             </label>

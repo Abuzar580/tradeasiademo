@@ -14,8 +14,8 @@ export function IndustrialApplicationsHeader({
       <div className="flex flex-col gap-[30px] text-center md:text-left">
         <h1
           className="
-            text-[length:var(--heading-3-size)]
-            leading-[var(--heading-3-line-height)]
+            text-[length:var(--heading-4-size)]
+            leading-[var(--heading-4-line-height)]
             font-[var(--font-weight-bold)]
             md:text-[length:var(--heading-2-size)]
             md:leading-[var(--heading-2-line-height)]
