@@ -197,7 +197,7 @@ export function OurTopProductsSection({
         >
           {PRODUCTS.map((product) => (
             <SwiperSlide key={product.id} className="!h-auto">
-              <div className="rounded-xl overflow-hidden h-full flex flex-col">
+              <div className="rounded-xl overflow-hidden h-full flex flex-col border-3 border-transparent hover:border-[var(--brand-primary)] hover:shadow-[5px_5px_19px_var(--brand-primary-hover)] transition-all duration-300 ease-in-out">
                 <div className="relative w-full h-[533px] bg-[var(--brand-neutral-surface-2)]">
                   <Image
                     src={product.image}
@@ -206,7 +206,7 @@ export function OurTopProductsSection({
                     height={280}
                     className="w-full h-[280px] object-cover"
                   />
-                  <div className="absolute w-full bottom-0 rounded-t-2xl bg-[var(--brand-primary-deep)] z-50! p-[28px] flex flex-col gap-[20px] flex-1">
+                  <div className="absolute w-full bottom-0 rounded-t-2xl bg-[var(--brand-primary-deep)] z-50! p-[26px] flex flex-col gap-[20px] flex-1">
                     {/* Product Name */}
                     <h3 className="text-start body-large text-[var(--brand-white)] line-clamp-2">
                       {product.name}
@@ -243,7 +243,6 @@ export function OurTopProductsSection({
                     </Button>
                   </div>
                 </div>
-
               </div>
             </SwiperSlide>
           ))}
