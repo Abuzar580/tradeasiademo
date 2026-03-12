@@ -7,8 +7,10 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import "swiper/css/grid";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
 import { ArrowIcon, CheckIcon, FileIcon, StackIcon } from "@/icons";
 
 type ProductsSectionProps = {
@@ -84,7 +86,7 @@ export function OurTopProductsSection({
   subtitle
 }: ProductsSectionProps) {
   return (
-    <section className="relative flex justify-center overflow-hidden bg-[var(--brand-primary)] md:bg-[var(--brand-black)] py-15 text-center md:py-16 lg:py-[120px]">
+    <section className="relative flex justify-center overflow-hidden bg-[var(--brand-primary)] md:bg-[var(--brand-black)] py-15 pb-[120px] text-center md:py-16 lg:py-[120px]">
       <Image
         src="/ArtWorkIcon.svg"
         alt=""
@@ -135,45 +137,45 @@ export function OurTopProductsSection({
               </p>
             )}
           </div>
-          <div className="hidden md:flex items-center justify-between w-full md:max-w-[300px] max-w-[320px]">
-            <Button
-              variant="outlined"
-              className="custom-swiper-prev inline-flex items-center justify-center rounded-full disabled:cursor-not-allowed disabled:opacity-[0.3]"
-            >
-              <ArrowIcon className="w-4 h-4 rotate-180" />
-            </Button>
 
-            <div className="hidden md:flex custom-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[32px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" />
-
-            <Button
-              variant="outlined"
-              className="custom-swiper-next inline-flex items-center justify-center rounded-full disabled:cursor-not-allowed disabled:opacity-[0.3]"
-            >
-              <ArrowIcon className="w-4 h-4" />
-            </Button>
+          <div className="absolute md:relative bottom-[-80px] md:bottom-0 grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-[320px] px-4 gap-2">
+            <div className="flex justify-start">
+              <Button
+                variant="outlined"
+                className="events-swiper-prev inline-flex items-center justify-center shadow-none! p-3! [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
+              >
+                <ArrowIcon className="w-4 h-3 rotate-180" />
+              </Button>
+            </div>
+            <div className="flex events-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[40px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" />
+            <div className="flex justify-end">
+              <Button
+                variant="outlined"
+                className="events-swiper-next inline-flex items-center justify-center shadow-none! p-3! [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
+              >
+                <ArrowIcon className="w-4 h-3" />
+              </Button>
+            </div>
           </div>
         </div>
 
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={12}
-          slidesPerView={3}
+          modules={[Navigation, Pagination]}
+          spaceBetween={110}
+          slidesPerView={1}
           slidesPerGroup={1}
           speed={0}
           allowTouchMove={false}
+          loop={false}
           navigation={{
-            prevEl: ".custom-swiper-prev",
-            nextEl: ".custom-swiper-next",
+            prevEl: ".events-swiper-prev",
+            nextEl: ".events-swiper-next",
           }}
           pagination={{
             clickable: true,
-            el: ".custom-swiper-pagination",
+            el: ".events-swiper-pagination",
             renderBullet: (index, className) =>
               `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--brand-white)] cursor-pointer transition-all duration-300"></span>`,
-          }}
-          autoplay={{
-            delay: 1000000,
-            disableOnInteraction: false,
           }}
           breakpoints={{
             320: {
@@ -193,7 +195,7 @@ export function OurTopProductsSection({
               spaceBetween: 30,
             },
           }}
-          className="m-0! w-full md:max-w-[900px] p-[50px]! md:p-0! py-0! md:py-0!"
+          className="industries-swiper m-0! w-full md:max-w-[900px] p-[50px]! md:p-0! py-0! md:py-0!"
         >
           {PRODUCTS.map((product) => (
             <SwiperSlide key={product.id} className="!h-auto">
@@ -247,24 +249,6 @@ export function OurTopProductsSection({
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* mobile */}
-        <div className="flex md:hidden mt-10 items-center justify-between w-full md:max-w-[300px] max-w-[320px]">
-          <Button
-            variant="outlined"
-            className="custom-swiper-prev inline-flex items-center justify-center rounded-full disabled:cursor-not-allowed disabled:opacity-[0.3]"
-          >
-            <ArrowIcon className="w-4 h-4 rotate-180" />
-          </Button>
-
-          {/* <div className="hidden md:flex custom-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[32px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" /> */}
-
-          <Button
-            variant="outlined"
-            className="custom-swiper-next inline-flex items-center justify-center rounded-full disabled:cursor-not-allowed disabled:opacity-[0.3]"
-          >
-            <ArrowIcon className="w-4 h-4" />
-          </Button>
-        </div>
       </div>
     </section>
   );
