@@ -6,6 +6,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { InsightCard, InsightCardProps } from "./InsightCard";
 
+export type { InsightCardProps } from "./InsightCard";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
