@@ -1,13 +1,11 @@
 "use client";
 
-import { QuickInquiryForm } from "./QuickInquiryForm";
-
 type HeaderProps = {
   title: string
   subtitle?: string
 }
 
-export function QuickInquiry({
+export function IndustrialApplicationsHeader({
   title,
   subtitle,
 }: HeaderProps) {
@@ -34,14 +32,13 @@ export function QuickInquiry({
               text-[var(--body-regular-size)]
               leading-[var(--body-large-line-height)]
               md:text-[var(--body-large-size)]
-              font-[var(--font-weight-semibold)] mb-2
+              font-[var(--font-weight-semibold)]
             "
           >
             {subtitle}
           </p>
         )}
       </div>
-      <QuickInquiryForm />
     </div>
   );
 }

@@ -34,11 +34,11 @@ export function QuickInquiryForm() {
 
     return (
         <section>
-            <div className="w-full rounded-[40px] bg-[var(--brand-white)] px-6 py-8 shadow-[var(--box-shadow)]">
-                <form className="flex flex-col justify-between gap-2" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-8">
+            <div className="w-full h-full rounded-[8px] md:rounded-[40px] bg-[var(--brand-white)] px-[25px] py-[32px] shadow-[var(--btn-shadow-soft)] md:shadow-[var(--box-shadow)] flex flex-col gap-[30px]">
+                <form className="flex-1 flex flex-col justify-between" onSubmit={handleSubmit(onSubmit)}>
+                    <div>
                         {/* Product Name */}
-                        <div className="flex flex-col mb-4">
+                        <div className="flex flex-col pb-5">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 PRODUCT NAME *
                             </label>
@@ -56,8 +56,7 @@ export function QuickInquiryForm() {
                         </div>
 
                         {/* Quantity */}
-
-                        <div className="flex flex-col mb-4">
+                        <div className="flex flex-col pb-5">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 QTY *
                             </label>
@@ -75,14 +74,14 @@ export function QuickInquiryForm() {
                         </div>
 
                         {/* Select Option */}
-                        <div className="flex flex-col mb-4">
+                        <div className="flex flex-col pb-5">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 SELECT
                             </label>
 
                             <select
                                 {...register("selectOption", { required: "Please select an option" })}
-                                className={`h-[58px] w-full rounded-[20px] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] p-2 font-[var(--font-weight-semibold)] ${errors.selectOption ? "border-[var(--brand-danger)]" : ""}`}
+                                className={`${inputStyle} bg-[var(--brand-neutral-surface-3)]`}
                             >
                                 <option value="">Select an option</option>
                                 {options.map((option) => (
@@ -92,7 +91,7 @@ export function QuickInquiryForm() {
                         </div>
 
                         {/* Email */}
-                        <div className="flex flex-col mb-4">
+                        <div className="flex flex-col pb-5">
                             <label className="body-regular text-[var(--brand-primary-deep)] uppercase">
                                 EMAIL *
                             </label>
@@ -119,12 +118,12 @@ export function QuickInquiryForm() {
                                 {...register("message")}
                                 rows={6}
                                 placeholder="Enter your message"
-                                className={`${inputStyle} h-auto body-regular w-full resize-none rounded-[20px] border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)] p-2 outline-none focus:border-[var(--brand-primary)]`}
+                                className={`${inputStyle} h-auto body-regular p-3`}
                             ></textarea>
                         </div>
                     </div>
 
-                    <div className="flex">
+                    <div className="flex justify-center mt-[30px]">
                         <Button variant="primary" type="submit" className="w-full">
                             Submit Inquiry
                         </Button>
