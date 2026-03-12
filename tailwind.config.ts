@@ -8,6 +8,14 @@ const config: Config = {
     "./src/layouts/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      spacing: {
+        15: "3.75rem", // 60px
+        18: "4.5rem", // 72px
+      },
+    },
+  },
 };
 
 export default config;
