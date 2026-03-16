@@ -3,6 +3,7 @@ import { GlobalSupplySection } from "@/components/sections/GlobalSupplySection";
 import { ProductCategoriesSection } from "@/components/sections/ProductCategoriesSection";
 import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
 import { FeedbackSection } from "@/components/sections/FeedbackSection";
+import { IndustrialApplicationsAndQuickInquiry } from "@/components/sections/IndustrialApplicationsAndQuickInquirySection";
 import { SupplyChainSolutionsSection } from "@/components/sections/SupplyChainSolutionsSection";
 import { IndustryUpdatesSection } from "@/components/sections/IndustryUpdatesSection";
 import { IndustryTrendsSection } from "@/components/sections/IndustryTrendsSection";
@@ -17,6 +18,7 @@ export function HomeLayoutOne() {
         buttonText="Learn More"
         buttonHref="#"
       />
+      <IndustrialApplicationsAndQuickInquiry />
       <GlobalSupplySection/>
       <ProductCategoriesSection />
       <SupplyChainSolutionsSection />
