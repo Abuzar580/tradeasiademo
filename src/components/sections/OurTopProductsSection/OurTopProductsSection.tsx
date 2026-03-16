@@ -114,7 +114,7 @@ export function OurTopProductsSection({
 
       {/* Products Slider */}
       <div className="w-full md:px-[40px] flex flex-col items-center relative justify-center md:justify-end md:flex-row z-10 md:gap-[30px]">
-        <div className=" absolute w-[calc(100%-240px)] h-full md:bg-[var(--brand-neutral-surface-2)] md:rounded-2xl"> </div>
+        <div className=" absolute w-[calc(100%-280px)] h-full md:bg-[var(--brand-neutral-surface-2)] md:rounded-2xl"> </div>
         {/* Desktop & Mobile Title */}
         <div className="flex flex-col w-full md:w-[545px] z-50 items-center justify-center bg-[rgba(var(--brand-primary-rgb),0.9)] md:p-6 md:py-[72px] rounded-none md:rounded-3xl">
           <div className="flex flex-col gap-[30px] text-center md:px-0 px-[52px] pb-[50px] md:pb-[40px]">
