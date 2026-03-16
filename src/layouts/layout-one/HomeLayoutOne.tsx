@@ -4,6 +4,7 @@ import { OurTopProductsSection } from "@/components/sections/OurTopProductsSecti
 import { ProductCategoriesSection } from "@/components/sections/ProductCategoriesSection";
 import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
 import { FeedbackSection } from "@/components/sections/FeedbackSection";
+import { IndustrialApplicationsAndQuickInquiry } from "@/components/sections/IndustrialApplicationsAndQuickInquirySection";
 import { SupplyChainSolutionsSection } from "@/components/sections/SupplyChainSolutionsSection";
 import { IndustryUpdatesSection } from "@/components/sections/IndustryUpdatesSection";
 import { IndustryTrendsSection } from "@/components/sections/IndustryTrendsSection";
@@ -18,6 +19,7 @@ export function HomeLayoutOne() {
         buttonText="Learn More"
         buttonHref="#"
       />
+      <IndustrialApplicationsAndQuickInquiry />
       <GlobalSupplySection />
       <ProductCategoriesSection />
       <OurTopProductsSection
@@ -25,11 +27,9 @@ export function HomeLayoutOne() {
         subtitle="Explore our premium selection of high-quality chemical products trusted by industries worldwide"
       />
       <SupplyChainSolutionsSection />
-      <AppDownloadSection />
-      <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png" />
       <IndustryTrendsSection />
       <IndustryUpdatesSection />
-      <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png"/>
+      <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png" />
       <AppDownloadSection />
     </>
   );
