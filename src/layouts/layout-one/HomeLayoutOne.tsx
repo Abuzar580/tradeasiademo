@@ -5,6 +5,8 @@ import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
 import { FeedbackSection } from "@/components/sections/FeedbackSection";
 import { IndustrialApplicationsAndQuickInquiry } from "@/components/sections/IndustrialApplicationsAndQuickInquirySection";
 import { SupplyChainSolutionsSection } from "@/components/sections/SupplyChainSolutionsSection";
+import { IndustryUpdatesSection } from "@/components/sections/IndustryUpdatesSection";
+import { IndustryTrendsSection } from "@/components/sections/IndustryTrendsSection";
 
 export function HomeLayoutOne() {
   return (
@@ -20,8 +22,10 @@ export function HomeLayoutOne() {
       <GlobalSupplySection/>
       <ProductCategoriesSection />
       <SupplyChainSolutionsSection />
-      <AppDownloadSection />
+      <IndustryTrendsSection />
+      <IndustryUpdatesSection />
       <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png"/>
+      <AppDownloadSection />
     </>
   );
 }

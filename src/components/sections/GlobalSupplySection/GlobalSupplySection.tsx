@@ -31,7 +31,7 @@ const GLOBAL_SUPPLY_DESCRIPTION =
 
 export function GlobalSupplySection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--brand-primary)] py-15 px-5 text-center md:py-16 lg:py-[120px]">
+    <section className="relative overflow-hidden bg-[var(--brand-primary)] py-15 text-center md:py-16 lg:py-[120px]">
 
       {/* Top Right Decoration */}
       <Image
@@ -57,7 +57,7 @@ export function GlobalSupplySection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 layout-container flex flex-col items-center gap-7 md:gap-15">
+      <div className="relative z-10 layout-container px-5 flex flex-col items-center gap-7 md:gap-15">
 
         {/* Heading + Description */}
         <div className="flex flex-col gap-5 md:gap-15">
