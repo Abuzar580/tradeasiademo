@@ -1,5 +1,6 @@
 import { BannerSection } from "@/components/sections/BannerSection";
 import { GlobalSupplySection } from "@/components/sections/GlobalSupplySection";
+import { OurTopProductsSection } from "@/components/sections/OurTopProductsSection";
 import { ProductCategoriesSection } from "@/components/sections/ProductCategoriesSection";
 import { AppDownloadSection } from "@/components/sections/AppDownloadSection";
 import { FeedbackSection } from "@/components/sections/FeedbackSection";
@@ -19,12 +20,16 @@ export function HomeLayoutOne() {
         buttonHref="#"
       />
       <IndustrialApplicationsAndQuickInquiry />
-      <GlobalSupplySection/>
+      <GlobalSupplySection />
       <ProductCategoriesSection />
+      <OurTopProductsSection
+        title="Our Top Products"
+        subtitle="Explore our premium selection of high-quality chemical products trusted by industries worldwide"
+      />
       <SupplyChainSolutionsSection />
       <IndustryTrendsSection />
       <IndustryUpdatesSection />
-      <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png"/>
+      <FeedbackSection headingPrefix="Give us your" headingHighlight="Feedback" subtitle="Let us know how we can serve you better" buttonText="SUBMIT YOUR FEEDBACK" buttonHref="#" backgroundImage="/feedback.png" />
       <AppDownloadSection />
     </>
   );
