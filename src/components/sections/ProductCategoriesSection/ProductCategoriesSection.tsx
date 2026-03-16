@@ -5,10 +5,10 @@ import { CategoryCard } from "./CategoryCard";
 export function ProductCategoriesSection() {
   return (
     <section
-      className="px-5 pt-[60px] pb-10 md:pt-20 md:pb-[60px]"
+      className="pt-[60px] pb-10 md:pt-20 md:pb-[60px]"
       aria-labelledby="product-categories-heading"
     >
-      <div className="layout-container text-center">
+      <div className="layout-container px-5 text-center">
 
         {/* Heading + Description */}
         <div className="max-w-[850px] mx-auto">

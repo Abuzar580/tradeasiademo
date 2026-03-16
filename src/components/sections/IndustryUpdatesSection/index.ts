@@ -1,0 +1,1 @@
+export { IndustryUpdatesSection } from "./IndustryUpdateSection";
