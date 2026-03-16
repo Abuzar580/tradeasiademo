@@ -93,7 +93,7 @@ export function OurTopProductsSection({
   return (
     <section className="relative flex justify-center overflow-hidden bg-[var(--brand-primary)] md:bg-[var(--brand-black)] py-[40px] md:py-[80px] pb-[120px] text-center md:py-16 lg:py-[120px]">
       <Image
-        src="/ArtWorkIcon.svg"
+        src="/DecoratorImage.svg"
         alt=""
         width={551}
         height={543}
@@ -103,7 +103,7 @@ export function OurTopProductsSection({
       />
 
       <Image
-        src="/ArtWorkIcon.svg"
+        src="/DecoratorImage.svg"
         alt=""
         width={551}
         height={543}
