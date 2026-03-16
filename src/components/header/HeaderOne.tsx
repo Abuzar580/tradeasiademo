@@ -23,13 +23,32 @@ export function HeaderOne({ config }: HeaderOneProps) {
 
   const { logo, nav, actions } = config;
 
+  // Function to close all menus
+  const closeAllMenus = () => {
+    setMobileMenuOpen(false);
+    setDesktopDrawerOpen(false);
+    setSearchOpen(false);
+  };
+
   useEffect(() => {
     const menuOpen = mobileMenuOpen || desktopDrawerOpen || searchOpen;
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
+
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
       document.body.style.overflow = "";
-    };
+    }
   }, [mobileMenuOpen, desktopDrawerOpen, searchOpen]);
+
+  // Close all drawers when window is resized
+  useEffect(() => {
+    const handleResize = () => {
+      closeAllMenus();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <header className="left-0 right-0 z-50 px-5 fixed top-5 md:top-[30px]">
@@ -59,7 +78,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
       <div className="lg:hidden">
         <MobileHamburgerDrawer
           isOpen={mobileMenuOpen}
-          onClose={() => setMobileMenuOpen(false)}
+          onClose={closeAllMenus}
           config={config}
         />
       </div>
@@ -68,12 +87,12 @@ export function HeaderOne({ config }: HeaderOneProps) {
       <div className="hidden lg:block">
         <DesktopHamburgerDrawer
           isOpen={desktopDrawerOpen}
-          onClose={() => setDesktopDrawerOpen(false)}
+          onClose={closeAllMenus}
           config={config}
         />
       </div>
 
-      <SearchOverlay isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      <SearchOverlay isOpen={searchOpen} onClose={closeAllMenus} />
     </header>
   );
 }
