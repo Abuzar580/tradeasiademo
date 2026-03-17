@@ -36,7 +36,7 @@ export function BannerSection({
         className="pointer-events-none absolute left-0 top-[-80px] opacity-70 rotate-270"
       />
 
-      <div className="layout-container px-5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
+      <div className="layout-container px-5 lg:gap-[51px] grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
 
         {/* Text */}
         <div className="flex flex-col gap-[30px] text-center md:text-left">

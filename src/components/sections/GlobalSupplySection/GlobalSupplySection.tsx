@@ -27,7 +27,7 @@ const GLOBAL_SUPPLY_FEATURES: FeatureCard[] = [
 ];
 
 const GLOBAL_SUPPLY_DESCRIPTION =
-  "With two decades of expertise in chemical supply, Tradeasia International is your go-to source for a diverse array of raw materials essential across industries. As a reliable chemical distributor, we offer a comprehensive range of products to meet both commodity and specialty chemical needs worldwide.";
+  "With two decades of expertise in chemical supply, Tradeasia International is your go-to source for a diverse array of raw materials essential across industries. As a reliable chemical distributor, we offer a comprehensive range of products to meet both commodity and specialty chemical needs worldwide. Our focus is on delivering a seamless supply chain experience tailored to your requirements. Backed by experienced team leaders and a global support network, we ensure optimized supply chain services around the clock.";
 
 export function GlobalSupplySection() {
   return (
