@@ -22,7 +22,7 @@ type NewsAndInsightsProps = {
 const ARTICLE= [
   {
     id: "1",
-    image: "/CategoryImage.png",
+    image: "/artical1.png",
     badge: "ARTICLE",
     heading: "The Invisible Framework: Understanding Bulking Agents in Foo...",
     date: "04 February 2026",
@@ -30,7 +30,7 @@ const ARTICLE= [
   },
   {
     id: "2",
-    image: "/CategoryImage.png",
+    image: "/artical2.png",
     badge: "ARTICLE",
     heading: "The Zero-Error Standard: Managing Allergens from Distribution to Labeling",
     date: "04 February 2026",
@@ -38,7 +38,7 @@ const ARTICLE= [
   },
   {
     id: "3",
-    image: "/CategoryImage.png",
+    image: "/artical3.png",
     badge: "ARTICLE",
     heading: "Deep Dive: The Universal Emulsifier – Understanding Lecithin in Food...",
     date: "04 February 2026",

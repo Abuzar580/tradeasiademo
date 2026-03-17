@@ -13,7 +13,7 @@ const INSIGHTS_DATA: InsightCardProps[] = [
   },
   {
     id: "2",
-    image: "/MarketInsight.png",
+    image: "/industry2.png",
     badge: "INDUSTRY TRENDS",
     title: "What Global Trade Flows Reveal About Polyaluminium Chloride Demand",
     description: "Discover the latest trends in chemical manufacturing and distribution across Southeast Asia and their impact on global supply chains...",
@@ -22,7 +22,7 @@ const INSIGHTS_DATA: InsightCardProps[] = [
   },
   {
     id: "3",
-    image: "/MarketInsight.png",
+    image: "/industry3.png",
     badge: "MARKET ANALYSIS",
     title: "What Global Trade Flows Reveal About Polyaluminium Chloride Demand",
     description: "Analyze the growing demand for specialty chemicals in various industrial applications and what it means for importers and exporters...",
