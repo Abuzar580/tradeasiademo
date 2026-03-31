@@ -176,13 +176,18 @@ export function getProductsByIndustry(industryId: string): Product[] {
 }
 
 export const PRODUCTS: Product[] = PRODUCT_CATEGORY_ORDER.flatMap((category, catIndex) =>
-  PRODUCT_NAMES[category].map((name, nameIndex) => ({
-    id: catIndex * 5 + nameIndex + 1,
-    name,
-    casNumber: CAS_NUMBERS[category],
-    hsCode: HS_CODES[category],
-    image: "/CategoryImage.png",
-    badge: "In Stock",
-    category,
-  }))
+  PRODUCT_NAMES[category].map((name, nameIndex) => {
+    const id = catIndex * 5 + nameIndex + 1;
+    const imageIndex = (id - 1) % 3;
+    const sliderImages = ["/SliderImage1.png", "/SliderImage2.png", "/SliderImage3.png"];
+    return {
+      id,
+      name,
+      casNumber: CAS_NUMBERS[category],
+      hsCode: HS_CODES[category],
+      image: sliderImages[imageIndex],
+      badge: "In Stock",
+      category,
+    };
+  })
 );
