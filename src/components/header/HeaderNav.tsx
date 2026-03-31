@@ -13,7 +13,7 @@ type HeaderNavProps = {
 export function HeaderNav({ nav, openIndex, onOpenIndexChange }: HeaderNavProps) {
   return (
     <nav
-      className="hidden lg:flex lg:items-center lg:gap-[25px] lg:ml-[30px]"
+      className="hidden lg:flex lg:items-center lg:gap-[var(--header-nav-gap)] lg:ml-[30px]"
       aria-label="Main"
     >
       {nav.map((item, index) => (
@@ -27,12 +27,7 @@ export function HeaderNav({ nav, openIndex, onOpenIndexChange }: HeaderNavProps)
             <>
               <a
                 type="button"
-                className="body-caption flex items-center gap-1 hover:opacity-90 text-[var(--brand-white)] uppercase lg:py-3"
-                style={{
-                  fontWeight: "var(--font-weight-bold)",
-                  lineHeight: "13.2px",
-                  letterSpacing: "var(--common-letter-spacing)",
-                }}
+                className="text-[length:var(--header-link-size)] flex items-center gap-[var(--header-link-icon-gap)] hover:opacity-90 text-[var(--header-link-color)] uppercase lg:py-3 font-[var(--header-link-weight)] leading-[var(--header-link-line)] tracking-[var(--header-link-tracking)]"
                 aria-expanded={openIndex === index}
                 aria-haspopup="true"
                 onClick={() => onOpenIndexChange(openIndex === index ? null : index)}
@@ -48,24 +43,14 @@ export function HeaderNav({ nav, openIndex, onOpenIndexChange }: HeaderNavProps)
               </a>
               {openIndex === index && (
                 <ul
-                  className="rounded-lg absolute left-0 top-7 z-20 mt-1 min-w-[180px] py-2"
-                  style={{
-                    background: "var(--brand-neutral-surface)",
-                    boxShadow: "var(--btn-shadow-soft)",
-                    transition: "var(--transition)",
-                  }}
+                  className="rounded-lg absolute left-0 top-7 z-20 mt-1 min-w-[180px] py-2 bg-[var(--header-dropdown-bg)] shadow-[var(--header-dropdown-shadow)] transition-default"
                   role="menu"
                 >
                   {item.children.map((child) => (
                     <li key={child.href} role="none">
                       <Link
                         href={child.href}
-                        className="body-small block px-4 py-2 hover:bg-[var(--brand-neutral-surface-2)]"
-                        style={{
-                          fontWeight: "var(--font-weight-normal)",
-                          color: "var(--brand-neutral-text)",
-                          transition: "var(--transition)",
-                        }}
+                        className="block px-4 py-2 hover:bg-[var(--header-dropdown-item-hover)] font-[var(--header-dropdown-item-weight)] text-[var(--header-dropdown-item-color)] transition-default"
                         role="menuitem"
                       >
                         {child.label}
@@ -78,12 +63,7 @@ export function HeaderNav({ nav, openIndex, onOpenIndexChange }: HeaderNavProps)
           ) : (
             <Link
               href={item.href}
-              className="body-caption hover:opacity-90 text-[var(--brand-white)] uppercase"
-              style={{
-                fontWeight: "var(--font-weight-bold)",
-                lineHeight: "13.2px",
-                letterSpacing: "var(--common-letter-spacing)",
-              }}
+              className="text-[length:var(--header-link-size)] hover:opacity-90 text-[var(--header-link-color)] uppercase font-[var(--header-link-weight)] leading-[var(--header-link-line)] tracking-[var(--header-link-tracking)]"
             >
               {item.label}
             </Link>

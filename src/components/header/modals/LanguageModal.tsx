@@ -27,7 +27,7 @@ export function LanguageModal({
         onClick={onClose}
       />
       <div
-        className="rounded-2xl px-5 py-7 shadow-[var(--btn-shadow-soft)] fixed left-1/2 top-1/2 z-[101] w-full max-w-[min(90vw,400px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-[var(--brand-neutral-surface)]"
+        className="rounded-2xl px-5 py-7 shadow-[var(--header-modal-shadow)] fixed left-1/2 top-1/2 z-[101] w-full max-w-[min(90vw,400px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-[var(--header-modal-bg)]"
         role="dialog"
         aria-labelledby="language-modal-title"
         aria-modal
@@ -36,7 +36,7 @@ export function LanguageModal({
         <div className="flex items-start justify-between pb-7">
           <div
             id="language-modal-title"
-            className="body-regular text-[var(--brand-black)]"
+            className="body-regular text-[var(--header-modal-title-color)]"
           >
             Choose your language
           </div>
@@ -50,12 +50,12 @@ export function LanguageModal({
         </div>
         {/* Two-column list */}
         <div className="max-h-[60vh] overflow-y-auto">
-          <ul className="language-modal-grid grid grid-cols-2 gap-[10px]">
+          <ul className="language-modal-grid grid grid-cols-2 gap-[var(--header-modal-lang-grid-gap)]">
             {languages.map((item) => (
               <li key={item.code}>
                 <button
                   type="button"
-                  className="flex w-full items-center gap-3 pl-3"
+                  className="flex w-full items-center gap-[var(--header-modal-lang-item-gap)] pl-3"
                 >
                   <span className="relative h-6 w-8 shrink-0 overflow-hidden">
                     <Image
@@ -66,7 +66,7 @@ export function LanguageModal({
                       className="h-full w-full object-cover"
                     />
                   </span>
-                  <span className="body-caption text-[var(--brand-black)]">{item.name}</span>
+                  <span className="body-caption text-[var(--header-modal-title-color)]">{item.name}</span>
                 </button>
               </li>
             ))}

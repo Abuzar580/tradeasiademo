@@ -1,16 +1,18 @@
 import { FeedbackSection } from "@/components/sections/FeedbackSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { IndustriesGridSection } from "@/components/sections/IndustriesGridSection";
+import { routes } from "@/config/routes";
 
 export default function IndustriesPage() {
     return (
         <>
             <HeroSection
                 title="The Industries We Serve"
+                heroVariant="industries"
                 subtitle="A Trusted Supplier & Distributor that understands how your industries perform"
                 backgroundImage="/HeroImage.png"
                 breadcrumbs={[
-                    { label: "Home", href: "/" },
+                    { label: "Home", href: `${routes.homePage}` },
                     { label: "Industries" }
                 ]}
             />

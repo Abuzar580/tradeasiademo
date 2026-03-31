@@ -7,11 +7,11 @@ type FooterBottomProps = {
 
 export function FooterBottom({ copyright, socialLinks }: FooterBottomProps) {
   return (
-    <div className="mt-11 flex flex-col md:items-center gap-6 border-t border-[var(--brand-white)]/15 pt-8 md:flex-row md:justify-between md:gap-3 md:mt-18 md:pt-12 md:pb-15 md:px-3">
-      <p className="body-small text-[var(--brand-white)]">
-        <span className="font-normal">{copyright}</span>
+    <div className="mt-11 flex flex-col md:items-center gap-[var(--footer-bottom-gap-mobile)] border-t border-[var(--footer-border-color)] pt-8 md:flex-row md:justify-between md:gap-[var(--footer-bottom-gap-desktop)] md:mt-18 md:pt-12 md:pb-15 md:px-3">
+      <p className="body-small text-[var(--footer-text-color)]">
+        <span className="font-[var(--footer-copyright-weight)]">{copyright}</span>
       </p>
-      <FooterSocial socialLinks={socialLinks} className="hidden gap-4 md:flex" />
+      <FooterSocial socialLinks={socialLinks} className="hidden gap-[var(--footer-bottom-social-gap)] md:flex" />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { LayoutOne } from "@/layouts/layout-one";
+import { LayoutShell } from "@/layouts/layout-shell";
 import { getTenantId } from "@/lib/tenant";
 import { fetchTenantBootstrap } from "@/lib/api";
 
@@ -32,8 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
  *
  * Fetches the tenant bootstrap config on every cold render (ISR-cached for
  * 1 hour at the Next.js layer). The config is available here and ready to be
- * forwarded to child layout components in Phase 1 when HeaderOne, FooterOne,
- * and LayoutOne accept TenantConfig props.
+ * forwarded to global shell components in a later phase (e.g. header/footer
+ * variants driven by site config).
  */
 export default async function RootLayout({
   children,
@@ -41,14 +41,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const tenantId = await getTenantId();
-  // Phase 1: pass tenantConfig to LayoutOne (and through it to HeaderOne / FooterOne).
-  // The variable is intentionally kept here so the plumbing is in place.
   const tenantConfig = await fetchTenantBootstrap(tenantId);
 
+  const cssVars = Object.fromEntries(
+    Object.entries(tenantConfig.styleguide?.vars ?? {}).map(([key, value]) => [
+      `--${key}`,
+      value,
+    ]),
+  ) as React.CSSProperties;
+
   return (
-    <html lang={tenantConfig.locales.defaultLocale}>
+    <html lang={tenantConfig.locales.defaultLocale} style={cssVars}>
       <body className="antialiased">
-        <LayoutOne>{children}</LayoutOne>
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );

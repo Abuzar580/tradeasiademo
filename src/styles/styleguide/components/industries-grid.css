@@ -1,0 +1,34 @@
+:root {
+  /* Section */
+  --industries-grid-padding-top-mobile: var(--section-padding-40);
+  --industries-grid-padding-bottom-mobile: var(--section-padding-40);
+  --industries-grid-padding-top-desktop: var(--section-padding-70);
+  --industries-grid-padding-bottom-desktop: var(--section-padding-70);
+
+  /* Grid */
+  --industries-grid-gap-y-mobile: var(--gap-20);
+  --industries-grid-gap-y-desktop: var(--gap-40);
+  --industries-grid-gap-x-desktop: var(--gap-28);
+
+  /* Card (IndustryTile) */
+  --industries-grid-card-radius: 25px;
+  --industries-grid-card-bg: var(--brand-neutral-surface-2);
+  --industries-grid-card-shadow: var(--btn-shadow-soft);
+
+  /* Overlay */
+  --industries-grid-overlay-bg: color-mix(in srgb, var(--brand-primary) 50%, transparent);
+  --industries-grid-overlay-padding-right: var(--gap-20);
+  --industries-grid-overlay-padding-left: var(--gap-24);
+  --industries-grid-overlay-padding-y: var(--gap-28);
+  --industries-grid-overlay-gap: var(--gap-12);
+
+  /* Title */
+  --industries-grid-title-color: var(--brand-white);
+
+  /* Badge */
+  --industries-grid-badge-text-color: var(--brand-primary);
+  --industries-grid-badge-bg: var(--brand-white);
+  --industries-grid-badge-padding-x: var(--gap-12);
+  --industries-grid-badge-padding-y: var(--gap-8);
+  --industries-grid-badge-radius: 20px;
+}

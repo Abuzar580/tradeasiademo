@@ -23,10 +23,10 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
       />
       {/* Search card – positioned under header, above overlay */}
       <div className="absolute left-0 right-0 top-full z-[61] flex justify-center px-5 sm:px-6">
-      <div className="bg-[color:var(--brand-neutral-surface-2)] w-full lg:max-w-[60%] rounded-[8px] border-[rgb(var(--brand-white-rgb)/0.15)] lg:rounded-[30px] pt-3 px-5 pb-5 lg:px-7 lg:py-6">
+      <div className="bg-[color:var(--header-search-card-bg)] w-full lg:max-w-[60%] rounded-[8px] border-[color:var(--header-search-card-border)] lg:rounded-[30px] pt-3 px-5 pb-5 lg:px-7 lg:py-6">
         {/* Header row */}
         <div className="flex items-start justify-between">
-          <p className="text-[length:var(--body-small-size)] text-[var(--brand-black)] lg:text-[length:var(--body-small-size)]">
+          <p className="text-[length:var(--header-search-text-size)] text-[var(--header-search-label-color)] lg:text-[length:var(--header-search-text-size)]">
             Search...
           </p>
           <button
@@ -41,7 +41,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
 
         {/* Search form */}
         <form
-          className="flex flex-col gap-4 lg:flex-row lg:items-center pt-1 lg:pt-3"
+          className="flex flex-col gap-[var(--header-search-form-gap)] lg:flex-row lg:items-center pt-1 lg:pt-3"
           onSubmit={(event) => {
             event.preventDefault();
           }}
@@ -57,12 +57,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search for a chemical products by name, HS code, or market insights & articles..."
-              className="w-full rounded-[25px] bg-[var(--brand-primary-hover)] px-5 pr-11 py-[9px] text-[length:var(--body-small-size)] text-[var(--brand-white)] lg:rounded-[30px] lg:bg-[var(--brand-primary)] lg:px-10 lg:py-[14px]"
+              className="w-full rounded-[25px] bg-[var(--header-search-input-bg-mobile)] px-5 pr-12 py-[9px] text-[length:var(--header-search-text-size)] text-[var(--header-search-input-color)] lg:rounded-[30px] lg:bg-[var(--header-search-input-bg-desktop)] lg:px-10 lg:py-[14px]"
             />
             {/* Mobile search icon inside input */}
             <button
               type="submit"
-              className="absolute right-3 top-1/2 inline-flex h-[30px] w-[30px] -translate-y-1/2 items-center justify-center rounded-full bg-[var(--brand-primary-deep)] lg:hidden"
+              className="absolute right-3 top-1/2 inline-flex h-[30px] w-[30px] -translate-y-1/2 items-center justify-center rounded-full bg-[var(--header-search-icon-bg)] lg:hidden"
               aria-label="Run search"
             >
               <Image src="/search.svg" alt="" width={14} height={14} />
@@ -72,7 +72,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
           {/* Desktop button */}
           <button
             type="submit"
-            className="hidden shrink-0 rounded-[40px] bg-[var(--brand-primary)] px-[50px] py-[15px] text-sm font-semibold tracking-[0.5px] text-[var(--brand-white)] shadow-md lg:inline-flex hover:bg-[var(--brand-primary-hover)] transition"
+            className="hidden shrink-0 rounded-[40px] bg-[var(--header-search-desktop-btn-bg)] px-[50px] py-[15px] text-sm font-[var(--header-search-desktop-btn-weight)] tracking-[0.5px] text-[var(--header-search-desktop-btn-color)] shadow-md lg:inline-flex hover:bg-[var(--header-search-desktop-btn-hover)] transition"
           >
             Search
           </button>

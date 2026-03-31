@@ -1,0 +1,53 @@
+:root {
+  /* Section spacing */
+  --supply-chain-solutions-padding-top-mobile: var(--section-padding-60);
+  --supply-chain-solutions-padding-bottom-mobile: var(--section-padding-60);
+  --supply-chain-solutions-padding-top-desktop: var(--section-padding-60);
+  --supply-chain-solutions-padding-bottom-desktop: var(--section-padding-60);
+
+  /* Overlay */
+  --supply-chain-solutions-overlay-bg-color: rgba(var(--brand-white-rgb), 0.90);
+
+  /* Heading */
+  --supply-chain-solutions-heading-size-mobile: var(--heading-3-size);
+  --supply-chain-solutions-heading-size-desktop: var(--heading-2-size);
+  --supply-chain-solutions-heading-line-mobile: var(--heading-3-line-height);
+  --supply-chain-solutions-heading-line-desktop: var(--heading-2-line-height);
+  --supply-chain-solutions-heading-weight-mobile: var(--font-weight-semibold);
+  --supply-chain-solutions-heading-weight-desktop: var(--font-weight-bold);
+  --supply-chain-solutions-heading-color: var(--brand-black);
+  --supply-chain-solutions-heading-highlight-color: var(--brand-primary);
+
+  /* Paragraph */
+  --supply-chain-solutions-text-size-mobile: var(--body-regular-size);
+  --supply-chain-solutions-text-size-desktop: var(--heading-5-size);
+  --supply-chain-solutions-text-line-mobile: var(--body-regular-line-height);
+  --supply-chain-solutions-text-line-desktop: var(--heading-5-line-height);
+  --supply-chain-solutions-text-weight-mobile: var(--font-weight-semibold);
+  --supply-chain-solutions-text-weight-desktop: var(--font-weight-semibold);
+
+  /* Grid */
+  --supply-chain-solutions-grid-gap-mobile: var(--gap-20);
+  --supply-chain-solutions-grid-gap-desktop: var(--gap-40);
+  --supply-chain-solutions-grid-margin-top-mobile: var(--gap-28);
+  --supply-chain-solutions-grid-margin-top-desktop: var(--section-padding-60);
+  --supply-chain-solutions-cta-margin-top-mobile: var(--gap-28);
+  --supply-chain-solutions-cta-margin-top-desktop: var(--section-padding-60);
+
+  /* Card */
+  --supply-chain-solutions-card-radius: var(--radius-card-lg);
+  --supply-chain-solutions-card-bg: var(--brand-white);
+  --supply-chain-solutions-card-bg-hover: var(--brand-primary);
+  --supply-chain-solutions-card-padding-mobile: var(--card-padding-30);
+  --supply-chain-solutions-card-padding-desktop: var(--section-padding-40);
+  --supply-chain-solutions-card-shadow: var(--btn-shadow-soft);
+  --supply-chain-solutions-card-icon-bg: var(--brand-primary);
+  --supply-chain-solutions-card-icon-bg-hover: var(--brand-white);
+  --supply-chain-solutions-card-icon-color: var(--brand-white);
+  --supply-chain-solutions-card-icon-color-hover: var(--brand-primary);
+  --supply-chain-solutions-card-title-color: var(--brand-primary);
+  --supply-chain-solutions-card-title-color-hover: var(--brand-white);
+  --supply-chain-solutions-card-text-color-hover: var(--brand-white);
+  --supply-chain-solutions-card-cta-color: var(--brand-primary);
+  --supply-chain-solutions-card-cta-color-hover: var(--brand-white);
+}

@@ -8,3 +8,4 @@ export { default as BagIcon } from "./BagIcon.svg";
 export { default as CalenderIcon } from "./Calender.svg";
 export { default as LocationIcon } from "./LocationIcon.svg";
 export { default as HomeIcon } from "./HomeIcon.svg";
+export { default as ArrowSmIcon } from "./ArrowSmIcon.svg";

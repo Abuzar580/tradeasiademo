@@ -1,0 +1,73 @@
+:root {
+  /* Section */
+  --industrial-applications-bg: var(--brand-white);
+  --industrial-applications-padding-top-mobile: var(--section-padding-40);
+  --industrial-applications-padding-top-desktop: var(--section-padding-60);
+  --industrial-applications-padding-bottom-mobile: var(--section-padding-40);
+  --industrial-applications-padding-bottom-desktop: var(--section-padding-60);
+  --industrial-applications-padding-x: var(--section-padding-20);
+  --industrial-applications-grid-gap: var(--gap-40);
+  --industrial-applications-grid-margin-bottom: var(--section-padding-60);
+
+  /* Header (IndustrialApplicationsHeader, QuickInquiryHeader) */
+  --industrial-applications-header-gap: var(--gap-30);
+  --industrial-applications-header-title-size-mobile: var(--heading-4-size);
+  --industrial-applications-header-title-size-desktop: var(--heading-2-size);
+  --industrial-applications-header-title-line-mobile: var(--heading-4-line-height);
+  --industrial-applications-header-title-line-desktop: var(--heading-2-line-height);
+  --industrial-applications-header-title-weight-mobile: var(--font-weight-bold);
+  --industrial-applications-header-title-weight-desktop: var(--font-weight-bold);
+  --industrial-applications-header-title-color: var(--brand-primary);
+  --industrial-applications-header-text-size-mobile: var(--body-regular-size);
+  --industrial-applications-header-text-size-desktop: var(--body-large-size);
+  --industrial-applications-header-text-line-mobile: var(--body-large-line-height);
+  --industrial-applications-header-text-line-desktop: var(--body-large-line-height);
+  --industrial-applications-header-text-weight-mobile: var(--font-weight-semibold);
+  --industrial-applications-header-text-weight-desktop: var(--font-weight-semibold);
+
+  /* Slider (Silder.tsx) */
+  --industrial-applications-slider-bg: var(--brand-white);
+  --industrial-applications-slider-padding-x: var(--card-padding-25);
+  --industrial-applications-slider-padding-y: var(--card-padding-32);
+  --industrial-applications-slider-shadow: var(--box-shadow);
+  --industrial-applications-slider-gap: var(--gap-30);
+  --industrial-applications-slider-radius-desktop: var(--radius-header);
+  --industrial-applications-slider-mobile-grid-gap-x: var(--gap-22);
+  --industrial-applications-slider-mobile-grid-gap-y: var(--gap-16);
+  --industrial-applications-slider-card-bg: var(--brand-neutral-surface-2);
+  --industrial-applications-slider-card-padding-x: var(--card-padding-15);
+  --industrial-applications-slider-card-padding-y: var(--card-padding-24);
+  --industrial-applications-slider-card-gap: var(--gap-8);
+  --industrial-applications-slider-card-radius: 20px;
+  --industrial-applications-slider-card-text-color: var(--brand-primary);
+  --industrial-applications-slider-card-icon-color: var(--brand-primary);
+  --industrial-applications-slider-desktop-card-gap: var(--gap-16);
+  --industrial-applications-slider-desktop-card-inner-gap: var(--gap-12);
+  --industrial-applications-slider-desktop-icon-bg: var(--brand-primary);
+  --industrial-applications-slider-desktop-icon-color: var(--brand-white);
+  --industrial-applications-slider-pagination-gap: var(--gap-8);
+  --industrial-applications-slider-pagination-bullet-active-color: var(--brand-primary);
+  --industrial-applications-slider-pagination-bullet-color: var(--brand-neutral-surface-3);
+
+  /* QuickInquiryForm */
+  --industrial-applications-form-bg: var(--brand-white);
+  --industrial-applications-form-radius-mobile: var(--radius-card-sm);
+  --industrial-applications-form-radius-desktop: var(--radius-header);
+  --industrial-applications-form-padding-x: var(--card-padding-25);
+  --industrial-applications-form-padding-y: var(--card-padding-32);
+  --industrial-applications-form-shadow-mobile: var(--btn-shadow-soft);
+  --industrial-applications-form-shadow-desktop: var(--box-shadow);
+  --industrial-applications-form-gap: var(--gap-30);
+  --industrial-applications-form-label-color: var(--brand-primary-deep);
+  --industrial-applications-form-input-border: var(--brand-neutral-surface-3);
+  --industrial-applications-form-input-bg: var(--brand-neutral-surface-2);
+  --industrial-applications-form-input-focus-border: var(--brand-primary);
+  --industrial-applications-form-placeholder-color: var(--brand-neutral-text);
+  --industrial-applications-form-error-color: var(--brand-danger);
+  --industrial-applications-form-error-size: var(--body-small-size);
+  --industrial-applications-form-select-bg: var(--brand-neutral-surface-3);
+  --industrial-applications-form-select-option-color: var(--brand-neutral);
+  --industrial-applications-form-select-option-selected-color: var(--brand-primary-deep);
+  --industrial-applications-form-arrow-color: var(--brand-primary);
+  --industrial-applications-form-submit-margin-top: var(--gap-30);
+}

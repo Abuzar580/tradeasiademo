@@ -1,0 +1,66 @@
+:root {
+  /* Section spacing */
+  --industry-trends-padding-top-mobile: var(--section-padding-40);
+  --industry-trends-padding-top-desktop: var(--section-padding-80);
+  --industry-trends-padding-bottom-mobile: var(--section-padding-60);
+  --industry-trends-padding-bottom-desktop: var(--section-padding-60);
+
+  /* Heading block */
+  --industry-trends-heading-margin-bottom-mobile: var(--gap-28);
+  --industry-trends-heading-margin-bottom-desktop: var(--section-padding-60);
+
+  /* Heading */
+  --industry-trends-heading-size-mobile: var(--heading-4-size);
+  --industry-trends-heading-size-desktop: var(--heading-2-size);
+  --industry-trends-heading-line-mobile: var(--heading-3-line-height);
+  --industry-trends-heading-line-desktop: var(--heading-2-line-height);
+  --industry-trends-heading-weight-mobile: var(--font-weight-bold);
+  --industry-trends-heading-weight-desktop: var(--font-weight-bold);
+  --industry-trends-heading-color: var(--brand-black);
+  --industry-trends-heading-highlight-color: var(--brand-primary);
+
+  /* Paragraph */
+  --industry-trends-text-size-mobile: var(--body-regular-size);
+  --industry-trends-text-size-desktop: var(--body-large-size);
+  --industry-trends-text-line-mobile: var(--body-regular-line-height);
+  --industry-trends-text-line-desktop: var(--body-large-line-height);
+  --industry-trends-text-weight-mobile: var(--font-weight-semibold);
+  --industry-trends-text-weight-desktop: var(--font-weight-semibold);
+
+  /* CTA */
+  --industry-trends-cta-margin-top-mobile: var(--section-padding-40);
+  --industry-trends-cta-margin-top-desktop: var(--gap-56);
+
+  /* Slider nav */
+  --industry-trends-nav-gap: var(--gap-20);
+  --industry-trends-pagination-gap: var(--gap-8);
+  --industry-trends-pagination-bullet-active-color: var(--brand-primary);
+
+  /* Card */
+  --industry-trends-card-radius: var(--radius-card-md);
+  --industry-trends-card-shadow-hover: var(--card-shadow-hover);
+  --industry-trends-card-overlay-start: rgba(var(--brand-black-rgb), 0.8);
+  --industry-trends-card-overlay-mid: rgba(var(--brand-black-rgb), 0.4);
+  --industry-trends-card-image-height: 240px;
+  --industry-trends-card-content-padding-y: var(--section-padding-40);
+  --industry-trends-card-content-padding-x: var(--gap-24);
+  --industry-trends-card-content-bg: var(--brand-primary);
+  --industry-trends-card-badge-color: var(--brand-white);
+  --industry-trends-card-badge-weight: var(--font-weight-medium);
+  --industry-trends-card-badge-size: var(--body-caption-size);
+  --industry-trends-card-badge-tracking: var(--common-letter-spacing);
+  --industry-trends-card-badge-bg: rgba(var(--brand-white-rgb), 0.15);
+  --industry-trends-card-badge-border: rgba(var(--brand-white-rgb), 0.2);
+  --industry-trends-card-title-size-mobile: var(--body-regular-size);
+  --industry-trends-card-title-size-desktop: var(--heading-5-size);
+  --industry-trends-card-title-line-mobile: var(--body-regular-line-height);
+  --industry-trends-card-title-line-desktop: var(--heading-5-line-height);
+  --industry-trends-card-title-weight-mobile: var(--font-weight-bold);
+  --industry-trends-card-title-weight-desktop: var(--font-weight-bold);
+  --industry-trends-card-title-color: var(--brand-white);
+  --industry-trends-card-text-color: rgba(var(--brand-white-rgb), 0.8);
+  --industry-trends-card-footer-pt-mobile: var(--gap-24);
+  --industry-trends-card-footer-pt-desktop: var(--gap-28);
+  --industry-trends-card-arrow-bg: var(--brand-primary-hover);
+  --industry-trends-card-arrow-color: var(--brand-white);
+}

@@ -1,0 +1,61 @@
+:root {
+
+    --feedback-padding-top-mobile: var(--section-padding-60);
+    --feedback-padding-bottom-mobile: var(--section-padding-60);
+  
+    --feedback-padding-top-desktop: var(--section-padding-70);
+    --feedback-padding-bottom-desktop: var(--section-padding-70);
+  
+    --feedback-bg-color: transparent;
+  
+    /* heading */
+  
+    --feedback-heading-size-mobile: var(--heading-5-size);
+    --feedback-heading-size-desktop: var(--heading-2-size);
+  
+    --feedback-heading-line-mobile: var(--heading-3-line-height);
+    --feedback-heading-line-desktop: var(--heading-2-line-height);
+  
+    --feedback-heading-weight-mobile: var(--font-weight-bold);
+    --feedback-heading-weight-desktop: var(--font-weight-bold);
+  
+    --feedback-heading-prefix-color: var(--brand-white);
+    --feedback-heading-highlight-color: var(--brand-primary);
+  
+    --feedback-highlight-offset-desktop: 15%;
+  
+  
+    /* highlight uses different size */
+  
+    --feedback-highlight-size-mobile: var(--heading-1-size);
+    --feedback-highlight-size-desktop: var(--heading-2-size);
+  
+    --feedback-highlight-line-mobile: var(--heading-1-line-height);
+    --feedback-highlight-line-desktop: var(--heading-2-line-height);
+  
+  
+    /* text */
+  
+    --feedback-text-size-mobile: var(--body-medium-size);
+    --feedback-text-size-desktop: var(--heading-4-size);
+  
+    --feedback-text-line-mobile: var(--body-large-line-height);
+    --feedback-text-line-desktop: var(--body-large-line-height);
+  
+    --feedback-text-weight-mobile: var(--font-weight-semibold);
+    --feedback-text-weight-desktop: var(--font-weight-semibold);
+  
+    --feedback-text-color: var(--brand-white);
+  
+  
+    /* gaps */
+  
+    --feedback-gap-main-mobile: var(--gap-40);
+    --feedback-gap-main-desktop: var(--gap-48);
+  
+    --feedback-gap-inner-mobile: var(--gap-12);
+    --feedback-gap-inner-desktop: var(--gap-20);
+
+    /* drop-shadow on highlight text */
+    --feedback-highlight-shadow-color: rgba(var(--brand-white-rgb), 0.34);
+}

@@ -1,11 +1,3 @@
-// ─── Layout ───────────────────────────────────────────────────────────────────
-
-/**
- * Identifies which layout shell a tenant uses.
- * Extend this union as new layout variants are introduced.
- */
-export type LayoutVariant = "layout-one" | "layout-two";
-
 // ─── Branding ─────────────────────────────────────────────────────────────────
 
 /**
@@ -123,6 +115,22 @@ export type AuthProvider = {
   loginUrl?: string;
 };
 
+// ─── Styleguide ───────────────────────────────────────────────────────────────
+
+/**
+ * Global CSS variable overrides applied to the <html> element.
+ * Keys are CSS custom property names without the leading "--".
+ * Example: { "brand-primary": "#e63946" } → style="--brand-primary:#e63946"
+ *
+ * These sit at level 2 in the 3-level style hierarchy:
+ *   1. Component-level override (per-section, future)
+ *   2. Global styleguide override  ← this
+ *   3. Local default (globals.css :root)
+ */
+export type StyleguideConfig = {
+  vars?: Record<string, string>;
+};
+
 // ─── Root Tenant Config ───────────────────────────────────────────────────────
 
 /**
@@ -135,10 +143,21 @@ export type AuthProvider = {
 export type TenantConfig = {
   /** Stable identifier for the tenant, e.g. "chemtradeasia", "chemtradeasia-id". */
   tenantId: string;
-  layoutVariant: LayoutVariant;
+  /**
+   * Global header component variant for the site.
+   * Provided by API later; for now comes from fallback/mock config.
+   */
+  headerVariant?: string;
+  /**
+   * Global footer component variant for the site.
+   * Provided by API later; for now comes from fallback/mock config.
+   */
+  footerVariant?: string;
   branding: BrandingConfig;
   navigation: NavigationConfig;
   footer: FooterConfig;
+  /** Global CSS variable overrides. Applied to <html> on every render. */
+  styleguide?: StyleguideConfig;
   seo: SeoConfig;
   locales: LocaleConfig;
   authProviders: AuthProvider[];

@@ -20,39 +20,53 @@ export function HeaderOne({ config }: HeaderOneProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopDrawerOpen, setDesktopDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const { logo, nav, actions } = config;
 
-  // Function to close all menus
+  // Close all menus
   const closeAllMenus = () => {
     setMobileMenuOpen(false);
     setDesktopDrawerOpen(false);
     setSearchOpen(false);
   };
 
+  // Lock body scroll when menu is open
   useEffect(() => {
     const menuOpen = mobileMenuOpen || desktopDrawerOpen || searchOpen;
-
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [mobileMenuOpen, desktopDrawerOpen, searchOpen]);
 
-  // Close all drawers when window is resized
+  // Close drawers on resize
   useEffect(() => {
-    const handleResize = () => {
-      closeAllMenus();
-    };
-
+    const handleResize = () => closeAllMenus();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="left-0 right-0 z-50 px-5 fixed top-5 md:top-[30px]">
-      <div className="mx-auto flex max-w-[1350px] items-center rounded-[40px] bg-[var(--brand-primary)] px-5 py-3 shadow-xl backdrop-blur-md md:rounded-[60px] md:px-[50px] md:py-5">
+    <header
+      className={`left-0 right-0 z-50 fixed transition-all duration-300
+        ${isScrolled ? "top-0 px-0" : "top-5 md:top-[30px] px-5"}
+      `}
+    >
+      <div
+        className={`flex items-center shadow-xl backdrop-blur-md transition-all duration-300
+          ${isScrolled
+            ? "rounded-none bg-[var(--header-bar-bg)]/95 border-b border-white/10 px-5 py-3 md:px-[50px] md:py-5"
+            : "rounded-[var(--header-bar-radius-mobile)] md:rounded-[var(--header-bar-radius-desktop)] bg-[var(--header-bar-bg)] px-5 py-3 md:px-[50px] md:py-5"}
+        `}
+      >
         <HeaderLogo src={logo.src} alt={logo.alt} href={logo.href} />
 
         <HeaderNav
@@ -61,8 +75,8 @@ export function HeaderOne({ config }: HeaderOneProps) {
           onOpenIndexChange={setOpenIndex}
         />
 
-        {/* Right: search, Sign In, hamburger – pushed to end */}
-        <div className="ml-auto flex items-center gap-5">
+        {/* Right side */}
+        <div className="ml-auto flex items-center gap-[var(--header-actions-gap)]">
           <HeaderSearchButton onSearchOpen={() => setSearchOpen(true)} />
           <HeaderActions actions={actions} />
           <HeaderHamburger
@@ -74,7 +88,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
         </div>
       </div>
 
-      {/* Mobile hamburger drawer – bottom sheet, 30px top radius, only below lg */}
+      {/* Mobile Drawer */}
       <div className="lg:hidden">
         <MobileHamburgerDrawer
           isOpen={mobileMenuOpen}
@@ -83,7 +97,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
         />
       </div>
 
-      {/* Desktop hamburger drawer – right-side panel, only from lg up */}
+      {/* Desktop Drawer */}
       <div className="hidden lg:block">
         <DesktopHamburgerDrawer
           isOpen={desktopDrawerOpen}
@@ -92,6 +106,7 @@ export function HeaderOne({ config }: HeaderOneProps) {
         />
       </div>
 
+      {/* Search */}
       <SearchOverlay isOpen={searchOpen} onClose={closeAllMenus} />
     </header>
   );

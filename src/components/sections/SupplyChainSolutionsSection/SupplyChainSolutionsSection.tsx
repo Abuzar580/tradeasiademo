@@ -4,29 +4,29 @@ import { StackIcon, ClockIcon, BagIcon } from "@/icons";
 
 export function SupplyChainSolutionsSection() {
   return (
-    <section className="relative py-15">
+    <section className="relative pt-[var(--supply-chain-solutions-padding-top-mobile)] pb-[var(--supply-chain-solutions-padding-bottom-mobile)] md:pt-[var(--supply-chain-solutions-padding-top-desktop)] md:pb-[var(--supply-chain-solutions-padding-bottom-desktop)]">
       <div
         className="absolute inset-0 -z-1 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/Logistics.png')" }}
       />
 
       {/* White overlay */}
-      <div className="absolute inset-0 bg-[rgba(var(--brand-white-rgb),0.90)]"></div>
+      <div className="absolute inset-0 bg-[var(--supply-chain-solutions-overlay-bg-color)]"></div>
 
       <div className="layout-container relative px-5">
         {/* Heading */}
         <div className="mx-auto max-w-[820px] text-center">
-          <h2 className="text-[length:var(--heading-3-size)] leading-[var(--heading-3-line-height)] font-[var(--font-weight-semibold)] text-[var(--brand-black)] md:text-[length:var(--heading-2-size)] md:leading-[var(--heading-2-line-height)] md:font-[var(--font-weight-bold)]">
+          <h2 className="text-[length:var(--supply-chain-solutions-heading-size-mobile)] leading-[var(--supply-chain-solutions-heading-line-mobile)] font-[var(--supply-chain-solutions-heading-weight-mobile)] text-[var(--supply-chain-solutions-heading-color)] md:text-[length:var(--supply-chain-solutions-heading-size-desktop)] md:leading-[var(--supply-chain-solutions-heading-line-desktop)] md:font-[var(--supply-chain-solutions-heading-weight-desktop)]">
             Bridging Continents with
-            <span className="block mt-2 md:mt-10 text-[var(--brand-primary)] tracking-[-1.84px]">
+            <span className="block mt-2 md:mt-10 text-[var(--supply-chain-solutions-heading-highlight-color)] tracking-[-1.84px]">
               Seamless Supply Chains
             </span>
           </h2>
 
           <p
-            className="text-[length:var(--body-regular-size)] leading-[var(--body-regular-line-height)]
-            tracking-[-0.16px] mt-6 font-[var(--font-weight-semibold)]
-            md:text-[length:var(--heading-5-size)] md:leading-[var(--heading-5-line-height)] md:mt-10"
+            className="text-[length:var(--supply-chain-solutions-text-size-mobile)] leading-[var(--supply-chain-solutions-text-line-mobile)]
+            tracking-[-0.16px] mt-6 font-[var(--supply-chain-solutions-text-weight-mobile)]
+            md:text-[length:var(--supply-chain-solutions-text-size-desktop)] md:leading-[var(--supply-chain-solutions-text-line-desktop)] md:font-[var(--supply-chain-solutions-text-weight-desktop)] md:mt-10"
           >
             With over two decades of expertise in global supply chain management,
             Tradeasia International offers optimal solutions for the distribution
@@ -36,7 +36,7 @@ export function SupplyChainSolutionsSection() {
         </div>
 
         {/* Cards */}
-        <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 md:mt-[60px] md:gap-10">
+        <div className="mt-[var(--supply-chain-solutions-grid-margin-top-mobile)] grid grid-cols-1 gap-[var(--supply-chain-solutions-grid-gap-mobile)] md:grid-cols-2 lg:grid-cols-3 md:mt-[var(--supply-chain-solutions-grid-margin-top-desktop)] md:gap-[var(--supply-chain-solutions-grid-gap-desktop)]">
           <SolutionCard
             Icon={StackIcon}
             title="Supply Chain Solutions"
@@ -60,7 +60,7 @@ export function SupplyChainSolutionsSection() {
         </div>
 
         {/* CTA */}
-        <div className="mt-7 md:mt-[60px] flex justify-center">
+        <div className="mt-[var(--supply-chain-solutions-cta-margin-top-mobile)] md:mt-[var(--supply-chain-solutions-cta-margin-top-desktop)] flex justify-center">
           <Button
             variant="primary"
             className="w-full max-w-[320px]"

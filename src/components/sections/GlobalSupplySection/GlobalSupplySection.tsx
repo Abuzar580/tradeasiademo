@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui";
 import { StackIcon, GlobeIcon, ClockIcon } from "@/icons";
+import { routes } from "@/config/routes";
 
 export type FeatureCard = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -27,11 +28,13 @@ const GLOBAL_SUPPLY_FEATURES: FeatureCard[] = [
 ];
 
 const GLOBAL_SUPPLY_DESCRIPTION =
-  "With two decades of expertise in chemical supply, Tradeasia International is your go-to source for a diverse array of raw materials essential across industries. As a reliable chemical distributor, we offer a comprehensive range of products to meet both commodity and specialty chemical needs worldwide. Our focus is on delivering a seamless supply chain experience tailored to your requirements. Backed by experienced team leaders and a global support network, we ensure optimized supply chain services around the clock.";
+  "With two decades of expertise in chemical supply, Tradeasia International is your go-to source for a diverse array of raw materials essential across industries. As a reliable chemical distributor, we offer a comprehensive range of products to meet both commodity and specialty chemical needs worldwide.";
 
 export function GlobalSupplySection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--brand-primary)] py-15 text-center md:py-16 lg:py-[120px]">
+    <section
+      className="relative overflow-hidden bg-[var(--global-supply-bg-color)] pt-[var(--global-supply-padding-top-mobile)] pb-[var(--global-supply-padding-bottom-mobile)] text-center md:pt-[var(--global-supply-padding-top-desktop)] md:pb-[var(--global-supply-padding-bottom-desktop)]"
+    >
 
       {/* Top Right Decoration */}
       <Image
@@ -57,30 +60,36 @@ export function GlobalSupplySection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 layout-container px-5 flex flex-col items-center gap-7 md:gap-15">
+      <div
+        className="relative z-10 layout-container px-5 flex flex-col items-center gap-[var(--global-supply-gap-main-mobile)] md:gap-[var(--global-supply-gap-main-desktop)]"
+      >
 
         {/* Heading + Description */}
-        <div className="flex flex-col gap-5 md:gap-15">
+        <div
+          className="flex flex-col gap-[var(--global-supply-gap-inner-mobile)] md:gap-[var(--global-supply-gap-inner-desktop)]"
+        >
           <h2
-            className="text-[length:var(--heading-3-size)] leading-[var(--heading-3-line-height)]
-            font-[var(--font-weight-semibold)] text-[var(--brand-white)]
-            md:text-[length:var(--heading-1-size)] md:leading-[var(--heading-1-line-height)]"
+            className="text-[length:var(--global-supply-heading-size-mobile)] leading-[var(--global-supply-heading-line-mobile)]
+            font-[var(--global-supply-heading-weight-mobile)] text-[var(--global-supply-heading-color)]
+            md:text-[length:var(--global-supply-heading-size-desktop)] md:leading-[var(--global-supply-heading-line-desktop)] md:font-[var(--global-supply-heading-weight-desktop)]"
           >
             Global Chemical Suppliers & Distributor
           </h2>
 
           <p
-            className="mx-auto max-w-[900px] text-[length:var(--body-regular-size)]
-            leading-[var(--heading-4-line-height)] font-[var(--font-weight-semibold)]
-            text-[rgba(var(--brand-white-rgb),0.9)]
-            md:text-[length:var(--body-large-size)]"
+            className="mx-auto max-w-[900px] text-[length:var(--global-supply-text-size-mobile)]
+            leading-[var(--global-supply-text-line-mobile)] font-[var(--global-supply-text-weight-mobile)]
+            text-[var(--global-supply-text-color)]
+            md:text-[length:var(--global-supply-text-size-desktop)] md:leading-[var(--global-supply-text-line-desktop)] md:font-[var(--global-supply-text-weight-desktop)]"
           >
             {GLOBAL_SUPPLY_DESCRIPTION}
           </p>
         </div>
 
         {/* Features */}
-        <div className="flex flex-wrap w-full max-w-[900px] gap-6 justify-center items-center md:gap-14">
+        <div
+          className="flex flex-wrap w-full max-w-[900px] gap-[var(--global-supply-grid-gap-mobile)] justify-center items-center md:gap-[var(--global-supply-grid-gap-desktop)]"
+        >
 
           {GLOBAL_SUPPLY_FEATURES.map((feature) => {
             const Icon = feature.icon;
@@ -88,17 +97,17 @@ export function GlobalSupplySection() {
             return (
               <div
                 key={feature.label}
-                className="flex items-center gap-[6px] rounded-[var(--btn-border-radius)]
-                bg-[rgba(var(--brand-white-rgb),0.08)] p-3 border
-                border-[rgba(var(--brand-white-rgb),15%)] backdrop-blur-md md:gap-3 md:px-6"
+                className="flex items-center gap-[var(--global-supply-card-gap-mobile)] rounded-[var(--global-supply-card-border-radius)]
+                bg-[var(--global-supply-card-bg-color)] p-[var(--global-supply-card-padding-mobile)] border
+                border-[var(--global-supply-card-border-color)] backdrop-blur-md md:gap-[var(--global-supply-card-gap-desktop)] md:px-[var(--global-supply-card-padding-desktop)]"
               >
 
                 {/* Icon */}
                 <div
                   className="flex h-9 w-9 shrink-0 items-center justify-center
-                  rounded-full bg-[var(--brand-white)]
+                  rounded-full bg-[var(--global-supply-card-icon-bg-color)]
                   md:h-12 md:w-12
-                  text-[var(--brand-primary)]"
+                  text-[var(--global-supply-card-icon-color)]"
                 >
                   <Icon className="h-[17px] w-[17px] md:h-6 md:w-6" />
                 </div>
@@ -106,19 +115,21 @@ export function GlobalSupplySection() {
                 {/* Text */}
                 <div
                   className="flex flex-col items-start
-                  text-[length:var(--body-small-size)]
-                  leading-[var(--body-caption-line-height)]
-                  font-[var(--font-weight-semibold)]
-                  text-[var(--brand-white)]
-                  md:text-[length:var(--heading-4-size)]
-                  md:leading-[var(--heading-4-line-height)]"
+                  text-[length:var(--global-supply-card-text-size-mobile)]
+                  leading-[var(--global-supply-card-text-line-mobile)]
+                  font-[var(--global-supply-card-text-weight-mobile)]
+                  text-[var(--global-supply-card-text-color)]
+                  md:text-[length:var(--global-supply-card-text-size-desktop)]
+                  md:leading-[var(--global-supply-card-text-line-desktop)]
+                  md:font-[var(--global-supply-card-text-weight-desktop)]"
                 >
                   <span>{feature.value}</span>
 
                   <span
-                    className="text-[length:var(--body-caption-size)]
-                    md:text-[length:var(--body-small-size)]
-                    md:leading-[var(--body-caption-line-height)]"
+                    className="text-[length:var(--global-supply-card-label-text-size-mobile)]
+                    md:text-[length:var(--global-supply-card-label-text-size-desktop)]
+                    leading-[var(--global-supply-card-label-line-mobile)]
+                    md:leading-[var(--global-supply-card-label-line-desktop)]"
                   >
                     {feature.label}
                   </span>
@@ -133,7 +144,7 @@ export function GlobalSupplySection() {
         {/* Button */}
         <Button
           variant="outlined"
-          href="#"
+          href="/products"
           className="max-w-[336px] w-full mx-auto md:mx-0 mt-3 md:mt-0"
         >
           explore our products

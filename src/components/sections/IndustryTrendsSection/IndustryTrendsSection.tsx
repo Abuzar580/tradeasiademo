@@ -34,26 +34,27 @@ const INSIGHTS_DATA: InsightCardProps[] = [
 export function IndustryTrendsSection() {
   return (
     <section
-      className="pt-10 pb-[60px] md:pt-20"
+      className="pt-[var(--industry-trends-padding-top-mobile)] pb-[var(--industry-trends-padding-bottom-mobile)] md:pt-[var(--industry-trends-padding-top-desktop)] md:pb-[var(--industry-trends-padding-bottom-desktop)]"
       aria-labelledby="industry-trends-heading"
     >
       <div className="layout-container px-5">
-        <div className="text-center mb-7 md:mb-[60px] max-w-[700px] m-auto">
+        <div className="text-center mb-[var(--industry-trends-heading-margin-bottom-mobile)] md:mb-[var(--industry-trends-heading-margin-bottom-desktop)] max-w-[700px] m-auto">
           <h2
             id="industry-trends-heading"
             className="
-              font-[var(--font-weight-bold)]
-              text-[length:var(--heading-4-size)]
-              leading-[var(--heading-3-line-height)]
-              md:text-[length:var(--heading-2-size)]
-              md:leading-[var(--heading-2-line-height)]
-              text-[var(--brand-black)]"
+              font-[var(--industry-trends-heading-weight-mobile)]
+              md:font-[var(--industry-trends-heading-weight-desktop)]
+              text-[length:var(--industry-trends-heading-size-mobile)]
+              leading-[var(--industry-trends-heading-line-mobile)]
+              md:text-[length:var(--industry-trends-heading-size-desktop)]
+              md:leading-[var(--industry-trends-heading-line-desktop)]
+              text-[var(--industry-trends-heading-color)]"
           >
             Industry Trends &
-            <span className="text-[var(--brand-primary)]"> Analysis</span>
+            <span className="text-[var(--industry-trends-heading-highlight-color)]"> Analysis</span>
           </h2>
 
-          <p className="text-[length:var(--body-regular-size)] leading-[var(--body-regular-line-height)] font-[var(--font-weight-semibold)] md:text-[length:var(--body-large-size)] md:leading-[var(--body-large-line-height)] mt-5">
+          <p className="text-[length:var(--industry-trends-text-size-mobile)] leading-[var(--industry-trends-text-line-mobile)] font-[var(--industry-trends-text-weight-mobile)] md:text-[length:var(--industry-trends-text-size-desktop)] md:leading-[var(--industry-trends-text-line-desktop)] md:font-[var(--industry-trends-text-weight-desktop)] mt-5">
             Stay informed with the latest market insights, industry trends, and expert analysis across chemical sectors worldwide.
           </p>
         </div>
@@ -65,7 +66,7 @@ export function IndustryTrendsSection() {
           <Button
             variant="primary"
             href="#"
-            className="inline-flex justify-center mt-10 md:mt-14 max-w-[200px] w-full"
+            className="inline-flex justify-center mt-[var(--industry-trends-cta-margin-top-mobile)] md:mt-[var(--industry-trends-cta-margin-top-desktop)] max-w-[200px] w-full"
           >
             View more
           </Button>

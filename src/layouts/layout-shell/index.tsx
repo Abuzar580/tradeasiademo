@@ -73,7 +73,7 @@ const headerOneConfig: HeaderConfig = {
   languages: defaultLanguages,
 };
 
-export function LayoutOne({ children }: { children: React.ReactNode }) {
+export function LayoutShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex min-h-screen flex-col">
       <HeaderOne config={headerOneConfig} />

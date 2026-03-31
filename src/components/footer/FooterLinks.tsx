@@ -8,12 +8,12 @@ export function FooterLinks({ links }: FooterLinksProps) {
   return (
     <div className="md:flex-1">
       <div className="body-medium mb-6 uppercase">Information</div>
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-[var(--footer-links-gap)]">
         {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="body-regular text-[var(--brand-white)] hover:opacity-90"
+              className="body-regular text-[var(--footer-text-color)] hover:opacity-90"
             >
               {link.label}
             </Link>

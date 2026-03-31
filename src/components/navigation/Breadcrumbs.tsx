@@ -17,45 +17,44 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
     <div
       className="
         w-full
-        bg-[rgba(var(--brand-white-rgb),0.89)]
-        px-5 pt-[105px] pb-5 md:pt-[160px] md:pb-9
-        flex items-center justify-center gap-2
+        bg-[var(--breadcrumbs-bg)]
+        px-5 pt-[var(--breadcrumbs-padding-top-mobile)] pb-[var(--breadcrumbs-padding-bottom-mobile)] md:pt-[var(--breadcrumbs-padding-top-desktop)] md:pb-[var(--breadcrumbs-padding-bottom-desktop)]
+        flex items-center justify-center gap-[var(--breadcrumbs-gap)]
       "
     >
       <nav aria-label="Breadcrumb" className="overflow-hidden">
-        <ol className="flex flex-wrap items-center justify-center gap-3 text-[length:var(--body-small-size)] leading-[var(--body-small-line-height)]">
+        <ol className="flex flex-wrap items-center justify-center gap-[var(--breadcrumbs-item-gap)] text-[length:var(--breadcrumbs-font-size-mobile)] leading-[var(--breadcrumbs-line-mobile)] md:text-[length:var(--breadcrumbs-font-size-desktop)] md:leading-[var(--breadcrumbs-line-desktop)]">
           {items.map((item, index) => {
             const isLast = index === items.length - 1;
             const isFirst = index === 0;
 
             return (
-              <li key={`${item.label}-${index}`} className="flex items-center gap-3">
+              <li key={`${item.label}-${index}`} className="flex items-center gap-[var(--breadcrumbs-item-gap)]">
                 {index > 0 && (
-                  <span className="flex items-center text-[var(--brand-neutral-text)]">
+                  <span className="flex items-center text-[var(--breadcrumbs-separator-color)]">
                     <ArrowIcon className="h-2 w-1" aria-hidden="true" />
                   </span>
                 )}
 
-                {/* home icon */}
                 {isFirst ? (
                   item.href ? (
-                    <Link href={item.href} aria-label={item.label} className="inline-flex items-center text-[var(--brand-neutral-text)]">
+                    <Link href={item.href} aria-label={item.label} className="inline-flex items-center text-[var(--breadcrumbs-link-color)]">
                       <HomeIcon className="h-5 w-5" aria-hidden="true" />
                     </Link>
                   ) : (
-                    <span className="inline-flex items-center text-[var(--brand-neutral-text)]">
+                    <span className="inline-flex items-center text-[var(--breadcrumbs-text-color)]">
                       <HomeIcon className="h-5 w-5" aria-hidden="true" />
                     </span>
                   )
-                ) : // Other items: non-last are links, last is plain text
+                ) :
                   isLast || !item.href ? (
-                    <span className="body-regular text-[var(--brand-black)] !font-[var(--font-weight-medium)]">
+                    <span className="body-regular text-[var(--breadcrumbs-text-active)] !font-[var(--breadcrumbs-weight-mobile)] md:!font-[var(--breadcrumbs-weight-desktop)]">
                       {item.label}
                     </span>
                   ) : (
                     <Link
                       href={item.href}
-                      className="body-regular text-[var(--brand-neutral-text)] !font-[var(--font-weight-medium)] hover:text-[var(--brand-black)] transition-colors"
+                      className="body-regular text-[var(--breadcrumbs-link-color)] !font-[var(--breadcrumbs-weight-mobile)] md:!font-[var(--breadcrumbs-weight-desktop)] hover:text-[var(--breadcrumbs-link-hover-color)] transition-colors"
                     >
                       {item.label}
                     </Link>

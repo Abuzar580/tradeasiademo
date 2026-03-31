@@ -1,0 +1,71 @@
+:root {
+  /* Section */
+  --industry-updates-bg: var(--brand-neutral-surface-2);
+  --industry-updates-padding-top-mobile: var(--section-padding-70);
+  --industry-updates-padding-top-desktop: var(--section-padding-70);
+  --industry-updates-padding-bottom-mobile: var(--section-padding-40);
+  --industry-updates-padding-bottom-desktop: var(--section-padding-70);
+
+  /* Main heading */
+  --industry-updates-heading-size-mobile: var(--heading-3-size);
+  --industry-updates-heading-size-desktop: var(--heading-2-size);
+  --industry-updates-heading-line-mobile: var(--heading-3-line-height);
+  --industry-updates-heading-line-desktop: var(--heading-2-line-height);
+  --industry-updates-heading-weight-mobile: var(--font-weight-bold);
+  --industry-updates-heading-weight-desktop: var(--font-weight-bold);
+  --industry-updates-heading-color: var(--brand-black);
+
+  /* Grid */
+  --industry-updates-grid-gap-mobile: var(--gap-64);
+  --industry-updates-grid-gap-desktop: var(--gap-28);
+  --industry-updates-grid-margin-top-mobile: var(--section-padding-32);
+  --industry-updates-grid-margin-top-desktop: var(--gap-64);
+
+  /* Subsection title (Events, News & Insights) */
+  --industry-updates-subsection-title-color: var(--brand-primary);
+
+  /* News & Insights */
+  --industry-updates-news-gap-main: var(--gap-30);
+  --industry-updates-news-gap-header: var(--gap-20);
+  --industry-updates-news-article-gap: var(--gap-30);
+  --industry-updates-news-card-radius: var(--radius-card-md);
+  --industry-updates-news-card-bg: var(--brand-white);
+  --industry-updates-news-card-shadow: var(--box-shadow);
+  --industry-updates-news-card-shadow-hover: var(--btn-shadow);
+  --industry-updates-news-card-padding-y: var(--card-padding-32);
+  --industry-updates-news-card-padding-x: var(--card-padding-24);
+  --industry-updates-news-card-inner-gap: var(--gap-18);
+  --industry-updates-news-badge-color: var(--brand-primary);
+  --industry-updates-news-badge-border: var(--brand-primary);
+  --industry-updates-news-badge-bg: var(--brand-neutral-surface-2);
+  --industry-updates-news-badge-weight: var(--font-weight-semibold);
+  --industry-updates-news-heading-color: var(--brand-primary);
+  --industry-updates-news-heading-line: var(--body-large-line-height);
+  --industry-updates-news-footer-gap: var(--gap-16);
+  --industry-updates-news-footer-pt: var(--gap-16);
+  --industry-updates-news-button-gap: var(--gap-12);
+
+  /* Events */
+  --industry-updates-events-gap-main-mobile: var(--gap-20);
+  --industry-updates-events-gap-main-desktop: var(--gap-30);
+  --industry-updates-events-gap-header: var(--gap-20);
+  --industry-updates-events-card-bg: var(--brand-white);
+  --industry-updates-events-card-shadow: var(--box-shadow);
+  --industry-updates-events-card-shadow-hover: var(--btn-shadow);
+  --industry-updates-events-card-gap: var(--gap-8);
+  --industry-updates-events-slide-image-padding-y: var(--panel-padding-60);
+  --industry-updates-events-slide-content-bg: var(--brand-primary);
+  --industry-updates-events-slide-content-padding-y: var(--panel-padding-48);
+  --industry-updates-events-slide-title-color: var(--brand-white);
+  --industry-updates-events-slide-details-gap-mobile: var(--gap-28);
+  --industry-updates-events-slide-details-gap-desktop: var(--gap-24);
+  --industry-updates-events-slide-row-gap-mobile: var(--gap-12);
+  --industry-updates-events-slide-row-gap-desktop: var(--gap-16);
+  --industry-updates-events-slide-text-color: var(--brand-white);
+  --industry-updates-events-nav-bg: var(--brand-primary);
+  --industry-updates-events-nav-padding-bottom-mobile: var(--section-padding-20);
+  --industry-updates-events-nav-padding-bottom-desktop: var(--section-padding-32);
+  --industry-updates-events-nav-padding-top: var(--section-padding-40);
+  --industry-updates-events-nav-gap: var(--gap-8);
+  --industry-updates-events-pagination-bullet-color: var(--brand-white);
+}

@@ -54,10 +54,10 @@ export function Events({
   subtitle,
 }: HeaderProps) {
   return (
-    <div className="flex flex-col gap-5 h-full lg:gap-[30px]">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-[var(--industry-updates-events-gap-main-mobile)] h-full lg:gap-[var(--industry-updates-events-gap-main-desktop)]">
+      <div className="flex flex-col gap-[var(--industry-updates-events-gap-header)]">
         <h2
-          className="heading-3 text-[var(--brand-primary)]"
+          className="heading-3 text-[var(--industry-updates-subsection-title-color)]"
         >
           {title}
         </h2>
@@ -69,7 +69,7 @@ export function Events({
         )}
       </div>
 
-      <div className="relative z-10 w-full flex-1 min-h-0 flex flex-col rounded-2xl bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] gap-2">
+      <div className="relative z-10 w-full flex-1 min-h-0 flex flex-col rounded-2xl bg-[var(--industry-updates-events-card-bg)] shadow-[var(--industry-updates-events-card-shadow)] hover:shadow-[var(--industry-updates-events-card-shadow-hover)] gap-[var(--industry-updates-events-card-gap)]">
         <div className="relative z-10 flex flex-1 min-h-0 flex flex-col">
           <Swiper
             modules={[Navigation, Pagination]}
@@ -87,7 +87,7 @@ export function Events({
               clickable: true,
               el: ".events-swiper-pagination",
               renderBullet: (index, className) =>
-                `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--brand-white)] cursor-pointer transition-all duration-300"></span>`,
+                `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--industry-updates-events-pagination-bullet-color)] cursor-pointer transition-all duration-300"></span>`,
             }}
             breakpoints={{
               320: {
@@ -100,37 +100,37 @@ export function Events({
             {INDUSTRY.map((Industry) => (
               <SwiperSlide key={Industry.id}>
                 <div className="rounded-tl-2xl rounded-tr-2xl overflow-hidden h-full flex flex-col">
-                  <div className="relative w-full bg-[var(--brand-white)]">
+                  <div className="relative w-full bg-[var(--industry-updates-events-card-bg)]">
                     <Image
                       src={Industry.image}
                       alt={Industry.name}
                       width={420}
                       height={420}
-                      className="object-cover w-full h-auto py-[60px]"
+                      className="object-cover w-full h-auto py-[var(--industry-updates-events-slide-image-padding-y)]"
                     />
                   </div>
 
-                  <div className="bg-[var(--brand-primary)] flex-1 px-5 md:px-8 pb-0 py-12 flex flex-col">
+                  <div className="bg-[var(--industry-updates-events-slide-content-bg)] flex-1 px-5 md:px-8 pb-0 py-[var(--industry-updates-events-slide-content-padding-y)] flex flex-col">
                     {/* Industry  Name */}
-                    <h4 className="heading-4 text-[var(--brand-white)]">
+                    <h4 className="heading-4 text-[var(--industry-updates-events-slide-title-color)]">
                       {Industry.name}
                     </h4>
 
                     {/* Industry  Details with Icons */}
-                    <div className="space-y-7 md:space-y-6 mt-9 md:mt-6 heading-4 text-[var(--brand-white)] flex-1">
-                      <div className="flex items-center gap-3 md:gap-4">
+                    <div className="space-y-[var(--industry-updates-events-slide-details-gap-mobile)] md:space-y-[var(--industry-updates-events-slide-details-gap-desktop)] mt-9 md:mt-6 heading-4 text-[var(--industry-updates-events-slide-text-color)] flex-1">
+                      <div className="flex items-center gap-[var(--industry-updates-events-slide-row-gap-mobile)] md:gap-[var(--industry-updates-events-slide-row-gap-desktop)]">
                         <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                          <Industry.calenderIcon className="text-[var(--brand-white)]" />
+                          <Industry.calenderIcon className="text-[var(--industry-updates-events-slide-text-color)]" />
                         </div>
-                        <p className="body-medium text-[var(--brand-white)]">
+                        <p className="body-medium text-[var(--industry-updates-events-slide-text-color)]">
                           {Industry.date}
                         </p>
                       </div>
-                      <div className="flex items-center gap-3 md:gap-4">
+                      <div className="flex items-center gap-[var(--industry-updates-events-slide-row-gap-mobile)] md:gap-[var(--industry-updates-events-slide-row-gap-desktop)]">
                         <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                          <Industry.locationIcon className="text-[var(--brand-white)]" />
+                          <Industry.locationIcon className="text-[var(--industry-updates-events-slide-text-color)]" />
                         </div>
-                        <p className="body-medium text-[var(--brand-white)]">
+                        <p className="body-medium text-[var(--industry-updates-events-slide-text-color)]">
                           {Industry.location}
                         </p>
                       </div>
@@ -142,8 +142,8 @@ export function Events({
           </Swiper>
 
           {/* Single pagination + nav outside slides so bullets stay visible */}
-          <div className="rounded-b-2xl bg-[var(--brand-primary)] flex items-center justify-center w-full pb-5 md:pb-8 flex-shrink-0 pt-10">
-            <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-[320px] px-4 gap-2">
+          <div className="rounded-b-2xl bg-[var(--industry-updates-events-nav-bg)] flex items-center justify-center w-full pb-[var(--industry-updates-events-nav-padding-bottom-mobile)] md:pb-[var(--industry-updates-events-nav-padding-bottom-desktop)] flex-shrink-0 pt-[var(--industry-updates-events-nav-padding-top)]">
+            <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-[320px] px-4 gap-[var(--industry-updates-events-nav-gap)]">
               <div className="flex justify-start">
                 <Button
                   variant="outlined"
@@ -152,7 +152,7 @@ export function Events({
                   <ArrowIcon className="w-4 h-3 rotate-180" />
                 </Button>
               </div>
-              <div className="flex events-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[40px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" />
+              <div className="flex events-swiper-pagination items-center justify-center gap-[var(--industry-updates-events-nav-gap)] [&_.swiper-pagination-bullet-active]:!w-[40px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--industry-updates-events-pagination-bullet-color)] [&_.swiper-pagination-bullet]:!bg-[var(--industry-updates-events-pagination-bullet-color)]" />
               <div className="flex justify-end">
                 <Button
                   variant="outlined"

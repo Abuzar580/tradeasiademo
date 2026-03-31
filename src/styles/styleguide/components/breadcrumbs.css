@@ -1,0 +1,23 @@
+:root {
+  --breadcrumbs-bg: rgba(var(--brand-white-rgb), 0.89);
+  --breadcrumbs-gap: var(--gap-8);
+  --breadcrumbs-item-gap: var(--gap-12);
+
+  --breadcrumbs-padding-top-mobile: 105px;
+  --breadcrumbs-padding-top-desktop: 160px;
+  --breadcrumbs-padding-bottom-mobile: 20px;
+  --breadcrumbs-padding-bottom-desktop: 36px;
+
+  --breadcrumbs-font-size-mobile: var(--body-small-size);
+  --breadcrumbs-font-size-desktop: var(--body-small-size);
+  --breadcrumbs-line-mobile: var(--body-small-line-height);
+  --breadcrumbs-line-desktop: var(--body-small-line-height);
+  --breadcrumbs-weight-mobile: var(--font-weight-medium);
+  --breadcrumbs-weight-desktop: var(--font-weight-medium);
+
+  --breadcrumbs-text-color: var(--brand-neutral-text);
+  --breadcrumbs-link-color: var(--brand-neutral-text);
+  --breadcrumbs-link-hover-color: var(--brand-black);
+  --breadcrumbs-text-active: var(--brand-black);
+  --breadcrumbs-separator-color: var(--brand-neutral-text);
+}

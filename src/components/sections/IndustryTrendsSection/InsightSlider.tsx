@@ -45,7 +45,7 @@ export function InsightSlider({ insights }: InsightSliderProps) {
       </Swiper>
 
       {/* Arrows + Dots below slider */}
-      <div className="flex items-center justify-center gap-5">
+      <div className="flex items-center justify-center gap-[var(--industry-trends-nav-gap)]">
         <Button
           variant="primary"
           className="mt-7 insight-swiper-prev inline-flex items-center justify-center !rounded-[50%] disabled:cursor-not-allowed disabled:opacity-[0.3] h-[50px] w-[50px]"
@@ -54,7 +54,7 @@ export function InsightSlider({ insights }: InsightSliderProps) {
         </Button>
 
         {/* Pagination dots */}
-        <div className="mt-7 insight-swiper-pagination !w-auto flex items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[42px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-primary)]" />
+        <div className="mt-7 insight-swiper-pagination !w-auto flex items-center justify-center gap-[var(--industry-trends-pagination-gap)] [&_.swiper-pagination-bullet-active]:!w-[42px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--industry-trends-pagination-bullet-active-color)]" />
 
         <Button
           variant="primary"

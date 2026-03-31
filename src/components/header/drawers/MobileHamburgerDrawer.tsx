@@ -37,13 +37,13 @@ export function MobileHamburgerDrawer({
       />
       {/* Drawer – bottom sheet, 30px top radius, dark blue */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 max-h-[90vh] overflow-y-auto rounded-t-[30px] bg-[var(--brand-primary-hover)] lg:hidden p-5 pb-10"
+        className="fixed bottom-0 left-0 right-0 z-50 max-h-[90vh] overflow-y-auto rounded-t-[30px] bg-[var(--header-drawer-bg)] lg:hidden p-5 pb-10"
         role="dialog"
         aria-label="Menu"
       >
         {/* Drag handle */}
         <div className="flex justify-center pb-5">
-          <div className="h-1 w-12 rounded-full bg-[var(--brand-neutral-surface-3)]/30" />
+          <div className="h-1 w-12 rounded-full bg-[var(--header-drawer-surface-color)]/30" />
         </div>
 
         <nav aria-label="Mobile">
@@ -56,7 +56,7 @@ export function MobileHamburgerDrawer({
                     onClick={() =>
                       setExpandedIndex(expandedIndex === index ? null : index)
                     }
-                    className="body-small text-[var(--brand-white)] tracking-[var(--common-letter-spacing)] flex w-full items-center justify-between py-5"
+                    className="body-small text-[var(--header-drawer-link-color)] tracking-[var(--header-link-tracking)] flex w-full items-center justify-between py-5"
                     aria-expanded={expandedIndex === index}
                   >
                     <span className="uppercase">{item.label}</span>
@@ -73,13 +73,13 @@ export function MobileHamburgerDrawer({
                     </span>
                   </a>
                   {expandedIndex === index && (
-                    <ul className="bg-[var(--brand-primary)]">
+                    <ul className="bg-[var(--header-drawer-children-bg)]">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            style={{ fontWeight: "var(--font-weight-medium)" }}
-                            className="body-small text-[var(--brand-white)] tracking-[var(--common-letter-spacing)] block border-t border-[var(--brand-neutral-surface)]/15 py-5 pl-5 text-[var(--brand-white)]"
+                            style={{ fontWeight: "var(--header-drawer-child-weight)" }}
+                            className="body-small text-[var(--header-drawer-link-color)] tracking-[var(--header-link-tracking)] block border-t border-[var(--header-drawer-border-color)]/15 py-5 pl-5 text-[var(--header-drawer-link-color)]"
                             onClick={onClose}
                           >
                             {child.label}
@@ -92,34 +92,34 @@ export function MobileHamburgerDrawer({
               ) : (
                 <Link
                   href={item.href}
-                  className="body-small text-[var(--brand-white)] tracking-[var(--common-letter-spacing)] flex w-full items-center justify-between py-5 uppercase"
+                  className="body-small text-[var(--header-drawer-link-color)] tracking-[var(--header-link-tracking)] flex w-full items-center justify-between py-5 uppercase"
                   onClick={onClose}
                 >
                   {item.label}
                 </Link>
               )}
-              <div className="h-px bg-[var(--brand-neutral-surface-3)]/15" />
+              <div className="h-px bg-[var(--header-drawer-surface-color)]/15" />
             </div>
           ))}
         </nav>
 
         {/* Bottom: Select language + Select a website (flex), then Sign In */}
         <div className="pt-7">
-          <div className="flex gap-5">
+          <div className="flex gap-[var(--header-drawer-bottom-gap)]">
             <button
               type="button"
               onClick={() => setLanguageModalOpen(true)}
-              className="body-small text-[var(--brand-white)] flex flex-1 items-center gap-3 py-2 border-b border-[var(--brand-neutral-surface)]/15 text-left"
+              className="body-small text-[var(--header-drawer-link-color)] flex flex-1 items-center gap-[var(--header-drawer-btn-gap)] py-2 border-b border-[var(--header-drawer-border-color)]/15 text-left"
             >
-              <GlobeIcon className="w-6 h-6 text-[var(--brand-white)]" />
+              <GlobeIcon className="w-6 h-6 text-[var(--header-drawer-link-color)]" />
               <span>Select language</span>
             </button>
             <button
               type="button"
               onClick={() => setWebsiteExploreModalOpen(true)}
-              className="body-small text-[var(--brand-white)] flex flex-1 items-center gap-3 py-2 border-b border-[var(--brand-neutral-surface)]/15"
+              className="body-small text-[var(--header-drawer-link-color)] flex flex-1 items-center gap-[var(--header-drawer-btn-gap)] py-2 border-b border-[var(--header-drawer-border-color)]/15"
             >
-              <GlobeIcon className="w-6 h-6 text-[var(--brand-white)]" />
+              <GlobeIcon className="w-6 h-6 text-[var(--header-drawer-link-color)]" />
               <span>Select a website</span>
             </button>
           </div>

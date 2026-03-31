@@ -5,8 +5,8 @@ import Slider from "./Silder";
 
 export function IndustrialApplicationsAndQuickInquiry() {
     return (
-        <section className="bg-[var(--brand-white)] layout-container py-[40px] px-[20px] md:py-[60px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[40px] mb-[60px]">
+        <section className="bg-[var(--industrial-applications-bg)] layout-container pt-[var(--industrial-applications-padding-top-mobile)] pb-[var(--industrial-applications-padding-bottom-mobile)] px-[var(--industrial-applications-padding-x)] md:pt-[var(--industrial-applications-padding-top-desktop)] md:pb-[var(--industrial-applications-padding-bottom-desktop)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--industrial-applications-grid-gap)] mb-[var(--industrial-applications-grid-margin-bottom)]">
 
                 <div className="order-1 md:order-1">
                     <IndustrialApplicationsHeader

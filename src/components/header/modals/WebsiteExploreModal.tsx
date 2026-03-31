@@ -43,7 +43,7 @@ export function WebsiteExploreModal({
         onClick={onClose}
       />
       <div
-        className="rounded-2xl px-5 py-7 shadow-[var(--btn-shadow-soft)] fixed left-1/2 top-1/2 z-[101] w-full max-w-[min(90vw,400px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-[var(--brand-neutral-surface)]"
+        className="rounded-2xl px-5 py-7 shadow-[var(--header-modal-shadow)] fixed left-1/2 top-1/2 z-[101] w-full max-w-[min(90vw,400px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-[var(--header-modal-bg)]"
         role="dialog"
         aria-labelledby="website-explore-modal-title"
         aria-modal
@@ -52,7 +52,7 @@ export function WebsiteExploreModal({
         <div className="flex items-start justify-between pb-2">
           <div
             id="website-explore-modal-title"
-            className="body-regular text-[var(--brand-black)]"
+            className="body-regular text-[var(--header-modal-title-color)]"
           >
             Select a Website to Explore
           </div>
@@ -65,7 +65,7 @@ export function WebsiteExploreModal({
             <Image src="/close.svg" alt="" width={13} height={13} />
           </button>
         </div>
-        <p className="body-caption text-[var(--brand-black)] pb-4">
+        <p className="body-caption text-[var(--header-modal-title-color)] pb-4">
           {EXPLORE_DESCRIPTION}
         </p>
 
@@ -73,7 +73,7 @@ export function WebsiteExploreModal({
         <div className="relative">
           <button
             type="button"
-            className="body-small text-[var(--brand-primary)] flex w-full items-center justify-between pb-2 border-b border-[var(--brand-primary)]"
+            className="body-small text-[var(--header-modal-primary)] flex w-full items-center justify-between pb-2 border-b border-[var(--header-modal-primary)]"
             onClick={() => setCategoryOpen(!categoryOpen)}
             aria-expanded={categoryOpen}
           >
@@ -83,7 +83,7 @@ export function WebsiteExploreModal({
             </span>
           </button>
           {categoryOpen && (
-            <div className="bg-[var(--brand-primary)] z-[1] flex flex-col items-stretch absolute top-full left-0 right-0">
+              <div className="bg-[var(--header-modal-primary)] z-[1] flex flex-col items-stretch absolute top-full left-0 right-0">
               {exploreCategories.map((cat) => (
                 <button
                   key={cat.label}
@@ -92,10 +92,10 @@ export function WebsiteExploreModal({
                     setActiveCategory(cat.label);
                     setCategoryOpen(false);
                   }}
-                  className="body-small p-4 text-[var(--brand-white)] text-left"
+                  className="body-small p-4 text-[var(--header-modal-option-color)] text-left"
                   style={{
                     transition: "var(--transition)",
-                    ...(activeCategory === cat.label && { background: "var(--brand-primary-hover)" }),
+                    ...(activeCategory === cat.label && { background: "var(--header-modal-option-active-bg)" }),
                   }}
                 >
                   {cat.label}
@@ -107,31 +107,31 @@ export function WebsiteExploreModal({
 
         {/* Two-column list */}
         <div className="max-h-[40vh] overflow-y-auto py-3">
-          <ul className="grid grid-cols-2 gap-2">
+          <ul className="grid grid-cols-2 gap-[var(--header-modal-explore-grid-gap)]">
             {listItems.map((item, i) => (
               <li key={item.label + i}>
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="flex w-full items-center gap-3"
+                    className="flex w-full items-center gap-[var(--header-modal-explore-item-gap)]"
                     onClick={onClose}
                   >
                     {item.flagSrc && (
-                      <span className="relative h-6 w-8 shrink-0 overflow-hidden rounded border border-[var(--brand-neutral-surface-3)] bg-[var(--brand-neutral-surface-2)]">
+                      <span className="relative h-6 w-8 shrink-0 overflow-hidden rounded border border-[var(--header-modal-flag-border)] bg-[var(--header-modal-flag-bg)]">
                         <Image src={item.flagSrc} alt="" width={32} height={24} className="h-full w-full object-cover" />
                       </span>
                     )}
-                    <span className="body-caption text-[var(--brand-black)]">{item.label}</span>
+                    <span className="body-caption text-[var(--header-modal-title-color)]">{item.label}</span>
                   </Link>
                 ) : (
-                  <span className="body-caption text-[var(--brand-black)]">{item.label}</span>
+                  <span className="body-caption text-[var(--header-modal-title-color)]">{item.label}</span>
                 )}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="h-px bg-[var(--brand-primary)]" />
+        <div className="h-px bg-[var(--header-modal-primary)]" />
         <div className="pt-4">
           <Link
             href={globalWebsiteUrl}

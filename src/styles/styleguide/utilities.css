@@ -1,0 +1,119 @@
+@layer utilities {
+  .layout-container {
+    max-width: var(--layout-container-max);
+    margin: 0 auto;
+  }
+
+  .transition-default {
+    transition: var(--transition);
+  }
+
+  .body-large {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--body-large-size);
+    line-height: var(--body-large-line-height);
+  }
+
+  .body-medium {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--body-medium-size);
+    line-height: var(--body-medium-line-height);
+  }
+
+  .body-regular {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--body-regular-size);
+    line-height: var(--body-regular-line-height);
+  }
+
+  .body-small {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--body-small-size);
+    line-height: var(--body-small-line-height);
+  }
+
+  .body-caption {
+    font-weight: var(--font-weight-normal);
+    font-size: var(--body-caption-size);
+    line-height: var(--body-caption-line-height);
+  }
+
+  /* Sign in button */
+  .btn-sign-in {
+    border-radius: var(--btn-border-radius);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--btn-signin-font-size);
+    line-height: var(--btn-signin-line-height);
+    letter-spacing: var(--btn-signin-letter-spacing);
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    padding: var(--btn-signin-padding);
+    color: var(--btn-signin-color);
+    background: var(--btn-signin-bg);
+    border: var(--btn-signin-border);
+    transition: var(--transition);
+  }
+
+  .btn-sign-in:hover {
+    color: var(--btn-signin-color-hover);
+    background: var(--btn-signin-bg-hover);
+    border: var(--btn-signin-border-hover);
+    text-shadow: 0 0 1px currentColor;
+  }
+
+  /* Common btn style */
+  .btn {
+    border-radius: var(--btn-border-radius);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--btn-common-font-size);
+    line-height: var(--btn-common-line-height);
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    padding: var(--btn-common-padding);
+    transition: var(--transition);
+  }
+
+  .btn:hover {
+    /* Fake bold effect */
+    text-shadow: 0 0 1px currentColor;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    color: var(--btn-primary-color);
+    background: var(--btn-primary-bg);
+    box-shadow: var(--btn-shadow);
+  }
+
+  .btn-primary:hover {
+    color: var(--btn-primary-color-hover);
+    background: var(--btn-primary-bg-hover);
+    box-shadow: var(--btn-shadow);
+  }
+
+  /* Outlined button */
+  .btn-outlined {
+    color: var(--btn-outlined-color);
+    background: var(--btn-outlined-bg);
+    border: var(--btn-outlined-border);
+    box-shadow: var(--btn-shadow-soft);
+  }
+
+  .btn-outlined:hover {
+    color: var(--btn-outlined-color-hover);
+    background: var(--btn-outlined-bg-hover);
+    border: var(--btn-outlined-border-hover);
+    box-shadow: var(--btn-shadow-soft);
+  }
+
+  /* Mobile: smaller button typography */
+  @media (max-width: 767px) {
+    .btn {
+      font-size: var(--btn-mobile-font-size);
+      line-height: var(--btn-mobile-line-height);
+    }
+  }
+}
+

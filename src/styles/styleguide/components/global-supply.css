@@ -1,0 +1,69 @@
+:root {
+  /* Spacing */
+  --global-supply-padding-top-mobile: var(--section-padding-60);
+  --global-supply-padding-bottom-mobile: var(--section-padding-60);
+
+  --global-supply-padding-top-desktop: var(--section-padding-120);
+  --global-supply-padding-bottom-desktop: var(--section-padding-120);
+
+  /* Background */
+  --global-supply-bg-color: var(--brand-primary);
+
+  /* Heading */
+  --global-supply-heading-size-mobile: var(--heading-3-size);
+  --global-supply-heading-size-desktop: var(--heading-1-size);
+  --global-supply-heading-line-mobile: var(--heading-3-line-height);
+  --global-supply-heading-line-desktop: var(--heading-1-line-height);
+  --global-supply-heading-weight-mobile: var(--font-weight-semibold);
+  --global-supply-heading-weight-desktop: var(--font-weight-semibold);
+  --global-supply-heading-color: var(--brand-white);
+
+  /* Paragraph / subtitle */
+  --global-supply-text-size-mobile: var(--body-regular-size);
+  --global-supply-text-size-desktop: var(--body-large-size);
+  --global-supply-text-line-mobile: var(--heading-4-line-height);
+  --global-supply-text-line-desktop: var(--heading-4-line-height);
+  --global-supply-text-weight-mobile: var(--font-weight-semibold);
+  --global-supply-text-weight-desktop: var(--font-weight-semibold);
+  --global-supply-text-color: rgba(var(--brand-white-rgb), 0.9);
+
+  /* Main layout gap */
+  --global-supply-gap-main-mobile: var(--gap-28);
+  --global-supply-gap-main-desktop: var(--gap-60);
+
+  /* Inner gap (heading/text block) */
+  --global-supply-gap-inner-mobile: var(--gap-20);
+  --global-supply-gap-inner-desktop: var(--gap-60);
+
+  /* Grid gap */
+  --global-supply-grid-gap-mobile: var(--gap-24);
+  --global-supply-grid-gap-desktop: var(--gap-56);
+
+  /* Card spacing (if cards exist) */
+  --global-supply-card-padding-mobile: var(--gap-12);
+  --global-supply-card-padding-desktop: var(--gap-24);
+
+  /* Card layout vars */
+  --global-supply-card-gap-mobile: var(--gap-6);
+  --global-supply-card-gap-desktop: var(--gap-12);
+  --global-supply-card-border-radius: var(--btn-border-radius);
+  --global-supply-card-bg-color: rgba(var(--brand-white-rgb), 0.08);
+  --global-supply-card-border-color: rgba(var(--brand-white-rgb), 15%);
+
+  --global-supply-card-icon-bg-color: var(--brand-white);
+  --global-supply-card-icon-color: var(--brand-primary);
+
+  --global-supply-card-text-size-mobile: var(--body-small-size);
+  --global-supply-card-text-size-desktop: var(--heading-4-size);
+  --global-supply-card-text-line-mobile: var(--body-caption-line-height);
+  --global-supply-card-text-line-desktop: var(--heading-4-line-height);
+  --global-supply-card-text-weight-mobile: var(--font-weight-semibold);
+  --global-supply-card-text-weight-desktop: var(--font-weight-semibold);
+  --global-supply-card-text-color: var(--brand-white);
+
+  --global-supply-card-label-text-size-mobile: var(--body-caption-size);
+  --global-supply-card-label-text-size-desktop: var(--body-small-size);
+  --global-supply-card-label-line-mobile: var(--body-caption-line-height);
+  --global-supply-card-label-line-desktop: var(--body-caption-line-height);
+}
+

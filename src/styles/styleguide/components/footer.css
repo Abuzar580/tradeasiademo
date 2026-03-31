@@ -1,0 +1,36 @@
+:root {
+  /* Background & text */
+  --footer-bg: var(--brand-primary);
+  --footer-text-color: var(--brand-white);
+  --footer-address-color: rgba(var(--brand-white-rgb), 0.9);
+  --footer-border-color: rgba(var(--brand-white-rgb), 0.15);
+  --footer-icon-bg: var(--brand-primary-hover);
+  --footer-shadow: var(--box-shadow);
+
+  /* Main layout gaps */
+  --footer-main-gap-mobile: var(--gap-44);
+  --footer-main-gap-tablet: var(--gap-48);
+  --footer-main-gap-desktop: var(--gap-64);
+
+  /* FooterCompanyInfo */
+  --footer-company-gap: var(--gap-60);
+  --footer-company-inner-gap: var(--gap-8);
+  --footer-social-mobile-gap: var(--gap-10);
+
+  /* FooterLinks */
+  --footer-links-gap: var(--gap-16);
+
+  /* FooterApps */
+  --footer-apps-gap: var(--gap-12);
+  --footer-app-label-size: var(--body-caption-size);
+  --footer-app-label-weight: var(--font-weight-semibold);
+  --footer-app-title-size: var(--body-small-size);
+  --footer-app-title-weight: var(--font-weight-bold);
+
+  /* FooterBottom */
+  --footer-bottom-gap-mobile: var(--gap-24);
+  --footer-bottom-gap-desktop: var(--gap-12);
+  --footer-bottom-social-gap: var(--gap-16);
+  --footer-copyright-weight: var(--font-weight-normal);
+  --footer-contact-weight: var(--font-weight-semibold);
+}

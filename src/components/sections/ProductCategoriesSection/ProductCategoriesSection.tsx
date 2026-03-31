@@ -5,7 +5,13 @@ import { CategoryCard } from "./CategoryCard";
 export function ProductCategoriesSection() {
   return (
     <section
-      className="pt-[60px] pb-10 md:pt-20 md:pb-[60px]"
+      className="
+        pt-[var(--product-categories-padding-top-mobile)]
+        pb-[var(--product-categories-padding-bottom-mobile)]
+        md:pt-[var(--product-categories-padding-top-desktop)]
+        md:pb-[var(--product-categories-padding-bottom-desktop)]
+        bg-[var(--product-categories-bg-color)]
+      "
       aria-labelledby="product-categories-heading"
     >
       <div className="layout-container px-5 text-center">
@@ -15,18 +21,32 @@ export function ProductCategoriesSection() {
 
           <h2
             id="product-categories-heading"
-            className="font-[var(--font-weight-bold)]
-            text-[length:var(--heading-4-size)]
-            leading-[var(--heading-4-line-height)]
-            md:text-[length:var(--heading-2-size)]
-            md:leading-[var(--heading-2-line-height)]
-            text-[var(--brand-black)]"
+            className="
+            text-[length:var(--product-categories-heading-size-mobile)]
+            leading-[var(--product-categories-heading-line-mobile)]
+            md:text-[length:var(--product-categories-heading-size-desktop)]
+            md:leading-[var(--product-categories-heading-line-desktop)]
+            font-[var(--product-categories-heading-weight-mobile)]
+            md:font-[var(--product-categories-heading-weight-desktop)]
+            text-[var(--product-categories-heading-color)]
+            "
           >
             Explore Our Extensive Range of Over
-            <span className="text-[var(--brand-primary)]"> 500+ Products</span>
+            <span className="text-[var(--product-categories-heading-highlight-color)]">
+              {" "}
+              500+ Products
+            </span>
           </h2>
 
-          <p className="body-large mt-5">
+          <p
+            className="
+              text-[length:var(--product-categories-text-size-mobile)]
+              leading-[var(--product-categories-text-line-mobile)]
+              font-[var(--product-categories-text-weight-mobile)]
+              text-[var(--product-categories-text-color)]
+              mt-5
+            "
+          >
             Discover our comprehensive portfolio of high-quality chemical
             products across multiple categories, serving diverse industries worldwide.
           </p>
@@ -36,13 +56,14 @@ export function ProductCategoriesSection() {
         {/* Categories Grid */}
         <div
           className="
-          mt-[30px]
-          md:mt-[60px]
+          mt-[var(--product-categories-gap-main-mobile)]
+          md:mt-[var(--product-categories-gap-main-desktop)]
           grid grid-cols-2
-          gap-x-5 gap-y-8
+          gap-x-[var(--product-categories-grid-gap-x-mobile)]
+          gap-y-[var(--product-categories-grid-gap-y-mobile)]
           md:grid-cols-3
           lg:grid-cols-5
-          lg:gap-y-14
+          lg:gap-y-[var(--product-categories-grid-gap-y-desktop)]
         "
         >
           {PRODUCT_CATEGORIES.map((category) => (
@@ -53,7 +74,7 @@ export function ProductCategoriesSection() {
         {/* Button */}
         <Button
           variant="primary"
-          href="/categories"
+          href="/products"
           className="inline-flex justify-center w-full max-w-[250px] mx-auto mt-8 md:mt-[60px]"
         >
           View all products

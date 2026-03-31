@@ -11,15 +11,16 @@ export function QuickInquiryHeader({
 }: HeaderProps) {
   return (
     <div>
-      <div className="flex flex-col gap-[30px] text-center md:text-left">
+      <div className="flex flex-col gap-[var(--industrial-applications-header-gap)] text-center md:text-left">
         <h1
           className="
-            text-[length:var(--heading-4-size)]
-            leading-[var(--heading-4-line-height)]
-            font-[var(--font-weight-bold)]
-            md:text-[length:var(--heading-2-size)]
-            md:leading-[var(--heading-2-line-height)]
-            text-[var(--brand-primary)]
+            text-[length:var(--industrial-applications-header-title-size-mobile)]
+            leading-[var(--industrial-applications-header-title-line-mobile)]
+            font-[var(--industrial-applications-header-title-weight-mobile)]
+            md:text-[length:var(--industrial-applications-header-title-size-desktop)]
+            md:leading-[var(--industrial-applications-header-title-line-desktop)]
+            md:font-[var(--industrial-applications-header-title-weight-desktop)]
+            text-[var(--industrial-applications-header-title-color)]
           "
         >
           {title}
@@ -29,10 +30,12 @@ export function QuickInquiryHeader({
           <p
             className="
               tracking-[-0.008em]
-              text-[var(--body-regular-size)]
-              leading-[var(--body-large-line-height)]
-              md:text-[var(--body-large-size)]
-              font-[var(--font-weight-semibold)]
+              text-[length:var(--industrial-applications-header-text-size-mobile)]
+              leading-[var(--industrial-applications-header-text-line-mobile)]
+              md:text-[length:var(--industrial-applications-header-text-size-desktop)]
+              md:leading-[var(--industrial-applications-header-text-line-desktop)]
+              font-[var(--industrial-applications-header-text-weight-mobile)]
+              md:font-[var(--industrial-applications-header-text-weight-desktop)]
             "
           >
             {subtitle}
