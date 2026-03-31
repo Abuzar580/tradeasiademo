@@ -15,7 +15,7 @@ export function FooterSocial({ socialLinks, className }: FooterSocialProps) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-primary-hover)] shadow-[var(--box-shadow)]"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--footer-icon-bg)] shadow-[var(--footer-shadow)]"
         >
           <SocialIcon name={s.icon} />
         </a>

@@ -1,0 +1,148 @@
+:root {
+  /* Section */
+  --industries-products-section-padding-top-mobile: var(--section-padding-40);
+  --industries-products-section-padding-bottom-mobile: var(--section-padding-40);
+  --industries-products-section-padding-top-desktop: var(--section-padding-70);
+  --industries-products-section-padding-bottom-desktop: var(--section-padding-70);
+
+  /* Grid */
+  --industries-products-grid-gap-mobile: var(--gap-30);
+  --industries-products-grid-gap-desktop: var(--gap-40);
+  --industries-products-grid-padding-bottom-mobile: var(--section-padding-32);
+  --industries-products-grid-intro-gap-mobile: var(--gap-20);
+  --industries-products-grid-intro-gap-desktop: var(--gap-25);
+
+  --industries-products-grid-title-size-mobile: var(--heading-4-size);
+  --industries-products-grid-title-size-desktop: var(--heading-3-size);
+  --industries-products-grid-title-line-mobile: var(--heading-4-line-height);
+  --industries-products-grid-title-line-desktop: var(--heading-3-line-height);
+  --industries-products-grid-title-weight-mobile: var(--font-weight-semibold);
+  --industries-products-grid-title-weight-desktop: var(--font-weight-semibold);
+  --industries-products-grid-title-color: var(--brand-black);
+
+  --industries-products-grid-subtitle-size-mobile: var(--body-small-size);
+  --industries-products-grid-subtitle-size-desktop: var(--body-regular-size);
+  --industries-products-grid-subtitle-line-mobile: var(--body-regular-line-height);
+  --industries-products-grid-subtitle-line-desktop: var(--body-regular-line-height);
+  --industries-products-grid-subtitle-weight-mobile: var(--font-weight-normal);
+  --industries-products-grid-subtitle-weight-desktop: var(--font-weight-normal);
+  --industries-products-grid-subtitle-color: var(--brand-black);
+
+  /* Sidebar */
+  --industries-products-sidebar-padding: var(--card-padding-25);
+  --industries-products-sidebar-radius: var(--gap-20);
+  --industries-products-sidebar-bg: var(--brand-white);
+  --industries-products-sidebar-shadow: var(--box-shadow);
+  --industries-products-sidebar-margin-x-mobile: var(--gap-12);
+
+  /* Sidebar Title */
+  --industries-products-sidebar-title-size-mobile: var(--body-regular-size);
+  --industries-products-sidebar-title-size-desktop: var(--body-medium-size);
+  --industries-products-sidebar-title-line-mobile: var(--body-regular-line-height);
+  --industries-products-sidebar-title-line-desktop: var(--body-medium-line-height);
+  --industries-products-sidebar-title-weight-mobile: var(--font-weight-semibold);
+  --industries-products-sidebar-title-weight-desktop: var(--font-weight-semibold);
+  --industries-products-sidebar-title-color: var(--brand-black);
+  --industries-products-sidebar-gap: var(--gap-20);
+
+  /* Sidebar Categories Menu List */
+  --industries-products-sidebar-menu-list-gap: var(--gap-12);
+  --industries-products-sidebar-menu-list-padding-x: var(--gap-16);
+  --industries-products-sidebar-menu-list-padding-y: var(--gap-14);
+  --industries-products-sidebar-menu-list-radius: var(--gap-12);
+  --industries-products-sidebar-menu-list-bg: var(--brand-neutral-surface-2);
+
+  --industries-products-sidebar-menu-title-color-active: var(--brand-primary);
+  --industries-products-sidebar-menu-title-color-inactive: var(--brand-black);
+  --industries-products-sidebar-menu-title-size: var(--body-small-size);
+  --industries-products-sidebar-menu-title-line: var(--body-small-line-height);
+  --industries-products-sidebar-menu-title-weight: var(--font-weight-medium);
+
+  --industries-products-sidebar-menu-badge-width: 26px;
+  --industries-products-sidebar-menu-badge-height: 26px;
+  --industries-products-sidebar-menu-badge-radius: var(--radius-card-full);
+  --industries-products-sidebar-menu-badge-color-active: var(--brand-white);
+  --industries-products-sidebar-menu-badge-bg-active: var(--brand-primary);
+  --industries-products-sidebar-menu-badge-color-inactive: var(--brand-neutral-text);
+  --industries-products-sidebar-menu-badge-bg-inactive: var(--brand-neutral-surface-2);
+  --industries-products-sidebar-menu-badge-size: var(--body-caption-size);
+  --industries-products-sidebar-menu-badge-line: var(--body-caption-line-height);
+  --industries-products-sidebar-menu-badge-weight: var(--font-weight-semibold);
+
+  /* Products List Tile */
+  --industries-products-list-gap-mobile: var(--gap-37);
+  --industries-products-list-gap-desktop: var(--gap-25);
+  --industries-products-list-title-size-mobile: var(--body-large-size);
+  --industries-products-list-title-size-desktop: var(--heading-4-size);
+  --industries-products-list-title-line-mobile: var(--heading-4-line-height);
+  --industries-products-list-title-line-desktop: var(--heading-4-line-height);
+  --industries-products-list-title-weight-mobile: var(--font-weight-semibold);
+  --industries-products-list-title-weight-desktop: var(--font-weight-semibold);
+  --industries-products-list-title-color: var(--brand-black);
+
+  --industries-products-sort-title-size: var(--body-small-size);
+  --industries-products-sort-title-line: var(--body-small-line-height);
+  --industries-products-sort-title-weight: var(--font-weight-medium);
+  --industries-products-sort-title-color: var(--brand-neutral-text);
+  --industries-products-sort-gap: var(--gap-14);
+
+  --industries-products-dropdown-width: 180px;
+  --industries-products-dropdown-bg: var(--brand-white);
+  --industries-products-dropdown-radius: var(--gap-12);
+  --industries-products-dropdown-padding-x: var(--gap-16);
+  --industries-products-dropdown-padding-y: var(--gap-10);
+  --industries-products-dropdown-padding-r: var(--gap-16);
+  --industries-products-dropdown-border-color: var(--brand-neutral-text);
+  --industries-products-dropdown-option-size: var(--body-small-size);
+  --industries-products-dropdown-option-line: var(--body-small-line-height);
+  --industries-products-dropdown-option-weight: var(--font-weight-medium);
+  --industries-products-dropdown-option-color: var(--brand-black);
+  --industries-products-dropdown-arrow-color: var(--brand-black);
+  --industries-products-dropdown-arrow-right: var(--gap-18);
+
+  /* Card (ProductsListTile) */
+  --industries-products-grid-card-gap-y-mobile: var(--gap-25);
+  --industries-products-grid-card-gap-y-desktop: var(--gap-30);
+  --industries-products-grid-card-gap-x: var(--gap-64);
+  --industries-products-grid-card-padding-x: var(--gap-35);
+  --industries-products-grid-card-bottom-radius: var(--gap-20);
+  --industries-products-grid-card-bg: var(--brand-white);
+  --industries-products-grid-card-shadow: var(--btn-shadow-soft);
+  --industries-products-grid-card-shadow-hover: var(--btn-shadow);
+
+  --industries-products-tile-badge-size: var(--body-caption-size);
+  --industries-products-tile-badge-line: var(--body-caption-line-height);
+  --industries-products-tile-badge-weight: var(--font-weight-semibold);
+  --industries-products-tile-badge-color: var(--brand-white);
+  --industries-products-tile-badge-bg: var(--brand-primary);
+  --industries-products-tile-badge-gap-top: var(--gap-16);
+  --industries-products-tile-badge-gap-left: var(--gap-16);
+  --industries-products-tile-badge-padding-y: var(--gap-5);
+  --industries-products-tile-badge-padding-x: var(--gap-12);
+  --industries-products-tile-badge-radius: var(--gap-14);
+
+  --industries-products-tile-bg: var(--brand-white);
+  --industries-products-tile-padding-top: var(--gap-20);
+  --industries-products-tile-padding-bottom: var(--gap-30);
+  --industries-products-tile-padding-x: var(--gap-20);
+  --industries-products-tile-gap: var(--gap-12);
+
+  --industries-products-tile-title-size-mobile: var(--body-regular-size);
+  --industries-products-tile-title-size-desktop: var(--body-medium-size);
+  --industries-products-tile-title-line-mobile: var(--body-regular-line-height);
+  --industries-products-tile-title-line-desktop: var(--body-regular-line-height);
+  --industries-products-tile-title-weight-mobile: var(--font-weight-semibold);
+  --industries-products-tile-title-weight-desktop: var(--font-weight-semibold);
+  --industries-products-tile-title-color: var(--brand-black);
+
+  --industries-products-tile-subtitle-size: var(--body-caption-size);
+  --industries-products-tile-subtitle-line: var(--body-caption-line-height);
+  --industries-products-tile-subtitle-color: var(--brand-neutral-text);
+  --industries-products-tile-subtitle-weight: var(--font-weight-medium);
+  --industries-products-tile-subtitle-value-color: var(--brand-black);
+  --industries-products-tile-subtitle-value-weight: var(--font-weight-semibold);
+
+  /* CTA button overrides inside tiles */
+  --industries-products-cta-text-color: var(--brand-white);
+  --industries-products-cta-padding-y: var(--gap-12);
+}

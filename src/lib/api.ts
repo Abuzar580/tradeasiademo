@@ -98,7 +98,12 @@ export async function apiFetch<T>(
 function getFallbackTenantConfig(tenantId: string): TenantConfig {
   return {
     tenantId,
-    layoutVariant: "layout-one",
+    headerVariant: "header-one",
+    footerVariant: "footer-one",
+
+    styleguide: {
+      vars: {},
+    },
 
     branding: {
       colors: {

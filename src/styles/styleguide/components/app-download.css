@@ -1,0 +1,34 @@
+:root {
+  --app-download-padding-top-mobile: var(--section-padding-48);
+  --app-download-padding-bottom-mobile: var(--section-padding-48);
+
+  --app-download-padding-top-desktop: var(--section-padding-100);
+  --app-download-padding-bottom-desktop: var(--section-padding-100);
+
+  --app-download-bg-color: var(--brand-neutral-surface);
+
+  /* heading */
+  --app-download-heading-size-mobile: var(--heading-3-size);
+  --app-download-heading-size-desktop: var(--heading-2-size);
+  --app-download-heading-line-mobile: var(--heading-3-line-height);
+  --app-download-heading-line-desktop: var(--heading-2-line-height);
+  --app-download-heading-weight-mobile: var(--font-weight-bold);
+  --app-download-heading-weight-desktop: var(--font-weight-bold);
+  --app-download-heading-color: var(--brand-black);
+  --app-download-heading-highlight-color: var(--brand-primary);
+
+  /* text */
+  --app-download-text-size-mobile: var(--body-large-size);
+  --app-download-text-size-desktop: var(--body-large-size);
+  --app-download-text-line-mobile: var(--body-large-line-height);
+  --app-download-text-line-desktop: var(--body-large-line-height);
+  --app-download-text-weight-mobile: var(--font-weight-semibold);
+  --app-download-text-weight-desktop: var(--font-weight-semibold);
+  --app-download-text-color: var(--brand-neutral-text);
+
+  /* gaps */
+  --app-download-gap-main-mobile: var(--gap-64);
+  --app-download-gap-main-desktop: var(--gap-64);
+  --app-download-gap-inner-mobile: var(--gap-16);
+  --app-download-gap-inner-desktop: var(--gap-16);
+}

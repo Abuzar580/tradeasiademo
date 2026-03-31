@@ -1,0 +1,65 @@
+:root {
+  /* Spacing */
+  --product-categories-padding-top-mobile: var(--section-padding-60);
+  --product-categories-padding-bottom-mobile: var(--section-padding-40);
+
+  --product-categories-padding-top-desktop: var(--section-padding-80);
+  --product-categories-padding-bottom-desktop: var(--section-padding-60);
+
+  /* Background */
+  --product-categories-bg-color: var(--brand-white);
+
+  /* Heading */
+  --product-categories-heading-size-mobile: var(--heading-4-size);
+  --product-categories-heading-size-desktop: var(--heading-2-size);
+  --product-categories-heading-line-mobile: var(--heading-4-line-height);
+  --product-categories-heading-line-desktop: var(--heading-2-line-height);
+  --product-categories-heading-weight-mobile: var(--font-weight-bold);
+  --product-categories-heading-weight-desktop: var(--font-weight-bold);
+  --product-categories-heading-color: var(--brand-black);
+
+  /* Highlight */
+  --product-categories-heading-highlight-color: var(--brand-primary);
+
+  /* Subtitle / text */
+  --product-categories-text-size-mobile: var(--body-large-size);
+  --product-categories-text-line-mobile: var(--body-large-line-height);
+  --product-categories-text-weight-mobile: var(--font-weight-semibold);
+  --product-categories-text-color: var(--brand-neutral-text);
+
+  /* Main gap (heading -> grid top) */
+  --product-categories-gap-main-mobile: var(--gap-30);
+  --product-categories-gap-main-desktop: var(--gap-60);
+
+  /* Grid gap */
+  --product-categories-grid-gap-x-mobile: var(--gap-20);
+  --product-categories-grid-gap-y-mobile: var(--gap-32);
+  --product-categories-grid-gap-y-desktop: var(--gap-56);
+
+  /* Card radius */
+  --product-categories-card-radius-mobile: var(--radius-card-sm);
+  --product-categories-card-radius-desktop: var(--radius-card-md);
+
+  /* Card text: title */
+  --product-categories-card-title-size-mobile: var(--body-medium-size);
+  --product-categories-card-title-size-desktop: var(--body-medium-size);
+  --product-categories-card-title-line-mobile: var(--body-medium-line-height);
+  --product-categories-card-title-line-desktop: var(--body-medium-line-height);
+  --product-categories-card-title-weight-mobile: var(--font-weight-bold);
+  --product-categories-card-title-weight-desktop: var(--font-weight-bold);
+  --product-categories-card-title-color: var(--brand-white);
+
+  /* Card text: description */
+  --product-categories-card-desc-size-mobile: var(--body-small-size);
+  --product-categories-card-desc-size-desktop: var(--body-small-size);
+  --product-categories-card-desc-line-mobile: var(--body-small-line-height);
+  --product-categories-card-desc-line-desktop: var(--body-small-line-height);
+  --product-categories-card-desc-weight-mobile: var(--font-weight-semibold);
+  --product-categories-card-desc-weight-desktop: var(--font-weight-semibold);
+  --product-categories-card-desc-color: rgba(var(--brand-white-rgb), 0.8);
+
+  /* Card overlay / hover */
+  --product-categories-card-overlay-black-rgb: var(--brand-black-rgb);
+  --product-categories-card-hover-shadow-color: var(--brand-primary-hover);
+}
+

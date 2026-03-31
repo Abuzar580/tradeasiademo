@@ -9,7 +9,7 @@ export function FooterOne() {
   const { informationLinks, socialLinks, company, copyright } = footerOneConfig;
 
   return (
-    <footer className="bg-[var(--brand-primary)] text-[var(--brand-white)]">
+    <footer className="bg-[var(--footer-bg)] text-[var(--footer-text-color)]">
       <div className="mx-auto w-full layout-container p-8 md:p-0">
         <div className="hidden md:flex md:px-14 md:pt-15">
           <Image
@@ -20,7 +20,7 @@ export function FooterOne() {
             className="brightness-0 invert"
           />
         </div>
-        <div className="flex flex-col gap-11 md:flex-row md:gap-12 md:mt-7 lg:gap-16 md:px-14">
+        <div className="flex flex-col gap-[var(--footer-main-gap-mobile)] md:flex-row md:gap-[var(--footer-main-gap-tablet)] md:mt-7 lg:gap-[var(--footer-main-gap-desktop)] md:px-14">
           <FooterCompanyInfo company={company} socialLinks={socialLinks} />
           <FooterLinks links={informationLinks} />
           <FooterApps />

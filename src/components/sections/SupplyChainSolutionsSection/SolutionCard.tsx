@@ -18,25 +18,25 @@ export function SolutionCard({
   return (
     <Link
       href={href}
-      className="group relative flex h-full flex-col rounded-[30px] bg-white p-[30px] md:p-10 shadow-[var(--btn-shadow-soft)]
+      className="group relative flex h-full flex-col rounded-[var(--supply-chain-solutions-card-radius)] bg-[var(--supply-chain-solutions-card-bg)] p-[var(--supply-chain-solutions-card-padding-mobile)] md:p-[var(--supply-chain-solutions-card-padding-desktop)] shadow-[var(--supply-chain-solutions-card-shadow)]
       transition-[background-color,box-shadow] duration-300 ease-in-out
-      hover:bg-[var(--brand-primary)]"
+      hover:bg-[var(--supply-chain-solutions-card-bg-hover)]"
     >
       {/* Icon */}
       <div
-        className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--brand-primary)]
-        transition-colors duration-300 group-hover:bg-white"
+        className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--supply-chain-solutions-card-icon-bg)]
+        transition-colors duration-300 group-hover:bg-[var(--supply-chain-solutions-card-icon-bg-hover)]"
       >
         <Icon
-          className="h-10 w-10 text-[var(--brand-white)]
-          transition-colors duration-300 group-hover:text-[var(--brand-primary)]"
+          className="h-10 w-10 text-[var(--supply-chain-solutions-card-icon-color)]
+          transition-colors duration-300 group-hover:text-[var(--supply-chain-solutions-card-icon-color-hover)]"
         />
       </div>
 
       {/* Title */}
       <h3
-        className="heading-4 mt-7 text-[var(--brand-primary)]
-        transition-colors duration-300 group-hover:text-white"
+        className="heading-4 mt-7 text-[var(--supply-chain-solutions-card-title-color)]
+        transition-colors duration-300 group-hover:text-[var(--supply-chain-solutions-card-title-color-hover)]"
       >
         {title}
       </h3>
@@ -44,15 +44,15 @@ export function SolutionCard({
       {/* Description */}
       <p
         className="body-regular mt-4
-        transition-colors duration-300 group-hover:text-white"
+        transition-colors duration-300 group-hover:text-[var(--supply-chain-solutions-card-text-color-hover)]"
       >
         {description}
       </p>
 
       {/* CTA */}
       <div
-        className="body-regular mt-auto pt-7 text-[var(--brand-primary)]
-        transition-colors duration-300 group-hover:text-white flex items-center"
+        className="body-regular mt-auto pt-7 text-[var(--supply-chain-solutions-card-cta-color)]
+        transition-colors duration-300 group-hover:text-[var(--supply-chain-solutions-card-cta-color-hover)] flex items-center"
       >
         Learn More
         <ArrowIcon className="ml-3 h-[10px] w-[5px]" />

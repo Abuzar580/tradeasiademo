@@ -1,0 +1,52 @@
+:root {
+  /* Section gap */
+  --hero-gap-mobile: var(--gap-32);
+  --hero-gap-desktop: var(--gap-40);
+
+  /* Section padding */
+  --hero-padding-top-mobile: var(--section-padding-100);
+  --hero-padding-bottom-mobile: var(--section-padding-100);
+  --hero-industry-padding-top-mobile: var(--section-padding-110);
+  --hero-industry-padding-top-desktop: var(--section-padding-110);
+  --hero-industry-padding-bottom-mobile: var(--section-padding-110);
+  --hero-industry-padding-bottom-desktop: var(--section-padding-110);
+
+  /* Content card */
+  --hero-card-gap: var(--gap-16);
+  --hero-card-padding-x-mobile: var(--gap-12);
+  --hero-card-padding-y-mobile: var(--gap-40);
+  --hero-card-bg: var(--brand-primary);
+
+  /* Heading */
+  --hero-heading-size-mobile: var(--heading-4-size);
+  --hero-heading-size-desktop: var(--heading-2-size);
+  --hero-heading-line-mobile: var(--heading-4-line-height);
+  --hero-heading-line-desktop: var(--heading-2-line-height);
+  --hero-heading-weight-mobile: var(--font-weight-medium);
+  --hero-heading-weight-desktop: var(--font-weight-medium);
+  --hero-heading-color: var(--brand-white);
+
+  /* Text */
+  --hero-text-size-mobile: var(--body-regular-size);
+  --hero-text-size-desktop: var(--heading-4-size);
+  --hero-text-line-mobile: var(--body-regular-line-height);
+  --hero-text-line-desktop: var(--body-regular-line-height);
+  --hero-text-weight-mobile: var(--font-weight-medium);
+  --hero-text-weight-desktop: var(--font-weight-medium);
+  --hero-text-color: var(--brand-white);
+
+  /* Gradient */
+  --hero-gradient-start: var(--brand-primary);
+
+  /* Badge */
+  --hero-badge-text-size: var(--body-caption-size);
+  --hero-badge-text-line: var(--body-caption-line-height);
+  --hero-badge-text-weight: var(--font-weight-semibold);
+  --hero-badge-text-color: var(--brand-primary);
+  --hero-badge-text-bg: var(--brand-neutral-surface-2);
+  --hero-badge-text-radius: var(--gap-20);
+  --hero-badge-text-padding-top: var(--gap-6);
+  --hero-badge-text-padding-bottom: var(--gap-4);
+  --hero-badge-text-padding-x: var(--gap-12);
+
+}

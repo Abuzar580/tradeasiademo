@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/Button";
 
 export type FeedbackSectionProps = {
@@ -19,41 +20,108 @@ export function FeedbackSection({
   backgroundImage,
 }: FeedbackSectionProps) {
   return (
-    <section className="relative py-16 md:py-20 text-center md:text-left">
+    <section
+      className="
+        relative
+        pt-[var(--feedback-padding-top-mobile)]
+        pb-[var(--feedback-padding-bottom-mobile)]
+        md:pt-[var(--feedback-padding-top-desktop)]
+        md:pb-[var(--feedback-padding-bottom-desktop)]
+        text-center
+        md:text-left
+      "
+      style={{
+        backgroundColor: "var(--feedback-bg-color)",
+      }}
+    >
       {backgroundImage && (
         <div
-          className="absolute inset-0 -z-10 bg-cover bg-left bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          className="absolute inset-0 bg-cover bg-left bg-no-repeat"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+          }}
         />
       )}
-      <div className="relative px-5 layout-container flex flex-col gap-10 md:gap-12">
-          <div className="flex flex-col gap-3 md:gap-5">
-            <h2
-              className="text-[length:var(--heading-5-size)] leading-[var(--heading-3-line-height)] text-[var(--brand-white)] font-[var(--font-weight-bold)]
-              md:text-[length:var(--heading-2-size)] md:leading-[var(--heading-2-line-height)]"
-            >
-              {headingPrefix}
-              <span
-                className="block text-[var(--brand-primary)] text-[length:var(--heading-1-size)] leading-[var(--heading-1-line-height)]
-                md:text-[length:var(--heading-2-size)] md:leading-[var(--heading-2-line-height)] md:ml-[15%] drop-shadow-[0_4px_4px_rgba(var(--brand-white-rgb),0.34)]"
-              >
-                {headingHighlight}
-              </span>
-            </h2>
-            <p className="text-[length:var(--body-medium-size)] leading-[var(--body-large-line-height)] font-[var(--font-weight-semibold)] text-[var(--brand-white)]
-              md:text-[length:var(--heading-4-size)]">
-              {subtitle}
-            </p>
-          </div>
 
-          <Button
-            className="max-w-[285px] mx-auto md:mx-0"
-            variant="outlined"
-            href={buttonHref}
+      <div
+        className="
+          relative
+          px-5
+          layout-container
+          flex
+          flex-col
+          gap-[var(--feedback-gap-main-mobile)]
+          md:gap-[var(--feedback-gap-main-desktop)]
+        "
+      >
+        <div
+          className="
+            flex
+            flex-col
+            gap-[var(--feedback-gap-inner-mobile)]
+            md:gap-[var(--feedback-gap-inner-desktop)]
+          "
+        >
+          <h2
+            className="
+              font-[var(--feedback-heading-weight-mobile)]
+              text-[length:var(--feedback-heading-size-mobile)]
+              leading-[var(--feedback-heading-line-mobile)]
+
+              md:font-[var(--feedback-heading-weight-desktop)]
+              md:text-[length:var(--feedback-heading-size-desktop)]
+              md:leading-[var(--feedback-heading-line-desktop)]
+            "
           >
-            {buttonText}
-          </Button>
+            <span className="text-[var(--feedback-heading-prefix-color)]">
+              {headingPrefix}
+            </span>
+
+            <span
+              className="
+                block
+                text-[var(--feedback-heading-highlight-color)]
+
+                text-[length:var(--feedback-highlight-size-mobile)]
+                leading-[var(--feedback-highlight-line-mobile)]
+
+                md:text-[length:var(--feedback-highlight-size-desktop)]
+                md:leading-[var(--feedback-highlight-line-desktop)]
+
+                md:ml-[var(--feedback-highlight-offset-desktop)]
+
+                drop-shadow-[0_4px_4px_var(--feedback-highlight-shadow-color)]
+              "
+            >
+              {headingHighlight}
+            </span>
+          </h2>
+
+          <p
+            className="
+              text-[var(--feedback-text-color)]
+
+              font-[var(--feedback-text-weight-mobile)]
+              text-[length:var(--feedback-text-size-mobile)]
+              leading-[var(--feedback-text-line-mobile)]
+
+              md:font-[var(--feedback-text-weight-desktop)]
+              md:text-[length:var(--feedback-text-size-desktop)]
+              md:leading-[var(--feedback-text-line-desktop)]
+            "
+          >
+            {subtitle}
+          </p>
         </div>
+
+        <Button
+          className="max-w-[285px] mx-auto md:mx-0"
+          variant="outlined"
+          href={buttonHref}
+        >
+          {buttonText}
+        </Button>
+      </div>
     </section>
   );
 }

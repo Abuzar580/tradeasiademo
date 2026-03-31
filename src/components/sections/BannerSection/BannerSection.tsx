@@ -17,7 +17,9 @@ export function BannerSection({
   buttonHref,
 }: BannerSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-[var(--brand-neutral-surface-2)] pt-[120px] pb-[60px] md:pt-[150px] lg:pt-[190px]">
+    <section
+      className="relative overflow-hidden bg-[var(--banner-bg-color)] pt-[var(--banner-padding-top-mobile)] pb-[var(--banner-padding-bottom-mobile)] md:pb-[var(--banner-padding-bottom-desktop)] md:pt-[var(--banner-padding-top-desktop)] lg:pt-[var(--banner-padding-top-lg)]"
+    >
 
       {/* Decorations */}
       <Image
@@ -36,32 +38,40 @@ export function BannerSection({
         className="pointer-events-none absolute left-0 top-[-80px] opacity-70 rotate-270"
       />
 
-      <div className="layout-container px-5 lg:gap-[51px] grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
+      <div
+        className="layout-container px-5 grid grid-cols-1 md:grid-cols-2 gap-[var(--banner-gap-main-mobile)] md:gap-[var(--banner-gap-main-desktop)] items-center relative"
+      >
 
         {/* Text */}
-        <div className="flex flex-col gap-[30px] text-center md:text-left">
+        <div
+          className="flex flex-col gap-[var(--banner-gap-inner-mobile)] md:gap-[var(--banner-gap-inner-desktop)] text-center md:text-left"
+        >
           <h1
             className="
-            text-[length:var(--heading-3-size)]
-            leading-[var(--heading-3-line-height)]
-            font-[var(--font-weight-bold)]
-            md:text-[length:var(--heading-2-size)]
-            md:leading-[var(--heading-2-line-height)]
-            text-[var(--brand-black)]
+            text-[length:var(--banner-heading-size-mobile)]
+            leading-[var(--banner-heading-line-mobile)]
+            font-[var(--banner-heading-weight-mobile)]
+            md:text-[length:var(--banner-heading-size-desktop)]
+            md:leading-[var(--banner-heading-line-desktop)]
+            md:font-[var(--banner-heading-weight-desktop)]
+            text-[var(--banner-heading-color)]
           "
           >
             {title}
-            <span className="text-[var(--brand-primary)]"> {highlight}</span>
+            <span className="text-[var(--banner-heading-highlight-color)]"> {highlight}</span>
           </h1>
 
           {subtitle && (
             <p
               className="
               tracking-[-0.008em]
-              text-[var(--body-regular-size)]
-              leading-[var(--body-large-line-height)]
-              md:text-[var(--body-large-size)]
-              font-[var(--font-weight-semibold)]
+              text-[length:var(--banner-text-size-mobile)]
+              leading-[var(--banner-text-line-mobile)]
+              md:text-[length:var(--banner-text-size-desktop)]
+              md:leading-[var(--banner-text-line-desktop)]
+              font-[var(--banner-text-weight-mobile)]
+              md:font-[var(--banner-text-weight-desktop)]
+              text-[var(--banner-text-color)]
             "
             >
               {subtitle}

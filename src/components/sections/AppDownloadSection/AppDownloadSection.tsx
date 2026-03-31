@@ -6,26 +6,83 @@ const DESCRIPTION =
 
 export function AppDownloadSection() {
   return (
-    <section className="relative py-12 md:py-[100px]">
+    <section
+      className="
+        relative
+        bg-[var(--app-download-bg-color)]
+        pt-[var(--app-download-padding-top-mobile)]
+        pb-[var(--app-download-padding-bottom-mobile)]
+        md:pt-[var(--app-download-padding-top-desktop)]
+        md:pb-[var(--app-download-padding-bottom-desktop)]
+      "
+    >
       <div
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/neturalBgImage.png)" }}
       />
-      <div className="relative px-5 flex layout-container flex-col items-center md:flex-row gap-[50px]" style={{ textAlign: "center" }}>
+      <div
+        className="
+          relative
+          px-5
+          flex
+          layout-container
+          flex-col
+          items-center
+          md:flex-row
+          gap-[var(--app-download-gap-main-mobile)]
+          md:gap-[var(--app-download-gap-main-desktop)]
+          text-center
+        "
+      >
         {/* Left: Text + buttons */}
         <div className="flex flex-1 md:flex-[3] flex-col items-center">
           <h2
-            className="text-[32px] leading-[44.8px] md:text-[46px] md:leading-[62.1px] font-bold text-[var(--brand-black)]"
+            className="
+              text-[length:var(--app-download-heading-size-mobile)]
+              leading-[var(--app-download-heading-line-mobile)]
+              md:text-[length:var(--app-download-heading-size-desktop)]
+              md:leading-[var(--app-download-heading-line-desktop)]
+              font-[var(--app-download-heading-weight-mobile)]
+              md:font-[var(--app-download-heading-weight-desktop)]
+              text-[var(--app-download-heading-color)]
+            "
           >
             Introducing our NEW
-            <span className="block font-bold text-[var(--brand-primary)]">
+            <span
+              className="
+                block
+                font-[var(--app-download-heading-weight-mobile)]
+                md:font-[var(--app-download-heading-weight-desktop)]
+                text-[var(--app-download-heading-highlight-color)]
+              "
+            >
               Chemicals B2B Mobile App
             </span>
           </h2>
-          <p className="text-[length:var(--body-regular-size)] line-height:var(--body-large-line-height) font-[weight:var(--font-weight-semibold)] mt-4 max-w-[600px] text-[20px] md:text-[length:var(--body-large-size)]">
+          <p
+            className="
+              text-[length:var(--app-download-text-size-mobile)]
+              leading-[var(--app-download-text-line-mobile)]
+              font-[var(--app-download-text-weight-mobile)]
+              md:font-[var(--app-download-text-weight-desktop)]
+              text-[var(--app-download-text-color)]
+              mt-4
+              max-w-[600px]
+              md:text-[length:var(--app-download-text-size-desktop)]
+              md:leading-[var(--app-download-text-line-desktop)]
+            "
+          >
             {DESCRIPTION}
           </p>
-          <div className="pt-7 flex items-center gap-4">
+          <div
+            className="
+              pt-7
+              flex
+              items-center
+              gap-[var(--app-download-gap-inner-mobile)]
+              md:gap-[var(--app-download-gap-inner-desktop)]
+            "
+          >
             <Link href="#" className="flex h-10 items-center">
               <Image
                 src="/AppStoreIcon.svg"

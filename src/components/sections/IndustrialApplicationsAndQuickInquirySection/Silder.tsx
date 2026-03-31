@@ -17,20 +17,20 @@ export default function Slider() {
     const mobileCards = INDUSTRIES.slice(0, 10);
 
     return (
-        <div className="w-full h-full md:rounded-[40px] md:bg-[var(--brand-white)] px-0 py-0 md:px-[25px] md:py-[32px] md:shadow-[var(--box-shadow)] flex flex-col gap-[30px]">
+        <div className="w-full h-full md:rounded-[var(--industrial-applications-slider-radius-desktop)] md:bg-[var(--industrial-applications-slider-bg)] px-0 py-0 md:px-[var(--industrial-applications-slider-padding-x)] md:py-[var(--industrial-applications-slider-padding-y)] md:shadow-[var(--industrial-applications-slider-shadow)] flex flex-col gap-[var(--industrial-applications-slider-gap)]">
 
             {/* MOBILE GRID */}
-            <div className="grid grid-cols-2 gap-x-[22px] gap-y-[16px] md:hidden">
+            <div className="grid grid-cols-2 gap-x-[var(--industrial-applications-slider-mobile-grid-gap-x)] gap-y-[var(--industrial-applications-slider-mobile-grid-gap-y)] md:hidden">
                 {mobileCards.map((industry, index) => (
                     <Link
                         key={index}
                         href="#"
-                        className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-[15px] py-[24px] gap-2"
+                        className="flex items-center justify-between rounded-[var(--industrial-applications-slider-card-radius)] bg-[var(--industrial-applications-slider-card-bg)] px-[var(--industrial-applications-slider-card-padding-x)] py-[var(--industrial-applications-slider-card-padding-y)] gap-[var(--industrial-applications-slider-card-gap)]"
                     >
-                        <span className="body-regular text-[var(--brand-primary)]">
+                        <span className="body-regular text-[var(--industrial-applications-slider-card-text-color)]">
                             {industry}
                         </span>
-                        <ArrowIcon className="w-2 h-3 text-[var(--brand-primary)] flex-shrink-0" />
+                        <ArrowIcon className="w-2 h-3 text-[var(--industrial-applications-slider-card-icon-color)] flex-shrink-0" />
                     </Link>
                 ))}
             </div>
@@ -45,7 +45,7 @@ export default function Slider() {
                         <ArrowIcon className="w-2 h-3 rotate-180" />
                     </Button>
 
-                    <div className="custom-swiper-pagination !w-auto flex items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[42px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-primary)]" />
+                    <div className="custom-swiper-pagination !w-auto flex items-center justify-center gap-[var(--industrial-applications-slider-pagination-gap)] [&_.swiper-pagination-bullet-active]:!w-[42px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--industrial-applications-slider-pagination-bullet-active-color)]" />
 
                     <Button
                         variant="primary"
@@ -66,7 +66,7 @@ export default function Slider() {
                         clickable: true,
                         el: ".custom-swiper-pagination",
                         renderBullet: (index, className) =>
-                            `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--brand-neutral-surface-3)] cursor-pointer transition-all duration-300"></span>`,
+                            `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--industrial-applications-slider-pagination-bullet-color)] cursor-pointer transition-all duration-300"></span>`,
                     }}
                     grid={{
                         rows: 2,
@@ -96,18 +96,18 @@ export default function Slider() {
                         <SwiperSlide key={index}>
                             <Link
                                 href="#"
-                                className="flex items-center justify-between rounded-[20px] bg-[var(--brand-neutral-surface-2)] px-[15px] py-[24px] transition gap-4"
+                                className="flex items-center justify-between rounded-[var(--industrial-applications-slider-card-radius)] bg-[var(--industrial-applications-slider-card-bg)] px-[var(--industrial-applications-slider-card-padding-x)] py-[var(--industrial-applications-slider-card-padding-y)] transition gap-[var(--industrial-applications-slider-desktop-card-gap)]"
                             >
-                                <div className="flex items-center gap-3">
-                                    <span className="hidden md:flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[var(--brand-primary)] text-[var(--brand-white)]">
+                                <div className="flex items-center gap-[var(--industrial-applications-slider-desktop-card-inner-gap)]">
+                                    <span className="hidden md:flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[var(--industrial-applications-slider-desktop-icon-bg)] text-[var(--industrial-applications-slider-desktop-icon-color)]">
                                         <BagIcon className="h-6 w-6" />
                                     </span>
-                                    <span className="body-regular text-[var(--brand-primary)]">
+                                    <span className="body-regular text-[var(--industrial-applications-slider-card-text-color)]">
                                         {industry}
                                     </span>
                                 </div>
 
-                                <ArrowIcon className="w-2 h-3 text-[var(--brand-primary)] flex-shrink-0" />
+                                <ArrowIcon className="w-2 h-3 text-[var(--industrial-applications-slider-card-icon-color)] flex-shrink-0" />
                             </Link>
                         </SwiperSlide>
                     ))}
@@ -115,7 +115,7 @@ export default function Slider() {
             </div>
 
             <div className="flex justify-center">
-                <Button variant="primary" className="px-[30px]!">
+                <Button variant="primary" href="/industries" className="px-[30px]!">
                     SEE MORE INDUSTRIES
                 </Button>
             </div>

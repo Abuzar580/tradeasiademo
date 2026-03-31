@@ -1,0 +1,12 @@
+:root {
+  --pagination-link-weight: var(--font-weight-normal);
+  --pagination-bg-active: var(--brand-black);
+  --pagination-color-active: var(--brand-white);
+  --pagination-color: var(--brand-black);
+  --pagination-muted: var(--brand-neutral-text);
+  --pagination-gap-desktop: var(--gap-8);
+  --pagination-padding-top-desktop: var(--section-padding-25);
+  --pagination-caption-size-mobile: var(--body-caption-size);
+  --pagination-caption-size-desktop: var(--body-small-size);
+}
+

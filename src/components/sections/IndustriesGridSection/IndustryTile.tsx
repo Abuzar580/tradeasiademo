@@ -19,7 +19,7 @@ export function IndustryTile({ industry, isCenteredOnLastRow }: IndustryTileProp
     <Link
       href={industry.href}
       className={
-        "group relative block overflow-hidden rounded-[25px] bg-[var(--brand-neutral-surface-2)] shadow-[var(--btn-shadow-soft)]" +
+        "group relative block overflow-hidden rounded-[var(--industries-grid-card-radius)] bg-[var(--industries-grid-card-bg)] shadow-[var(--industries-grid-card-shadow)]" +
         (isCenteredOnLastRow ? " md:col-span-1 md:col-start-2" : "")
       }
     >
@@ -41,18 +41,18 @@ export function IndustryTile({ industry, isCenteredOnLastRow }: IndustryTileProp
             items-center
             justify-between
             w-full
-            bg-[color-mix(in_srgb,var(--brand-primary)_50%,transparent)]
-            pr-5
-            pl-6
-            py-7
-            gap-3
+            bg-[var(--industries-grid-overlay-bg)]
+            pr-[var(--industries-grid-overlay-padding-right)]
+            pl-[var(--industries-grid-overlay-padding-left)]
+            py-[var(--industries-grid-overlay-padding-y)]
+            gap-[var(--industries-grid-overlay-gap)]
           "
         >
-          <span className="body-large text-[var(--brand-white)]">
+          <span className="body-large text-[var(--industries-grid-title-color)]">
             {industry.name}
           </span>
           {industry.productCount !== undefined && (
-            <span className="body-small text-[var(--brand-primary)] uppercase whitespace-nowrap px-3 py-2 bg-[var(--brand-white)] rounded-[20px]">
+            <span className="body-small text-[var(--industries-grid-badge-text-color)] uppercase whitespace-nowrap px-[var(--industries-grid-badge-padding-x)] py-[var(--industries-grid-badge-padding-y)] bg-[var(--industries-grid-badge-bg)] rounded-[var(--industries-grid-badge-radius)]">
               {industry.productCount} Products
             </span>
           )}

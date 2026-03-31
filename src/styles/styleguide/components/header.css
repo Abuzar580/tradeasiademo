@@ -1,0 +1,77 @@
+:root {
+  /* ── Bar (HeaderOne) ── */
+  --header-bar-bg: var(--brand-primary);
+  --header-bar-radius-mobile: var(--radius-header);
+  --header-bar-radius-desktop: var(--radius-header-desktop);
+  --header-actions-gap: var(--gap-20);
+
+  /* ── Nav links (HeaderNav) ── */
+  --header-nav-gap: var(--gap-25);
+  --header-link-color: var(--brand-white);
+  --header-link-size: var(--body-caption-size);
+  --header-link-weight: var(--font-weight-bold);
+  --header-link-line: var(--nav-item-line-height);
+  --header-link-tracking: var(--common-letter-spacing);
+  --header-link-icon-gap: var(--gap-4);
+
+  /* ── Dropdown (HeaderNav) ── */
+  --header-dropdown-bg: var(--brand-neutral-surface);
+  --header-dropdown-shadow: var(--btn-shadow-soft);
+  --header-dropdown-item-color: var(--brand-neutral-text);
+  --header-dropdown-item-hover: var(--brand-neutral-surface-2);
+  --header-dropdown-item-weight: var(--font-weight-normal);
+
+  /* ── Search button (HeaderSearchButton) ── */
+  --header-search-btn-bg: var(--brand-primary-deep);
+
+  /* ── Mobile drawer (MobileHamburgerDrawer) ── */
+  --header-drawer-bg: var(--brand-primary-hover);
+  --header-drawer-surface-color: var(--brand-neutral-surface-3);
+  --header-drawer-link-color: var(--brand-white);
+  --header-drawer-children-bg: var(--brand-primary);
+  --header-drawer-child-weight: var(--font-weight-medium);
+  --header-drawer-border-color: var(--brand-neutral-surface);
+  --header-drawer-bottom-gap: var(--gap-20);
+  --header-drawer-btn-gap: var(--gap-12);
+
+  /* ── Desktop panel (DesktopHamburgerDrawer) ── */
+  --header-panel-bg: var(--brand-neutral-surface);
+  --header-panel-section-bg: var(--brand-neutral-surface-3);
+  --header-panel-text-color: var(--brand-black);
+  --header-panel-muted-color: var(--brand-neutral-text);
+  --header-panel-header-gap: var(--gap-8);
+  --header-panel-toggle-padding: var(--control-padding-4);
+  --header-panel-lang-gap: var(--gap-10);
+  --header-panel-item-size: var(--body-regular-size);
+  --header-panel-item-gap: var(--gap-12);
+  --header-panel-domain-weight: var(--font-weight-normal);
+
+  /* ── Search overlay (SearchOverlay) ── */
+  --header-search-card-bg: var(--brand-neutral-surface-2);
+  --header-search-card-border: rgb(var(--brand-white-rgb) / 0.15);
+  --header-search-label-color: var(--brand-black);
+  --header-search-text-size: var(--body-small-size);
+  --header-search-form-gap: var(--gap-16);
+  --header-search-input-color: var(--brand-white);
+  --header-search-input-bg-mobile: var(--brand-primary-hover);
+  --header-search-input-bg-desktop: var(--brand-primary);
+  --header-search-icon-bg: var(--brand-primary-deep);
+  --header-search-desktop-btn-bg: var(--brand-primary);
+  --header-search-desktop-btn-hover: var(--brand-primary-hover);
+  --header-search-desktop-btn-weight: var(--font-weight-semibold);
+  --header-search-desktop-btn-color: var(--brand-white);
+
+  /* ── Modals (LanguageModal, WebsiteExploreModal) ── */
+  --header-modal-bg: var(--brand-neutral-surface);
+  --header-modal-shadow: var(--btn-shadow-soft);
+  --header-modal-title-color: var(--brand-black);
+  --header-modal-lang-grid-gap: var(--gap-10);
+  --header-modal-lang-item-gap: var(--gap-12);
+  --header-modal-primary: var(--brand-primary);
+  --header-modal-option-color: var(--brand-white);
+  --header-modal-option-active-bg: var(--brand-primary-hover);
+  --header-modal-explore-grid-gap: var(--gap-8);
+  --header-modal-explore-item-gap: var(--gap-12);
+  --header-modal-flag-border: var(--brand-neutral-surface-3);
+  --header-modal-flag-bg: var(--brand-neutral-surface-2);
+}

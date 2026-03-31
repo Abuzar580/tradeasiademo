@@ -15,8 +15,7 @@ export function HomeLayoutOne() {
       <BannerSection
         title="Explore TradeAsia Indonesia to discover valuable"
         highlight="insights and information"
-        subtitle="Mira los planes, dale seguimientos a todo el progreso y mantén las conversaciones laborales desde solo lugar. Si gestionas los proyectos con Pigueon, estarás al tanto de todo lo que
-el equipo realiza."
+        subtitle="Mira los planes, dale seguimientos a todo el progreso y mantén las conversaciones laborales desde solo lugar."
         buttonText="Learn More"
         buttonHref="#"
       />

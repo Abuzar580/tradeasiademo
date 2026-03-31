@@ -7,20 +7,14 @@
 
 import type {
   TenantConfig,
-  LayoutVariant,
   BrandingConfig,
   NavigationConfig,
   FooterConfig,
   SeoConfig,
   LocaleConfig,
   AuthProvider,
+  StyleguideConfig,
 } from "@/types/tenant";
-
-const KNOWN_LAYOUT_VARIANTS: LayoutVariant[] = ["layout-one", "layout-two"];
-
-function isKnownLayoutVariant(value: string): value is LayoutVariant {
-  return KNOWN_LAYOUT_VARIANTS.includes(value as LayoutVariant);
-}
 
 function fail(input: unknown, reason: string): TenantConfig {
   console.error({
@@ -38,7 +32,12 @@ function fail(input: unknown, reason: string): TenantConfig {
 function getSafeFallbackTenantConfig(): TenantConfig {
   return {
     tenantId: "default",
-    layoutVariant: "layout-one",
+    headerVariant: "header-one",
+    footerVariant: "footer-one",
+
+    styleguide: {
+      vars: {},
+    },
 
     branding: {
       colors: {
@@ -136,15 +135,18 @@ export function validateTenantConfig(input: unknown): TenantConfig {
     return fail(input, "tenantId must be a non-empty string");
   }
 
-  // 3. layoutVariant exists and is valid
-  if (typeof obj.layoutVariant !== "string") {
-    return fail(input, "layoutVariant must be a string");
+  // 3. optional headerVariant/footerVariant
+  if (
+    obj.headerVariant !== undefined &&
+    typeof obj.headerVariant !== "string"
+  ) {
+    return fail(input, "headerVariant must be a string when provided");
   }
-  if (!isKnownLayoutVariant(obj.layoutVariant)) {
-    return fail(
-      input,
-      'layoutVariant must be one of ["layout-one", "layout-two"]',
-    );
+  if (
+    obj.footerVariant !== undefined &&
+    typeof obj.footerVariant !== "string"
+  ) {
+    return fail(input, "footerVariant must be a string when provided");
   }
 
   // 4. branding exists with logo and colors (explicit type guards)
@@ -230,10 +232,12 @@ export function validateTenantConfig(input: unknown): TenantConfig {
   // All checks passed — return validated input as TenantConfig
   return {
     tenantId: obj.tenantId as string,
-    layoutVariant: obj.layoutVariant as LayoutVariant,
+    headerVariant: obj.headerVariant as string | undefined,
+    footerVariant: obj.footerVariant as string | undefined,
     branding: obj.branding as BrandingConfig,
     navigation: obj.navigation as NavigationConfig,
     footer: obj.footer as FooterConfig,
+    styleguide: obj.styleguide as StyleguideConfig | undefined,
     seo: obj.seo as SeoConfig,
     locales: obj.locales as LocaleConfig,
     authProviders: obj.authProviders as AuthProvider[],

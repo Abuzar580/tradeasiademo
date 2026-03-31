@@ -8,6 +8,8 @@ export type HeroSectionProps = {
   subtitle: string;
   backgroundImage?: string;
   breadcrumbs?: HeroBreadcrumbItem[];
+  badge?: string;
+  heroVariant ?: "default" | "industries";
 };
 
 export function HeroSection({
@@ -15,8 +17,11 @@ export function HeroSection({
   subtitle,
   backgroundImage,
   breadcrumbs,
+  badge,
+  heroVariant = "default",
 }: HeroSectionProps) {
   const hasBreadcrumbs = !!breadcrumbs && breadcrumbs.length > 0;
+  const isIndustries = heroVariant === "industries";
 
   return (
     <section
@@ -40,7 +45,7 @@ export function HeroSection({
         className="
           hidden md:block
           absolute inset-0 -z-10
-          bg-[linear-gradient(90deg,var(--brand-primary)_0%,rgba(0,0,0,0.3)_50%,transparent_100%)]
+          bg-[linear-gradient(90deg,var(--hero-gradient-start)_0%,rgba(0,0,0,0.3)_50%,transparent_100%)]
         "
       />
 
@@ -50,33 +55,53 @@ export function HeroSection({
       )}
 
       <div
-        className="
+        className={`
           relative
           px-5
           layout-container
           flex flex-col
-          gap-8 md:gap-10 py-[110px]
-        "
+          gap-[var(--hero-gap-mobile)] md:gap-[var(--hero-gap-desktop)]
+          ${isIndustries ? "pt-[var(--hero-industry-padding-top-mobile)] md:pt-[var(--hero-industry-padding-top-desktop)] pb-[var(--hero-industry-padding-bottom-mobile)] md:pb-[var(--hero-industry-padding-bottom-desktop)]" : "pt-[var(--hero-padding-top-mobile)] pb-[var(--hero-padding-bottom-mobile)]"}
+        `}
       >
         {/* Hero content card */}
         <div
-          className="
+          className={`
             flex flex-col
-            gap-4
-            px-3 py-10
-            bg-[var(--brand-primary)]/57
+            gap-[var(--hero-card-gap)]
+            ${isIndustries ? "bg-[var(--hero-card-bg)]/57 text-center md:text-left py-[var(--hero-card-padding-y-mobile)] px-[var(--hero-card-padding-x-mobile)]" : ""}
             md:bg-transparent md:p-0
-          "
+          `}
         >
+
+          {badge && (
+            <span
+              className="
+              inline-flex w-fit uppercase
+              pt-[var(--hero-badge-text-padding-top)]
+              pb-[var(--hero-badge-text-padding-bottom)]
+              px-[var(--hero-badge-text-padding-x)]
+              rounded-[var(--hero-badge-text-radius)]
+              text-[length:var(--hero-badge-text-size)]
+              leading-[var(--hero-badge-text-line)]
+              font-[var(--hero-badge-text-weight)]
+              text-[var(--hero-badge-text-color)]
+              bg-[var(--hero-badge-text-bg)]
+              "
+            >
+              {badge}
+            </span>
+          )}
+
           <h2
             className="
-              text-[length:var(--heading-4-size)]
-              leading-[var(--heading-4-line-height)]
-              text-[var(--brand-white)]
-              font-[var(--font-weight-medium)]
-
-              md:text-[length:var(--heading-2-size)]
-              md:leading-[var(--heading-2-line-height)]
+              text-[length:var(--hero-heading-size-mobile)]
+              leading-[var(--hero-heading-line-mobile)]
+              text-[var(--hero-heading-color)]
+              font-[var(--hero-heading-weight-mobile)]
+              md:text-[length:var(--hero-heading-size-desktop)]
+              md:leading-[var(--hero-heading-line-desktop)]
+              md:font-[var(--hero-heading-weight-desktop)]
             "
           >
             {title}
@@ -84,12 +109,13 @@ export function HeroSection({
 
           <p
             className="
-              text-[length:var(--body-regular-size)]
-              leading-[var(--body-regular-line-height)]
-              font-[var(--font-weight-medium)]
-              text-[var(--brand-white)]
-
-              md:text-[length:var(--heading-4-size)]
+              text-[length:var(--hero-text-size-mobile)]
+              leading-[var(--hero-text-line-mobile)]
+              font-[var(--hero-text-weight-mobile)]
+              text-[var(--hero-text-color)]
+              md:text-[length:var(--hero-text-size-desktop)]
+              md:leading-[var(--hero-text-line-desktop)]
+              md:font-[var(--hero-text-weight-desktop)]
             "
           >
             {subtitle}

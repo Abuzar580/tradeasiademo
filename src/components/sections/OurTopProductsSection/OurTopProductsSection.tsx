@@ -11,7 +11,7 @@ import "swiper/css/grid";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { ArrowIcon, CheckIcon, FileIcon, StackIcon } from "@/icons";
+import { ArrowIcon, CheckIcon, FileIcon } from "@/icons";
 
 type ProductsCard = {
   id: number;
@@ -91,7 +91,7 @@ export function OurTopProductsSection({
   subtitle
 }: ProductsSectionProps) {
   return (
-    <section className="relative flex justify-center overflow-hidden bg-[var(--brand-primary)] md:bg-[var(--brand-black)] py-[40px] md:py-[80px] pb-[120px] text-center md:py-16 lg:py-[120px]">
+    <section className="relative flex justify-center overflow-hidden bg-[var(--our-top-products-bg-mobile)] md:bg-[var(--our-top-products-bg-desktop)] pt-[var(--our-top-products-padding-top-mobile)] pb-[var(--our-top-products-padding-bottom-mobile)] md:pt-[var(--our-top-products-padding-top-desktop)] md:pb-[var(--our-top-products-padding-bottom-desktop)] text-center">
       <Image
         src="/DecoratorImage.svg"
         alt=""
@@ -113,20 +113,20 @@ export function OurTopProductsSection({
       />
 
       {/* Products Slider */}
-      <div className="w-full md:px-[40px] flex flex-col items-center relative justify-center md:justify-end md:flex-row z-10 md:gap-[30px]">
-        <div className=" absolute w-[calc(100%-280px)] h-full md:bg-[var(--brand-neutral-surface-2)] md:rounded-2xl"> </div>
+      <div className="w-full md:px-[var(--our-top-products-slider-padding-x-desktop)] flex flex-col items-center relative justify-center md:justify-end md:flex-row z-10 md:gap-[var(--our-top-products-gap-main-desktop)]">
+        <div className=" absolute w-[calc(100%-280px)] h-full md:bg-[var(--our-top-products-slider-bg)] md:rounded-2xl"> </div>
         {/* Desktop & Mobile Title */}
-        <div className="flex flex-col w-full md:w-[545px] z-50 items-center justify-center bg-[var(--brand-primary)]/90 md:p-6 md:py-[72px] rounded-none md:rounded-3xl">
-          <div className="flex flex-col gap-[30px] text-center md:px-0 px-[52px] pb-[50px] md:pb-[40px]">
+        <div className="flex flex-col w-full md:w-[545px] z-50 items-center justify-center bg-[var(--our-top-products-title-bg-mobile)]/90 md:p-6 md:py-[var(--our-top-products-title-py-desktop)] rounded-none md:rounded-3xl">
+          <div className="flex flex-col gap-[var(--our-top-products-gap-inner)] text-center px-[var(--our-top-products-content-padding-mobile)] md:px-0 pb-[var(--our-top-products-content-padding-mobile)] md:pb-[var(--our-top-products-content-pb-desktop)]">
             <h1
               className="
-              text-[length:var(--heading-3-size)]
-              leading-[var(--heading-3-line-height)]
-              font-[var(--font-weight-semibold)]
-              md:text-[length:var(--heading-2-size)]
-              md:leading-[var(--heading-2-line-height)]
-              text-[var(--brand-white)]
-              md:px-0 px-[50px]
+              text-[length:var(--our-top-products-heading-size-mobile)]
+              leading-[var(--our-top-products-heading-line-mobile)]
+              font-[var(--our-top-products-heading-weight-mobile)]
+              md:text-[length:var(--our-top-products-heading-size-desktop)]
+              md:leading-[var(--our-top-products-heading-line-desktop)]
+              md:font-[var(--our-top-products-heading-weight-desktop)]
+              text-[var(--our-top-products-heading-color)]
             "
             >
               {title}
@@ -136,9 +136,11 @@ export function OurTopProductsSection({
               <p
                 className="
                 body-large
-                font-[var(--font-weight-medium)]!
-                leading-[var(--body-large-line-height)]!
-                text-[var(--brand-white)]
+                font-[var(--our-top-products-text-weight-mobile)]!
+                leading-[var(--our-top-products-text-line-mobile)]!
+                md:font-[var(--our-top-products-text-weight-desktop)]!
+                md:leading-[var(--our-top-products-text-line-desktop)]!
+                text-[var(--our-top-products-text-color)]
               "
               >
                 {subtitle}
@@ -146,20 +148,20 @@ export function OurTopProductsSection({
             )}
           </div>
 
-          <div className="absolute md:relative bottom-[-80px] md:bottom-0 grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-[320px] px-4 gap-2">
+          <div className="absolute md:relative bottom-[-80px] md:bottom-0 grid grid-cols-[1fr_auto_1fr] items-center w-full max-w-[320px] px-4 gap-[var(--our-top-products-pagination-gap)]">
             <div className="flex justify-start">
               <Button
                 variant="outlined"
-                className="products-swiper-prev inline-flex items-center justify-center shadow-none! p-3! [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
+                className="products-swiper-prev inline-flex items-center justify-center [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
               >
                 <ArrowIcon className="w-4 h-3 rotate-180" />
               </Button>
             </div>
-            <div className="flex products-swiper-pagination items-center justify-center gap-2 [&_.swiper-pagination-bullet-active]:!w-[40px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--brand-white)] [&_.swiper-pagination-bullet]:!bg-[var(--brand-white)]" />
+            <div className="flex products-swiper-pagination items-center justify-center gap-[var(--our-top-products-pagination-gap)] [&_.swiper-pagination-bullet-active]:!w-[40px] [&_.swiper-pagination-bullet-active]:!rounded-[20px] [&_.swiper-pagination-bullet-active]:!bg-[var(--our-top-products-pagination-bullet-color)] [&_.swiper-pagination-bullet]:!bg-[var(--our-top-products-pagination-bullet-color)]" />
             <div className="flex justify-end">
               <Button
                 variant="outlined"
-                className="products-swiper-next inline-flex items-center justify-center shadow-none! p-3! [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
+                className="products-swiper-next inline-flex items-center justify-center [&.swiper-button-disabled]:opacity-30 h-[50px] w-[50px]"
               >
                 <ArrowIcon className="w-4 h-3" />
               </Button>
@@ -182,62 +184,54 @@ export function OurTopProductsSection({
             clickable: true,
             el: ".products-swiper-pagination",
             renderBullet: (index, className) =>
-              `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--brand-white)] cursor-pointer transition-all duration-300"></span>`,
+              `<span class="${className} h-[6px] w-[6px] rounded-[10px] bg-[var(--our-top-products-pagination-bullet-color)] cursor-pointer transition-all duration-300"></span>`,
           }}
           breakpoints={{
             320: {
               slidesPerView: 1,
-              spaceBetween: 12,
-            },
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 16,
+              spaceBetween: 20,
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 24,
-            },
-            1024: {
-              slidesPerView: 3,
               spaceBetween: 30,
-            },
+            }
           }}
-          className="industries-swiper m-0! w-full p-[50px]! md:p-0! py-0! md:pr-[32px]! md:py-[76px]!"
+          className="industries-swiper w-full p-[var(--our-top-products-slider-padding-mobile)]! md:p-0! py-0! md:pr-[var(--our-top-products-slider-padding-right-desktop)]! md:py-[var(--our-top-products-slider-padding-desktop)]!"
         >
           {PRODUCTS.map((product) => (
             <SwiperSlide key={product.id} className="!h-auto">
-              <div className="rounded-xl overflow-hidden h-full flex flex-col border-3 border-transparent hover:border-[var(--brand-primary)] hover:shadow-[1px_1px_6px_var(--brand-primary-hover)] hover:border-[5px_3px_10px_var(--brand-primary-hover)] transition-all duration-800 ease-in-out">
-                <div className="relative w-full h-[533px] bg-[var(--brand-neutral-surface-2)]">
+              <div className="rounded-xl overflow-hidden h-full flex flex-col border-3 border-transparent hover:border-[var(--our-top-products-card-border-hover)] hover:shadow-[var(--our-top-products-card-shadow-hover)] hover:shadow-[var(--our-top-products-card-shadow-strong-hover)] transition-all duration-800 ease-in-out">
+                <div className="relative w-full h-[var(--our-top-products-card-height)] bg-[var(--our-top-products-card-bg)]">
                   <Image
                     src={product.image}
                     alt={product.name}
                     width={280}
                     height={280}
-                    className="w-full h-[286px] object-cover"
+                    className="w-full h-[var(--our-top-products-card-image-height)] object-cover"
                   />
-                  <div className="absolute w-full bottom-0 rounded-t-2xl bg-[var(--brand-primary-deep)] z-50! p-[26px] flex flex-col gap-[20px] flex-1">
+                  <div className="absolute w-full bottom-0 rounded-t-2xl bg-[var(--our-top-products-card-overlay)] z-50! p-[var(--our-top-products-card-padding)] flex flex-col gap-[var(--our-top-products-card-gap)] flex-1">
                     {/* Product Name */}
-                    <h3 className="text-start body-large text-[var(--brand-white)] line-clamp-2">
+                    <h3 className="text-start body-large text-[var(--our-top-products-card-title-color)] line-clamp-2">
                       {product.name}
                     </h3>
 
                     {/* Product Details with Icons */}
-                    <div className="space-y-4 flex-1">
-                      <div className="flex items-center gap-3">
-                        <div className="bg-[var(--brand-white)] rounded-lg flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                          <product.checkIcon className="w-4 h-4 text-[var(--brand-primary)]" />
+                    <div className="space-y-[var(--our-top-products-card-details-gap)] flex-1">
+                      <div className="flex items-center gap-[var(--our-top-products-card-detail-row-gap)]">
+                        <div className="bg-[var(--our-top-products-icon-bg)] rounded-lg flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                          <product.checkIcon className="w-4 h-4 text-[var(--our-top-products-icon-color)]" />
                         </div>
-                        <p className="body-caption text-[var(--brand-white)]">
-                          <span className="body-caption">CAS NUMBER:</span> {product.casNumber}
+                        <p className="body-caption text-[var(--our-top-products-card-text-color)]">
+                          <label>CAS NUMBER:</label> {product.casNumber}
                         </p>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <div className="bg-[var(--brand-white)] rounded-lg flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                          <product.fileIcon className="w-4 h-4 text-[var(--brand-primary)]" />
+                      <div className="flex items-center gap-[var(--our-top-products-card-detail-row-gap)]">
+                        <div className="bg-[var(--our-top-products-icon-bg)] rounded-lg flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                          <product.fileIcon className="w-4 h-4 text-[var(--our-top-products-icon-color)]" />
                         </div>
-                        <p className="body-caption text-[var(--brand-white)]">
-                          <span className="body-caption">HS CODE:</span> {product.hsCode}
+                        <p className="body-caption text-[var(--our-top-products-card-text-color)]">
+                          <label>HS CODE:</label> {product.hsCode}
                         </p>
                       </div>
                     </div>

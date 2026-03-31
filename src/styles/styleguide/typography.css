@@ -1,0 +1,36 @@
+:root {
+  /* Typography – headings */
+  --heading-1-size: 56px;
+  --heading-1-line-height: 67.2px;
+
+  --heading-2-size: 46px;
+  --heading-2-line-height: 62.1px;
+
+  --heading-3-size: 32px;
+  --heading-3-line-height: 44.8px;
+
+  --heading-4-size: 24px;
+  --heading-4-line-height: 33.6px;
+
+  --heading-5-size: 20px;
+  --heading-5-line-height: 28px;
+
+  /* Typography – body text */
+  --body-large-size: 20px;
+  --body-large-line-height: 30px;
+
+  --body-medium-size: 18px;
+  --body-medium-line-height: 27px;
+
+  --body-regular-size: 16px;
+  --body-regular-line-height: 24px;
+
+  --body-small-size: 14px;
+  --body-small-line-height: 20.02px;
+
+  --body-caption-size: 12px;
+  --body-caption-line-height: 18px;
+
+  --common-letter-spacing: 1.3px;
+  --nav-item-line-height: 13.2px;
+}

@@ -52,10 +52,10 @@ export function NewsAndInsights({
   subtitle,
 }: NewsAndInsightsProps) {
   return (
-    <div className="flex flex-col gap-[30px] h-full">
-      <div className="flex flex-col gap-[20px] ">
+    <div className="flex flex-col gap-[var(--industry-updates-news-gap-main)] h-full">
+      <div className="flex flex-col gap-[var(--industry-updates-news-gap-header)] ">
         <h2
-          className="heading-3 text-[var(--brand-primary)]"
+          className="heading-3 text-[var(--industry-updates-subsection-title-color)]"
         >
           {title}
         </h2>
@@ -71,11 +71,11 @@ export function NewsAndInsights({
 
       {/* Articles Grid */}
       {ARTICLE.length > 0 && (
-        <div className="grid grid-cols-1 gap-[30px]">
+          <div className="grid grid-cols-1 gap-[var(--industry-updates-news-article-gap)]">
           {ARTICLE.map((article) => (
             <div
               key={article.id}
-              className=" flex flex-col md:flex-row rounded-[18px] bg-[var(--brand-white)] shadow-[var(--box-shadow)] hover:shadow-[var(--btn-shadow)] overflow-hidden bg-[var(--brand-white)]"
+              className=" flex flex-col md:flex-row rounded-[var(--industry-updates-news-card-radius)] bg-[var(--industry-updates-news-card-bg)] shadow-[var(--industry-updates-news-card-shadow)] hover:shadow-[var(--industry-updates-news-card-shadow-hover)] overflow-hidden"
             >
               {/* Article Image */}
               <div className="hidden md:flex relative w-full md:max-w-[270px] h-auto flex-shrink-0">
@@ -88,26 +88,26 @@ export function NewsAndInsights({
               </div>
 
               {/* Article Content */}
-              <div className="flex flex-col gap-[18px] justify-between py-7 px-6 md:px-[18px]">
+              <div className="flex flex-col gap-[var(--industry-updates-news-card-inner-gap)] justify-between py-[var(--industry-updates-news-card-padding-y)] px-[var(--industry-updates-news-card-padding-x)] md:px-[var(--industry-updates-news-card-padding-x)]">
                   <span
-                    className="inline-flex w-fit body-caption font-[var(--font-weight-semibold)]! py-2 px-5 text-[var(--brand-primary)] border border-[var(--brand-primary)] rounded-[20px] uppercase bg-[var(--brand-neutral-surface-2)]"
+                    className="inline-flex w-fit body-caption font-[var(--industry-updates-news-badge-weight)]! py-2 px-5 text-[var(--industry-updates-news-badge-color)] border border-[var(--industry-updates-news-badge-border)] rounded-[20px] uppercase bg-[var(--industry-updates-news-badge-bg)]"
                   >
                     {article.badge}
                   </span>
 
-                <p className="body-medium text-[var(--brand-primary)] leading-[30px]!" >
+                <p className="body-medium text-[var(--industry-updates-news-heading-color)] leading-[var(--industry-updates-news-heading-line)]!" >
                   {article.heading}
                 </p>
 
-                <div className="flex items-center justify-between gap-[16px] pt-[16px]">
-                  <span className="body-caption font-[var(--font-weight-semibold)]!">
+                <div className="flex items-center justify-between gap-[var(--industry-updates-news-footer-gap)] pt-[var(--industry-updates-news-footer-pt)]">
+                  <span className="body-caption font-[var(--industry-updates-news-badge-weight)]!">
                     {article.date}
                   </span>
 
                   <Button
                     href={article.readMoreUrl}
                     variant="primary"
-                    className=" inline-flex gap-3 items-center justify-center py-3! px-5!"
+                    className=" inline-flex gap-[var(--industry-updates-news-button-gap)] items-center justify-center py-3! px-5!"
                   >
                     Read More
                     <ArrowIcon className="w-4 h-3" />

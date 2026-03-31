@@ -18,16 +18,16 @@ const INDUSTRIES: IndustryCard[] = [
 
 export function IndustriesGridSection() {
   return (
-    <section className="py-10 md:py-[70px]">
+    <section className="pt-[var(--industries-grid-padding-top-mobile)] pb-[var(--industries-grid-padding-bottom-mobile)] md:pt-[var(--industries-grid-padding-top-desktop)] md:pb-[var(--industries-grid-padding-bottom-desktop)]">
       <div className="layout-container px-5">
         <div
           className="
             grid
             grid-cols-1
-            gap-y-5
+            gap-y-[var(--industries-grid-gap-y-mobile)]
             md:grid-cols-3
-            md:gap-y-10
-            md:gap-x-7
+            md:gap-y-[var(--industries-grid-gap-y-desktop)]
+            md:gap-x-[var(--industries-grid-gap-x-desktop)]
           "
         >
           {INDUSTRIES.map((industry, index) => {

@@ -1,0 +1,9 @@
+:root {
+  /* Border radius */
+  --radius-header: 40px;
+  --radius-header-desktop: 60px;
+  --radius-card-sm: 8px;
+  --radius-card-md: 18px;
+  --radius-card-lg: 30px;
+  --radius-card-full: 100%;
+}

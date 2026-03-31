@@ -38,12 +38,12 @@ export function DesktopHamburgerDrawer({
       />
       {/* Panel – slides in from right */}
       <aside
-        className="fixed right-0 top-0 z-50 flex h-full w-full max-w-[288px] flex-col bg-[var(--brand-neutral-surface)] shadow-xl"
+        className="fixed right-0 top-0 z-50 flex h-full w-full max-w-[288px] flex-col bg-[var(--header-panel-bg)] shadow-xl"
         role="dialog"
         aria-label="Menu"
       >
         {/* Close button – top right */}
-        <div className="flex justify-end p-3 bg-[var(--brand-neutral-surface-3)]">
+        <div className="flex justify-end p-3 bg-[var(--header-panel-section-bg)]">
           <button
             type="button"
             onClick={onClose}
@@ -58,18 +58,18 @@ export function DesktopHamburgerDrawer({
         <section>
           <button
             type="button"
-            className="flex w-full items-center justify-between px-3 py-3 bg-[var(--brand-neutral-surface-3)]"
+            className="flex w-full items-center justify-between px-3 py-3 bg-[var(--header-panel-section-bg)]"
             onClick={() => setLanguageOpen(!languageOpen)}
             aria-expanded={languageOpen}
           >
-            <span className="flex items-center gap-2">
-              <GlobeIcon className="w-6 h-6 text-[var(--brand-black)]" />
-              <span className="body-small text-[var(--brand-black)]">
+            <span className="flex items-center gap-[var(--header-panel-header-gap)]">
+              <GlobeIcon className="w-6 h-6 text-[var(--header-panel-text-color)]" />
+              <span className="body-small text-[var(--header-panel-text-color)]">
                 Select language
               </span>
             </span>
             <span
-              className={`transition-transform p-[4px] ${languageOpen ? "rotate-180" : ""}`}
+              className={`transition-transform p-[var(--header-panel-toggle-padding)] ${languageOpen ? "rotate-180" : ""}`}
             >
               <Image
                 src="/dropdown-icon.svg"
@@ -86,7 +86,7 @@ export function DesktopHamburgerDrawer({
                 <li key={item.code}>
                   <button
                     type="button"
-                    className="body-caption text-[var(--brand-black)] flex w-full items-center gap-[10px] py-2 hover:text-[var(--brand-neutral-text)]"
+                    className="body-caption text-[var(--header-panel-text-color)] flex w-full items-center gap-[var(--header-panel-lang-gap)] py-2 hover:text-[var(--header-panel-muted-color)]"
                   >
                     <Image
                       src={item.flagSrc ?? "/flag.svg"}
@@ -107,18 +107,18 @@ export function DesktopHamburgerDrawer({
         <section>
           <button
             type="button"
-            className="flex w-full items-center justify-between px-3 py-3 bg-[var(--brand-neutral-surface-3)]"
+            className="flex w-full items-center justify-between px-3 py-3 bg-[var(--header-panel-section-bg)]"
             onClick={() => setExploreOpen(!exploreOpen)}
             aria-expanded={exploreOpen}
           >
-            <span className="flex items-center gap-2">
-              <GlobeIcon className="w-6 h-6 text-[var(--brand-black)]" />
-              <span className="body-small text-[var(--brand-black)]">
+            <span className="flex items-center gap-[var(--header-panel-header-gap)]">
+              <GlobeIcon className="w-6 h-6 text-[var(--header-panel-text-color)]" />
+              <span className="body-small text-[var(--header-panel-text-color)]">
                 Select a Website to Explore
               </span>
             </span>
             <span
-              className={`transition-transform p-[4px] ${exploreOpen ? "rotate-180" : ""}`}
+              className={`transition-transform p-[var(--header-panel-toggle-padding)] ${exploreOpen ? "rotate-180" : ""}`}
             >
               <Image
                 src="/dropdown-icon.svg"
@@ -137,8 +137,8 @@ export function DesktopHamburgerDrawer({
                     <button
                       type="button"
                       onClick={() => setSecondLevelLabel(item.label)}
-                      style={{ fontSize: "var(--body-regular-size)" }}
-                      className="body-caption text-[var(--brand-black)] flex w-full items-center justify-between py-4 hover:text-[var(--brand-neutral-text)]"
+                      style={{ fontSize: "var(--header-panel-item-size)" }}
+                      className="body-caption text-[var(--header-panel-text-color)] flex w-full items-center justify-between py-4 hover:text-[var(--header-panel-muted-color)]"
                     >
                       {item.label}
                       <Image
@@ -152,15 +152,15 @@ export function DesktopHamburgerDrawer({
                   </li>
                 ))}
               </ul>
-              <div className="h-px bg-[var(--brand-neutral-text)] mx-3" />
+              <div className="h-px bg-[var(--header-panel-muted-color)] mx-3" />
             </>
           )}
         </section>
 
         {/* Footer – domain */}
-        <div className="mt-auto p-3 bg-[var(--brand-neutral-surface-3)]">
-          <p className="body-caption text-[var(--brand-neutral-text)]">
-            <span className="font-normal">{siteDomain}</span>
+        <div className="mt-auto p-3 bg-[var(--header-panel-section-bg)]">
+          <p className="body-caption text-[var(--header-panel-muted-color)]">
+            <span className="font-[var(--header-panel-domain-weight)]">{siteDomain}</span>
           </p>
         </div>
       </aside>
@@ -168,11 +168,11 @@ export function DesktopHamburgerDrawer({
       {/* Second-level drawer */}
       {secondLevelLabel && (
         <aside
-          className="fixed right-0 top-0 z-[60] flex h-full w-full max-w-[288px] flex-col bg-[var(--brand-neutral-surface)] shadow-xl"
+          className="fixed right-0 top-0 z-[60] flex h-full w-full max-w-[288px] flex-col bg-[var(--header-panel-bg)] shadow-xl"
           role="dialog"
           aria-label={secondLevelLabel}
         >
-          <div className="flex items-center gap-2 p-3 bg-[var(--brand-neutral-surface-3)]">
+          <div className="flex items-center gap-[var(--header-panel-header-gap)] p-3 bg-[var(--header-panel-section-bg)]">
             <button
               type="button"
               onClick={() => setSecondLevelLabel(null)}
@@ -187,14 +187,14 @@ export function DesktopHamburgerDrawer({
                 className="invert rotate-90"
               />
             </button>
-            <span className="body-small text-[var(--brand-black)]">{secondLevelLabel}</span>
+            <span className="body-small text-[var(--header-panel-text-color)]">{secondLevelLabel}</span>
           </div>
           <ul className="flex-1 overflow-y-auto px-5 py-4">
             {secondLevelItems.map((item) => (
               <li key={item.label} className="py-3">
                 <a
                   href={item.href ?? "#"}
-                  className="body-caption text-[var(--brand-black)] flex items-center gap-3 hover:text-[var(--brand-neutral-text)]"
+                  className="body-caption text-[var(--header-panel-text-color)] flex items-center gap-[var(--header-panel-item-gap)] hover:text-[var(--header-panel-muted-color)]"
                 >
                   {item.flagSrc && (
                     <Image
@@ -210,9 +210,9 @@ export function DesktopHamburgerDrawer({
               </li>
             ))}
           </ul>
-          <div className="mt-auto p-3 bg-[var(--brand-neutral-surface-3)]">
-            <p className="body-caption text-[var(--brand-neutral-text)]">
-              <span className="font-normal">{siteDomain}</span>
+          <div className="mt-auto p-3 bg-[var(--header-panel-section-bg)]">
+            <p className="body-caption text-[var(--header-panel-muted-color)]">
+              <span className="font-[var(--header-panel-domain-weight)]">{siteDomain}</span>
             </p>
           </div>
         </aside>

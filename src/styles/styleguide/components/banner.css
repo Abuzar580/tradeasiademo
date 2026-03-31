@@ -1,0 +1,38 @@
+:root {
+  /* Spacing */
+  --banner-padding-top-mobile: var(--section-padding-120);
+  --banner-padding-bottom-mobile: var(--section-padding-60);
+
+  --banner-padding-top-desktop: var(--section-padding-150);
+  --banner-padding-bottom-desktop: var(--section-padding-60);
+
+  --banner-padding-top-lg: var(--section-padding-190);
+
+  /* Background */
+  --banner-bg-color: var(--brand-neutral-surface-2);
+
+  /* Heading */
+  --banner-heading-size-mobile: var(--heading-3-size);
+  --banner-heading-size-desktop: var(--heading-2-size);
+  --banner-heading-line-mobile: var(--heading-3-line-height);
+  --banner-heading-line-desktop: var(--heading-2-line-height);
+  --banner-heading-weight-mobile: var(--font-weight-bold);
+  --banner-heading-weight-desktop: var(--font-weight-bold);
+  --banner-heading-color: var(--brand-black);
+  --banner-heading-highlight-color: var(--brand-primary);
+
+  /* Sub text / paragraph */
+  --banner-text-size-mobile: var(--body-regular-size);
+  --banner-text-size-desktop: var(--body-large-size);
+  --banner-text-line-mobile: var(--body-large-line-height);
+  --banner-text-line-desktop: var(--body-large-line-height);
+  --banner-text-weight-mobile: var(--font-weight-semibold);
+  --banner-text-weight-desktop: var(--font-weight-semibold);
+  --banner-text-color: var(--brand-neutral-text);
+
+  /* Layout gaps */
+  --banner-gap-main-mobile: var(--gap-32);
+  --banner-gap-main-desktop: var(--gap-50);
+  --banner-gap-inner-mobile: var(--gap-30);
+  --banner-gap-inner-desktop: var(--gap-30);
+}

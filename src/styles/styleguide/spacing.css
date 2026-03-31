@@ -1,0 +1,62 @@
+:root {
+  /* Layout */
+  --layout-container-max: 1260px;
+
+  /* Section vertical spacing */
+  --section-padding-20: 20px;
+  --section-padding-25: 25px;
+  --section-padding-32: 32px;
+  --section-padding-40: 40px;
+  --section-padding-48: 48px;
+  --section-padding-60: 60px;
+  --section-padding-70: 70px;
+  --section-padding-80: 80px;
+  --section-padding-90: 90px;
+  --section-padding-100: 100px;
+  --section-padding-110: 110px;
+  --section-padding-120: 120px;
+  --section-padding-130: 130px;
+  --section-padding-150: 150px;
+  --section-padding-190: 190px;
+
+  /* Layout gap spacing */
+  --gap-4: 4px;
+  --gap-5: 5px;
+  --gap-6: 6px;
+  --gap-8: 8px;
+  --gap-10: 10px;
+  --gap-12: 12px;
+  --gap-14: 14px;
+  --gap-16: 16px;
+  --gap-18: 18px;
+  --gap-20: 20px;
+  --gap-22: 22px;
+  --gap-24: 24px;
+  --gap-25: 25px;
+  --gap-28: 28px;
+  --gap-30: 30px;
+  --gap-32: 32px;
+  --gap-35: 35px;
+  --gap-37: 37px;
+  --gap-40: 40px;
+  --gap-44: 44px;
+  --gap-48: 48px;
+  --gap-50: 50px;
+  --gap-56: 56px;
+  --gap-60: 60px;
+  --gap-64: 64px;
+
+  /* Card / panel padding */
+  --control-padding-4: 4px;
+  --control-padding-9: 9px;
+  --card-padding-15: 15px;
+  --card-padding-20: 20px;
+  --card-padding-24: 24px;
+  --card-padding-25: 25px;
+  --card-padding-26: 26px;
+  --card-padding-30: 30px;
+  --card-padding-32: 32px;
+  --card-padding-50: 50px;
+  --panel-padding-48: 48px;
+  --panel-padding-60: 60px;
+}
