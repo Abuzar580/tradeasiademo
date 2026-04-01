@@ -4,21 +4,20 @@ import type { Product } from "@/constants/products";
 
 export function IndustriesProductsSection({
   products,
+  title,
+  description,
 }: {
   products: Product[];
+  title: string;
+  description: string;
 }) {
   return (
     <section className="pt-[var(--industries-products-section-padding-top-mobile)] pb-[var(--industries-products-section-padding-bottom-mobile)] md:pt-[var(--industries-products-section-padding-top-desktop)] md:pb-[var(--industries-products-section-padding-bottom-desktop)]">
       <div className="layout-container px-5">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-[var(--industries-products-grid-gap-mobile)] md:gap-[var(--industries-products-grid-gap-desktop)]">
+        <div className="flex flex-col gap-[var(--industries-products-grid-gap-mobile)] md:grid md:grid-cols-12 md:gap-[var(--industries-products-grid-gap-desktop)]">
 
-          {/* Sidebar — full height, sticks to top */}
-          <div className="md:col-span-3 order-2 md:order-1 md:self-start">
-            <ProductCategoriesSideBar products={products} />
-          </div>
-
-          {/* Right side: intro + products stacked */}
-          <div className="md:col-span-9 order-1 md:order-2 flex flex-col gap-[var(--industries-products-grid-intro-gap-mobile)] md:gap-[var(--industries-products-grid-intro-gap-desktop)]">
+          {/* Right column: intro + products — first in DOM so mobile shows intro before sidebar */}
+          <div className="md:col-span-9 md:order-2 flex flex-col gap-[var(--industries-products-grid-intro-gap-mobile)] md:gap-[var(--industries-products-grid-intro-gap-desktop)]">
             <div className="flex flex-col gap-[var(--industries-products-grid-intro-gap-mobile)] md:gap-[var(--industries-products-grid-intro-gap-desktop)] pb-[var(--industries-products-grid-padding-bottom-mobile)] md:pb-0">
               <h3
                 className="
@@ -30,7 +29,7 @@ export function IndustriesProductsSection({
                   md:font-[var(--industries-products-grid-title-weight-desktop)]
                   text-[var(--industries-products-grid-title-color)]"
               >
-                Crops & Agro Chemicals
+                {title}
               </h3>
               <p
                 className="
@@ -42,7 +41,7 @@ export function IndustriesProductsSection({
                   md:font-[var(--industries-products-grid-subtitle-weight-desktop)]
                   text-[var(--industries-products-grid-subtitle-color)]"
               >
-                The agricultural chemical industry is a critical component of contemporary agriculture across the world. Chemical fertilizers, insecticides, and other chemical-based agricultural products are widely used all over the world. Agriculture industries require fertilizer-grade chemicals for crop growth which are typically unavailable in several locations. Pesticides, herbicides, insecticides, fungicides, synthetic fertilizers, and a variety of other chemicals used for plant and crop protection are among the available chemicals. Tradeasia International offers agricultural chemicals to support the industrial needs in the agricultural sector.
+                {description}
               </p>
             </div>
 
@@ -50,6 +49,11 @@ export function IndustriesProductsSection({
               title="Products"
               Products={products}
             />
+          </div>
+
+          {/* Sidebar — second in DOM (after intro on mobile), reordered to left on desktop */}
+          <div className="md:col-span-3 md:order-1 md:self-start">
+            <ProductCategoriesSideBar products={products} />
           </div>
 
         </div>

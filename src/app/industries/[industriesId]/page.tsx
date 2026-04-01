@@ -21,7 +21,11 @@ export default async function IndustriesDetailPage({ params }: { params: Promise
                 ]}
             />
 
-            <IndustriesProductsSection products={getProductsByIndustry(industriesId)} />
+            <IndustriesProductsSection
+                products={getProductsByIndustry(industriesId)}
+                title={`${formattedTitle} Chemicals`}
+                description={`Explore our range of chemical products for the ${formattedTitle.toLowerCase()} industry. Tradeasia International supplies high-quality chemicals to support your industrial needs.`}
+            />
         </>
     );
 }

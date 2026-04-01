@@ -11,10 +11,10 @@ export function ProductsSection({
     <section className="pt-[var(--industries-products-section-padding-top-mobile)] pb-[var(--industries-products-section-padding-bottom-mobile)] md:pt-[var(--industries-products-section-padding-top-desktop)] md:pb-[var(--industries-products-section-padding-bottom-desktop)]">
       <div className="layout-container px-5">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[var(--industries-products-grid-gap-mobile)] md:gap-[var(--industries-products-grid-gap-desktop)]">
-          <div className="md:col-span-3 order-2 md:order-1">
+          <div className="order-1 md:order-1 md:col-span-3 md:self-start">
             <ProductCategoriesSideBar products={products} />
           </div>
-          <div className="md:col-span-9 order-1 md:order-2">
+          <div className="order-2 md:order-2 md:col-span-9">
             <ProductsListTile
               title="All Products"
               Products={products}
