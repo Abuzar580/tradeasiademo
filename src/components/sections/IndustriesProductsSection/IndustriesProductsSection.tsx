@@ -15,9 +15,11 @@ export function IndustriesProductsSection({
     <section className="pt-[var(--industries-products-section-padding-top-mobile)] pb-[var(--industries-products-section-padding-bottom-mobile)] md:pt-[var(--industries-products-section-padding-top-desktop)] md:pb-[var(--industries-products-section-padding-bottom-desktop)]">
       <div className="layout-container px-5">
         <div className="flex flex-col gap-[var(--industries-products-grid-gap-mobile)] md:grid md:grid-cols-12 md:gap-[var(--industries-products-grid-gap-desktop)]">
+          <div className="order-1 md:order-1 md:col-span-3 md:self-start">
+            <ProductCategoriesSideBar products={products} />
+          </div>
 
-          {/* Right column: intro + products — first in DOM so mobile shows intro before sidebar */}
-          <div className="md:col-span-9 md:order-2 flex flex-col gap-[var(--industries-products-grid-intro-gap-mobile)] md:gap-[var(--industries-products-grid-intro-gap-desktop)]">
+          <div className="order-2 md:order-2 md:col-span-9 flex flex-col gap-[var(--industries-products-grid-intro-gap-mobile)] md:gap-[var(--industries-products-grid-intro-gap-desktop)]">
             <div className="flex flex-col gap-[var(--industries-products-grid-intro-gap-mobile)] md:gap-[var(--industries-products-grid-intro-gap-desktop)] pb-[var(--industries-products-grid-padding-bottom-mobile)] md:pb-0">
               <h3
                 className="
@@ -50,12 +52,6 @@ export function IndustriesProductsSection({
               Products={products}
             />
           </div>
-
-          {/* Sidebar — second in DOM (after intro on mobile), reordered to left on desktop */}
-          <div className="md:col-span-3 md:order-1 md:self-start">
-            <ProductCategoriesSideBar products={products} />
-          </div>
-
         </div>
       </div>
     </section>
