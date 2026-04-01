@@ -26,14 +26,6 @@ export function ProductCategoriesSideBar({
   const selected = (searchParams.get("category") ?? "").toLowerCase();
   const isAll = !selected || selected === "all-products";
 
-  const toSlug = (value: string) =>
-    value
-      .trim()
-      .toLowerCase()
-      .replace(/&/g, "and")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-
   const setCategory = (categorySlug: string) => {
     const next = new URLSearchParams(searchParams.toString());
 
@@ -80,12 +72,12 @@ export function ProductCategoriesSideBar({
 
       {/* Categories Menu List */}
       <div className="flex flex-col gap-[var(--industries-products-sidebar-menu-list-gap)]">
-        {categories.map((category, index) => {
+        {categories.map((category) => {
           const active = category.slug === "all-products" ? isAll : category.slug === selected;
 
           return (
           <div
-            key={index}
+            key={category.slug}
             onClick={() => setCategory(category.slug)}
             className={`
               group flex items-center justify-between

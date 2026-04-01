@@ -156,17 +156,47 @@ const HS_CODES: Record<string, string> = {
   "fertilizers":                "3102.10.00",
 };
 
+export const PRODUCTS: Product[] = PRODUCT_CATEGORY_ORDER.flatMap((category, catIndex) =>
+  PRODUCT_NAMES[category].map((name, nameIndex) => ({
+    id: catIndex * 5 + nameIndex + 1,
+    name,
+    casNumber: CAS_NUMBERS[category],
+    hsCode: HS_CODES[category],
+    image: "/CategoryImage.png",
+    badge: "In Stock",
+    category,
+  }))
+);
+
+// Maps industry route slugs to their relevant product categories.
+// IMPORTANT: keys here must exactly match the [industriesId] route param values.
+// If route slugs change or new industries are added, update this map too -
+// a missing key silently returns all products instead of a filtered set.
 const INDUSTRY_CATEGORIES: Record<string, string[]> = {
-  agriculture:    ["agriculture", "fertilizers"],
-  food:           ["food-additives", "feed-ingredients"],
-  pharmaceutical: ["pharmaceutical", "food-additives"],
-  cosmetics:      ["beauty-and-personal-care", "oleochemicals"],
-  textile:        ["textile-chemicals", "leather-chemicals"],
-  manufacturing:  ["plastic-and-polymers", "rubber"],
-  construction:   ["glass-and-ceramic", "paint-ink-and-coating"],
-  automotive:     ["rubber", "plastic-and-polymers"],
-  paper:          ["pulp-and-paper", "surplus-chemicals"],
-  water:          ["water-treatment-chemicals"],
+  agriculture:        ["agriculture", "fertilizers"],
+  "feed-ingredients": ["feed-ingredients", "fertilizers"],
+  fertilizers:        ["fertilizers", "agriculture"],
+  "food-additives":   ["food-additives", "feed-ingredients"],
+  "glass-ceramics":   ["glass-and-ceramic"],
+  "lab-fine-chemicals": ["surplus-chemicals", "boron", "pharmaceutical"],
+  "paints-inks":      ["paint-ink-and-coating"],
+  "plastic-polymer":  ["plastic-and-polymers"],
+  "pulp-paper":       ["pulp-and-paper"],
+  rubber:             ["rubber"],
+  "soap-detergents":  ["soap-and-detergents", "oleochemicals"],
+  "textile-chemicals": ["textile-chemicals", "leather-chemicals"],
+  "water-treatment":  ["water-treatment-chemicals"],
+
+  // Backward-compatible aliases
+  food:               ["food-additives", "feed-ingredients"],
+  pharmaceutical:     ["pharmaceutical", "food-additives"],
+  cosmetics:          ["beauty-and-personal-care", "oleochemicals"],
+  textile:            ["textile-chemicals", "leather-chemicals"],
+  manufacturing:      ["plastic-and-polymers", "rubber"],
+  construction:       ["glass-and-ceramic", "paint-ink-and-coating"],
+  automotive:         ["rubber", "plastic-and-polymers"],
+  paper:              ["pulp-and-paper", "surplus-chemicals"],
+  water:              ["water-treatment-chemicals"],
 };
 
 export function getProductsByIndustry(industryId: string): Product[] {
@@ -174,20 +204,3 @@ export function getProductsByIndustry(industryId: string): Product[] {
   if (!categories) return PRODUCTS;
   return PRODUCTS.filter((p) => categories.includes(p.category));
 }
-
-export const PRODUCTS: Product[] = PRODUCT_CATEGORY_ORDER.flatMap((category, catIndex) =>
-  PRODUCT_NAMES[category].map((name, nameIndex) => {
-    const id = catIndex * 5 + nameIndex + 1;
-    const imageIndex = (id - 1) % 3;
-    const sliderImages = ["/SliderImage1.png", "/SliderImage2.png", "/SliderImage3.png"];
-    return {
-      id,
-      name,
-      casNumber: CAS_NUMBERS[category],
-      hsCode: HS_CODES[category],
-      image: sliderImages[imageIndex],
-      badge: "In Stock",
-      category,
-    };
-  })
-);

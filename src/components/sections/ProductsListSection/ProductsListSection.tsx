@@ -126,7 +126,7 @@ export function ProductsListTile({
 
       {/* Products Grid */}
       {pageItems.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[var(--industries-products-grid-card-gap-y-mobile)] md:gap-y-[var(--industries-products-grid-card-gap-y-desktop)] gap-x-[var(--industries-products-grid-card-gap-x)] px-[var(--industries-products-grid-card-padding-x)] md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[var(--industries-products-grid-card-gap-y-mobile)] md:gap-y-[var(--industries-products-grid-card-gap-y-desktop)] gap-x-[var(--industries-products-grid-card-gap-x)]">
           {pageItems.map((product) => (
             <div
               key={product.id}
@@ -243,26 +243,14 @@ export function ProductsListTile({
               />
             </PaginationItem>
             {(() => {
-              const windowSize = 5;
-              const half = Math.floor(windowSize / 2);
+              const half = 1;
               let start = Math.max(1, currentPage - half);
-              let end = Math.min(totalPages, start + windowSize - 1);
-              start = Math.max(1, end - windowSize + 1);
-
+              let end = Math.min(totalPages, start + 2);
+              start = Math.max(1, end - 2);
               const pages = Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
               return (
                 <>
-                  {totalPages <= 7 &&
-                    Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                      <PaginationItem key={p}>
-                        <PaginationLink href={pageHref(p)} isActive={p === currentPage}>
-                          {p}
-                        </PaginationLink>
-                      </PaginationItem>
-                    ))}
-                  {totalPages > 7 && (
-                    <>
                   {start > 1 && (
                     <PaginationItem>
                       <PaginationLink href={pageHref(1)} isActive={currentPage === 1}>
@@ -295,8 +283,6 @@ export function ProductsListTile({
                         {totalPages}
                       </PaginationLink>
                     </PaginationItem>
-                  )}
-                    </>
                   )}
                 </>
               );
